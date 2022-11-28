@@ -79,6 +79,17 @@ namespace Minefield
             await Task.Delay(500);
 
             lblPlayer.Visible = false;
+
+            lblPlayer.Location = new Point(0, 380);
+            playerX = 0;
+            playerY = 19;
+
+            if (lives != 0)
+            {
+                hideMines();
+                lblPlayer.Image = Resources.up;
+                lblPlayer.Visible = true;
+            }
         }
 
         #region MineLogic
@@ -211,7 +222,6 @@ namespace Minefield
 
         private void checkEnv(int x, int y)
         {
-            String squareStatus = "Clear";
             int dangerLevel = 0;
 
             Label label = getLabel(x, y);
@@ -220,24 +230,21 @@ namespace Minefield
             {
                 if(lives >= 1)
                 {
-                    hideMines();
-
-                    lblPlayer.Location = new Point(0, 380);
-                    playerX = 0;
-                    playerY = 19;
-
                     switch (lives)
                     {
                         case 3:
                             pbLife.BackgroundImage = Resources._2Lives;
                             lives -= 1;
+                            explodeAsync();
                             break;
                         case 2:
                             pbLife.BackgroundImage = Resources._1life;
                             lives -= 1;
+                            explodeAsync();                            
                             break;
                         case 1:
                             pbLife.BackgroundImage = Resources.nolife;
+                            lives -= 1;
                             gameOver();
                             break;
                     }
