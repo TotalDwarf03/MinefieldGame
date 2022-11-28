@@ -28,6 +28,9 @@ namespace Minefield
         // The Array used to hold the positon of bombs
         int[,] MineMap = new int[20, 20];
 
+        // Holds the amount of lives the player has left
+        int lives;
+
 
         /// <summary>
         /// Gets the label at the given x and y coordinates
@@ -49,6 +52,13 @@ namespace Minefield
             }
             return null;
         }
+
+        private void gameOver()
+        {
+
+        }
+
+        #region MineLogic
 
         /// <summary>
         /// <Para> Generates an 20 by 20 array to hold the location of mines. </Para>
@@ -72,7 +82,53 @@ namespace Minefield
                     }
                 }
             }
+
+            MineMap[0, 19] = 0; //Start Square cannot be a mine
+            MineMap[19, 0] = 2; //Designates end square
         }
+
+        /// <summary>
+        /// Reveals all the mines on the grid using the MineMap
+        /// </summary>
+        private void revealMines()
+        {
+            for (int i = 0; i < 20; i++)
+            {
+                for (int j = 0; j < 20; j++)
+                {
+                    if (MineMap[i, j] == 1)
+                    {
+                        Label label = getLabel(i, j);
+                        label.BackColor = Color.Red;
+                    }
+                    else if (MineMap[i, j] == 0)
+                    {
+                        Label label = getLabel(i, j);
+                        label.BackColor = Color.Transparent;
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Hides all the mines on the grid
+        /// </summary>
+        private void hideMines()
+        {
+            foreach (Control c in panel1.Controls)
+            {
+                if (c.Name == "lblPlayer" || c.Name == "label381" || c.Name == "label20")
+                {
+                    c.BackColor = Color.Transparent;
+                }
+                else
+                {
+                    c.BackColor = Color.MidnightBlue;
+                }
+            }
+        }
+
+        #endregion
 
         #region Movement
 
@@ -140,7 +196,36 @@ namespace Minefield
 
             if (MineMap[x, y] == 1)
             {
-                label.BackColor = Color.Red;
+                if(lives >= 1)
+                {
+                    //Play explosion animation?
+
+                    hideMines();
+
+                    lblPlayer.Location = new Point(0, 380);
+                    playerX = 0;
+                    playerY = 19;
+
+                    switch (lives)
+                    {
+                        case 3:
+                            pbLife.BackgroundImage = Resources._2Lives;
+                            lives -= 1;
+                            break;
+                        case 2:
+                            pbLife.BackgroundImage = Resources._1life;
+                            lives -= 1;
+                            break;
+                        case 1:
+                            pbLife.BackgroundImage = Resources.nolife;
+                            MessageBox.Show("out of lives");
+                            break;
+                    }
+                }
+            }
+            else if (MineMap[x, y] == 2)
+            {
+                label.BackColor = Color.Yellow;
             }
             else
             {
@@ -148,44 +233,48 @@ namespace Minefield
             }
 
             //Danger Level Calculation
-            try
+            if (playerY != 0)
             {
                 if (MineMap[x, y - 1] == 1)
                 {
                     dangerLevel += 1;
                 }
+            }
+            if (playerY != 19)
+            {
                 if (MineMap[x, y + 1] == 1)
                 {
                     dangerLevel += 1;
                 }
+            }
+            if (playerX != 0)
+            {
                 if (MineMap[x - 1, y] == 1)
                 {
                     dangerLevel += 1;
                 }
+            }
+            if (playerX != 19)
+            {
                 if (MineMap[x + 1, y] == 1)
                 {
                     dangerLevel += 1;
                 }
-            } 
-            catch
-            {
-                //If object on edge of grid, out of bounds error
-                //Catch this here as isn't an issue
             }
-
+                
             switch (dangerLevel)
             {
                 case 0:
-                    pbDanger.BackgroundImage = Resources.dangerLevelLow;
+                    pbDanger.BackgroundImage = Resources.nobomb;
                     break;
                 case 1:
-                    pbDanger.BackgroundImage = Resources.dangerLevelMed;
+                    pbDanger.BackgroundImage = Resources._1bomb;
                     break;
                 case 2:
-                    pbDanger.BackgroundImage = Resources.dangerLevelHigh;
+                    pbDanger.BackgroundImage = Resources._2bomb;
                     break;
                 case 3:
-                    pbDanger.BackgroundImage = Resources.dangerLevelvHigh;
+                    pbDanger.BackgroundImage = Resources._3bomb;
                     break;
             }
 
@@ -197,6 +286,9 @@ namespace Minefield
         private void Form1_Load(object sender, EventArgs e)
         {
             GenerateMinefield();
+            label381.BackColor = Color.Transparent; //Set starting square to be transparent
+
+            lives = 3;
         }
 
         #region DPadControls
