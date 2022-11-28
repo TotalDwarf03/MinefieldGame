@@ -148,21 +148,45 @@ namespace Minefield
             }
 
             //Danger Level Calculation
-            if (MineMap[x, y - 20] == 1)
+            try
             {
-                dangerLevel += 1;
+                if (MineMap[x, y - 1] == 1)
+                {
+                    dangerLevel += 1;
+                }
+                if (MineMap[x, y + 1] == 1)
+                {
+                    dangerLevel += 1;
+                }
+                if (MineMap[x - 1, y] == 1)
+                {
+                    dangerLevel += 1;
+                }
+                if (MineMap[x + 1, y] == 1)
+                {
+                    dangerLevel += 1;
+                }
+            } 
+            catch
+            {
+                //If object on edge of grid, out of bounds error
+                //Catch this here as isn't an issue
             }
-            if (MineMap[x, y + 20] == 1)
+
+            switch (dangerLevel)
             {
-                dangerLevel += 1;
-            }
-            if (MineMap[x - 20, y] == 1)
-            {
-                dangerLevel += 1;
-            }
-            if (MineMap[x + 20, y] == 1)
-            {
-                dangerLevel += 1;
+                case 0:
+                    pbDanger.BackgroundImage = Resources.dangerLevelLow;
+                    break;
+                case 1:
+                    pbDanger.BackgroundImage = Resources.dangerLevelMed;
+                    break;
+                case 2:
+                    pbDanger.BackgroundImage = Resources.dangerLevelHigh;
+                    break;
+                case 3:
+                    pbDanger.BackgroundImage = Resources.dangerLevelvHigh;
+                    break;
             }
 
             return Tuple.Create(squareStatus, dangerLevel);
@@ -180,10 +204,6 @@ namespace Minefield
         {
             moveUp();
             squareState = checkEnv(playerX, playerY);
-
-            switch (squareState.Item2){
-                
-            }
         }
 
         private void btnDpadDown_Click(object sender, EventArgs e)
