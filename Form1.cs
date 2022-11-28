@@ -51,17 +51,23 @@ namespace Minefield
         }
 
         /// <summary>
-        /// Shows mine locations and show Game Over UI
+        /// Shows Game Over UI
         /// </summary>
         private void gameOver()
         {
-            showMines();
-
-            explodeAsync();
-
             pbGameOver.Visible = true;
             btnReplay.Visible = true;
             btnQuit.Visible = true;
+        }
+
+        /// <summary>
+        /// Shows Next Level UI
+        /// </summary>
+        private void completeLevel()
+        {
+            showMines();
+            pbWin.Visible = true;
+            btnNextLevel.Visible = true;
         }
 
         /// <summary>
@@ -133,7 +139,8 @@ namespace Minefield
                     if (MineMap[i, j] == 1)
                     {
                         Label label = getLabel(i, j);
-                        label.BackColor = Color.Red;
+                        label.BackColor = Color.Transparent;
+                        label.Image = Resources.bombsmall;
                     }
                     else if (MineMap[i, j] == 0)
                     {
@@ -245,6 +252,8 @@ namespace Minefield
                         case 1:
                             pbLife.BackgroundImage = Resources.nolife;
                             lives -= 1;
+                            showMines();
+                            explodeAsync();
                             gameOver();
                             break;
                     }
@@ -252,7 +261,7 @@ namespace Minefield
             }
             else if (MineMap[x, y] == 2)
             {
-                label.BackColor = Color.Yellow;
+                completeLevel();
             }
             else
             {

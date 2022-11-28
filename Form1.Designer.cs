@@ -444,11 +444,15 @@ namespace Minefield
             this.btnDpadUp = new System.Windows.Forms.Button();
             this.pbDanger = new System.Windows.Forms.PictureBox();
             this.pbLife = new System.Windows.Forms.PictureBox();
+            this.pbWin = new System.Windows.Forms.PictureBox();
+            this.btnNextLevel = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbGameOver)).BeginInit();
             this.PnlDpad.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDanger)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLife)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbWin)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -3655,6 +3659,8 @@ namespace Minefield
             // panel1
             // 
             this.panel1.BackgroundImage = global::Minefield.Properties.Resources.desertmockuplarger;
+            this.panel1.Controls.Add(this.btnNextLevel);
+            this.panel1.Controls.Add(this.pbWin);
             this.panel1.Controls.Add(this.btnQuit);
             this.panel1.Controls.Add(this.btnReplay);
             this.panel1.Controls.Add(this.pbGameOver);
@@ -4109,7 +4115,7 @@ namespace Minefield
             // label20
             // 
             this.label20.BackColor = System.Drawing.Color.Transparent;
-            this.label20.Image = global::Minefield.Properties.Resources.trophy;
+            this.label20.Image = global::Minefield.Properties.Resources.house;
             this.label20.Location = new System.Drawing.Point(380, 0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(20, 20);
@@ -4203,11 +4209,47 @@ namespace Minefield
             this.pbLife.TabIndex = 6;
             this.pbLife.TabStop = false;
             // 
+            // pbWin
+            // 
+            this.pbWin.BackColor = System.Drawing.Color.Transparent;
+            this.pbWin.BackgroundImage = global::Minefield.Properties.Resources.you_win;
+            this.pbWin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbWin.Location = new System.Drawing.Point(-43, 0);
+            this.pbWin.Name = "pbWin";
+            this.pbWin.Size = new System.Drawing.Size(487, 337);
+            this.pbWin.TabIndex = 6;
+            this.pbWin.TabStop = false;
+            this.pbWin.Visible = false;
+            // 
+            // btnNextLevel
+            // 
+            this.btnNextLevel.BackColor = System.Drawing.Color.Magenta;
+            this.btnNextLevel.FlatAppearance.BorderSize = 0;
+            this.btnNextLevel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNextLevel.Font = new System.Drawing.Font("Unispace", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnNextLevel.Location = new System.Drawing.Point(106, 344);
+            this.btnNextLevel.Name = "btnNextLevel";
+            this.btnNextLevel.Size = new System.Drawing.Size(189, 37);
+            this.btnNextLevel.TabIndex = 8;
+            this.btnNextLevel.Text = "NEXT LEVEL";
+            this.btnNextLevel.UseVisualStyleBackColor = false;
+            this.btnNextLevel.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(472, 408);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(479, 591);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.pbLife);
             this.Controls.Add(this.pbDanger);
             this.Controls.Add(this.PnlDpad);
@@ -4225,6 +4267,7 @@ namespace Minefield
             this.PnlDpad.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbDanger)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLife)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbWin)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -4640,6 +4683,9 @@ namespace Minefield
         private PictureBox pbGameOver;
         private Button btnQuit;
         private Button btnReplay;
+        private Button btnNextLevel;
+        private PictureBox pbWin;
+        private Button button1;
     }
 }
 
