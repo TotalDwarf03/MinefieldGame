@@ -53,9 +53,35 @@ namespace Minefield
             return null;
         }
 
+        /// <summary>
+        /// Shows mine locations and show Game Over UI
+        /// </summary>
         private void gameOver()
         {
+            showMines();
 
+            explodeAsync();
+
+            pbGameOver.Visible = true;
+            btnReplay.Visible = true;
+            btnQuit.Visible = true;
+        }
+
+        /// <summary>
+        /// Shows the Player exploding animation
+        /// </summary>
+        private async Task explodeAsync()
+        {
+            lblPlayer.Image = Resources.explosionP1;
+            await Task.Delay(500);
+            lblPlayer.Image = Resources.explosionP2;
+            await Task.Delay(500);
+            lblPlayer.Image = Resources.explosionP3;
+            await Task.Delay(500);
+            lblPlayer.Image = Resources.explosionP4;
+            await Task.Delay(500);
+
+            lblPlayer.Visible = false;
         }
 
         #region MineLogic
@@ -90,7 +116,7 @@ namespace Minefield
         /// <summary>
         /// Reveals all the mines on the grid using the MineMap
         /// </summary>
-        private void revealMines()
+        private void showMines()
         {
             for (int i = 0; i < 20; i++)
             {
@@ -117,10 +143,9 @@ namespace Minefield
         {
             foreach (Control c in panel1.Controls)
             {
-                if (c.Name == "lblPlayer" || c.Name == "label381" || c.Name == "label20")
-                {
-                    c.BackColor = Color.Transparent;
-                }
+                if (c.Name == "lblPlayer" || c.Name == "label381" || c.Name == "label20" || c.Name == "pbGameOver" || c.Name == "btnReplay" || c.Name == "btnQuit")
+                    ;   //Skip
+
                 else
                 {
                     c.BackColor = Color.MidnightBlue;
@@ -198,8 +223,6 @@ namespace Minefield
             {
                 if(lives >= 1)
                 {
-                    //Play explosion animation?
-
                     hideMines();
 
                     lblPlayer.Location = new Point(0, 380);
@@ -218,7 +241,7 @@ namespace Minefield
                             break;
                         case 1:
                             pbLife.BackgroundImage = Resources.nolife;
-                            MessageBox.Show("out of lives");
+                            gameOver();
                             break;
                     }
                 }
@@ -344,6 +367,16 @@ namespace Minefield
                 squareState = checkEnv(playerX, playerY);
             }
 
+        }
+
+        private void btnReplay_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
+
+        private void btnQuit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

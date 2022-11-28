@@ -433,6 +433,9 @@ namespace Minefield
             this.label400 = new System.Windows.Forms.Label();
             this.lblPlayer = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnQuit = new System.Windows.Forms.Button();
+            this.btnReplay = new System.Windows.Forms.Button();
+            this.pbGameOver = new System.Windows.Forms.PictureBox();
             this.label20 = new System.Windows.Forms.Label();
             this.PnlDpad = new System.Windows.Forms.Panel();
             this.btnDpadRight = new System.Windows.Forms.Button();
@@ -442,6 +445,7 @@ namespace Minefield
             this.pbDanger = new System.Windows.Forms.PictureBox();
             this.pbLife = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGameOver)).BeginInit();
             this.PnlDpad.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDanger)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLife)).BeginInit();
@@ -3651,6 +3655,9 @@ namespace Minefield
             // panel1
             // 
             this.panel1.BackgroundImage = global::Minefield.Properties.Resources.desertmockuplarger;
+            this.panel1.Controls.Add(this.btnQuit);
+            this.panel1.Controls.Add(this.btnReplay);
+            this.panel1.Controls.Add(this.pbGameOver);
             this.panel1.Controls.Add(this.lblPlayer);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
@@ -4057,6 +4064,48 @@ namespace Minefield
             this.panel1.Size = new System.Drawing.Size(400, 400);
             this.panel1.TabIndex = 3;
             // 
+            // btnQuit
+            // 
+            this.btnQuit.BackColor = System.Drawing.Color.Aqua;
+            this.btnQuit.FlatAppearance.BorderSize = 0;
+            this.btnQuit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuit.Font = new System.Drawing.Font("Unispace", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnQuit.Location = new System.Drawing.Point(204, 283);
+            this.btnQuit.Name = "btnQuit";
+            this.btnQuit.Size = new System.Drawing.Size(75, 37);
+            this.btnQuit.TabIndex = 5;
+            this.btnQuit.Text = "NO";
+            this.btnQuit.UseVisualStyleBackColor = false;
+            this.btnQuit.Visible = false;
+            this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
+            // 
+            // btnReplay
+            // 
+            this.btnReplay.BackColor = System.Drawing.Color.Magenta;
+            this.btnReplay.FlatAppearance.BorderSize = 0;
+            this.btnReplay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReplay.Font = new System.Drawing.Font("Unispace", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnReplay.Location = new System.Drawing.Point(121, 283);
+            this.btnReplay.Name = "btnReplay";
+            this.btnReplay.Size = new System.Drawing.Size(75, 37);
+            this.btnReplay.TabIndex = 4;
+            this.btnReplay.Text = "YES";
+            this.btnReplay.UseVisualStyleBackColor = false;
+            this.btnReplay.Visible = false;
+            this.btnReplay.Click += new System.EventHandler(this.btnReplay_Click);
+            // 
+            // pbGameOver
+            // 
+            this.pbGameOver.BackColor = System.Drawing.Color.Transparent;
+            this.pbGameOver.BackgroundImage = global::Minefield.Properties.Resources.gameoverCrop;
+            this.pbGameOver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbGameOver.Location = new System.Drawing.Point(14, 43);
+            this.pbGameOver.Name = "pbGameOver";
+            this.pbGameOver.Size = new System.Drawing.Size(360, 234);
+            this.pbGameOver.TabIndex = 3;
+            this.pbGameOver.TabStop = false;
+            this.pbGameOver.Visible = false;
+            // 
             // label20
             // 
             this.label20.BackColor = System.Drawing.Color.Transparent;
@@ -4172,6 +4221,7 @@ namespace Minefield
             this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbGameOver)).EndInit();
             this.PnlDpad.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbDanger)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLife)).EndInit();
@@ -4587,6 +4637,9 @@ namespace Minefield
         private PictureBox pbDanger;
         private Label label20;
         private PictureBox pbLife;
+        private PictureBox pbGameOver;
+        private Button btnQuit;
+        private Button btnReplay;
     }
 }
 
