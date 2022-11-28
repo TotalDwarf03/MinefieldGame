@@ -434,7 +434,15 @@ namespace Minefield
             this.label400 = new System.Windows.Forms.Label();
             this.lblPlayer = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.PnlDpad = new System.Windows.Forms.Panel();
+            this.btnDpadRight = new System.Windows.Forms.Button();
+            this.btnDpadDown = new System.Windows.Forms.Button();
+            this.btnDpadLeft = new System.Windows.Forms.Button();
+            this.btnDpadUp = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            this.PnlDpad.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -4055,16 +4063,101 @@ namespace Minefield
             this.panel1.Size = new System.Drawing.Size(400, 400);
             this.panel1.TabIndex = 3;
             // 
+            // PnlDpad
+            // 
+            this.PnlDpad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.PnlDpad.Controls.Add(this.btnDpadRight);
+            this.PnlDpad.Controls.Add(this.btnDpadDown);
+            this.PnlDpad.Controls.Add(this.btnDpadLeft);
+            this.PnlDpad.Controls.Add(this.btnDpadUp);
+            this.PnlDpad.Location = new System.Drawing.Point(279, 491);
+            this.PnlDpad.Name = "PnlDpad";
+            this.PnlDpad.Size = new System.Drawing.Size(160, 160);
+            this.PnlDpad.TabIndex = 4;
+            // 
+            // btnDpadRight
+            // 
+            this.btnDpadRight.BackColor = System.Drawing.Color.Transparent;
+            this.btnDpadRight.BackgroundImage = global::Minefield.Properties.Resources.D_PadRight;
+            this.btnDpadRight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnDpadRight.FlatAppearance.BorderSize = 0;
+            this.btnDpadRight.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDpadRight.Location = new System.Drawing.Point(90, 55);
+            this.btnDpadRight.Name = "btnDpadRight";
+            this.btnDpadRight.Size = new System.Drawing.Size(70, 50);
+            this.btnDpadRight.TabIndex = 3;
+            this.btnDpadRight.UseVisualStyleBackColor = false;
+            this.btnDpadRight.Click += new System.EventHandler(this.btnDpadRight_Click);
+            // 
+            // btnDpadDown
+            // 
+            this.btnDpadDown.BackColor = System.Drawing.Color.Transparent;
+            this.btnDpadDown.BackgroundImage = global::Minefield.Properties.Resources.D_PadDown;
+            this.btnDpadDown.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnDpadDown.FlatAppearance.BorderSize = 0;
+            this.btnDpadDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDpadDown.Location = new System.Drawing.Point(55, 95);
+            this.btnDpadDown.Name = "btnDpadDown";
+            this.btnDpadDown.Size = new System.Drawing.Size(50, 65);
+            this.btnDpadDown.TabIndex = 2;
+            this.btnDpadDown.UseVisualStyleBackColor = false;
+            this.btnDpadDown.Click += new System.EventHandler(this.btnDpadDown_Click);
+            // 
+            // btnDpadLeft
+            // 
+            this.btnDpadLeft.BackColor = System.Drawing.Color.Transparent;
+            this.btnDpadLeft.BackgroundImage = global::Minefield.Properties.Resources.D_PadLeft;
+            this.btnDpadLeft.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnDpadLeft.FlatAppearance.BorderSize = 0;
+            this.btnDpadLeft.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDpadLeft.Location = new System.Drawing.Point(0, 55);
+            this.btnDpadLeft.Name = "btnDpadLeft";
+            this.btnDpadLeft.Size = new System.Drawing.Size(70, 50);
+            this.btnDpadLeft.TabIndex = 1;
+            this.btnDpadLeft.UseVisualStyleBackColor = false;
+            this.btnDpadLeft.Click += new System.EventHandler(this.btnDpadLeft_Click);
+            // 
+            // btnDpadUp
+            // 
+            this.btnDpadUp.BackColor = System.Drawing.Color.Transparent;
+            this.btnDpadUp.BackgroundImage = global::Minefield.Properties.Resources.D_PadUp;
+            this.btnDpadUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnDpadUp.FlatAppearance.BorderSize = 0;
+            this.btnDpadUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDpadUp.Location = new System.Drawing.Point(55, 0);
+            this.btnDpadUp.Name = "btnDpadUp";
+            this.btnDpadUp.Size = new System.Drawing.Size(50, 65);
+            this.btnDpadUp.TabIndex = 0;
+            this.btnDpadUp.UseVisualStyleBackColor = false;
+            this.btnDpadUp.Click += new System.EventHandler(this.btnDpadUp_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::Minefield.Properties.Resources.dangerLevelLow;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(39, 418);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(200, 74);
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(479, 663);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.PnlDpad);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "Form1";
             this.Text = "Minefield: Can you get to the end?";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.panel1.ResumeLayout(false);
+            this.PnlDpad.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -4470,6 +4563,12 @@ namespace Minefield
         private System.Windows.Forms.Label label400;
         private Label lblPlayer;
         private Panel panel1;
+        private Panel PnlDpad;
+        private Button btnDpadRight;
+        private Button btnDpadDown;
+        private Button btnDpadLeft;
+        private Button btnDpadUp;
+        private PictureBox pictureBox1;
     }
 }
 
