@@ -22,9 +22,6 @@ namespace Minefield
         int playerX = 0;
         int playerY = 19;
 
-        // Used to detect bombs and calculate danger level
-        Tuple<String, int> squareState;
-
         // The Array used to hold the positon of bombs
         int[,] MineMap = new int[20, 20];
 
@@ -212,7 +209,7 @@ namespace Minefield
 
         #region EnvironmentChecks
 
-        private Tuple<String, int> checkEnv(int x, int y)
+        private void checkEnv(int x, int y)
         {
             String squareStatus = "Clear";
             int dangerLevel = 0;
@@ -300,8 +297,6 @@ namespace Minefield
                     pbDanger.BackgroundImage = Resources._3bomb;
                     break;
             }
-
-            return Tuple.Create(squareStatus, dangerLevel);
         }
 
         #endregion
@@ -312,31 +307,33 @@ namespace Minefield
             label381.BackColor = Color.Transparent; //Set starting square to be transparent
 
             lives = 3;
+
+            checkEnv(playerX, playerY);
         }
 
         #region DPadControls
         private void btnDpadUp_Click(object sender, EventArgs e)
         {
             moveUp();
-            squareState = checkEnv(playerX, playerY);
+            checkEnv(playerX, playerY);
         }
 
         private void btnDpadDown_Click(object sender, EventArgs e)
         {
             moveDown();
-            squareState = checkEnv(playerX, playerY);
+            checkEnv(playerX, playerY);
         }
 
         private void btnDpadLeft_Click(object sender, EventArgs e)
         {
             moveLeft();
-            squareState = checkEnv(playerX, playerY);
+            checkEnv(playerX, playerY);
         }
 
         private void btnDpadRight_Click(object sender, EventArgs e)
         {
             moveRight();
-            squareState = checkEnv(playerX, playerY);
+            checkEnv(playerX, playerY);
         }
 
         #endregion
@@ -346,25 +343,25 @@ namespace Minefield
             if (e.KeyCode == Keys.W || e.KeyCode == Keys.Up)
             {
                 moveUp();
-                squareState = checkEnv(playerX, playerY);
+                checkEnv(playerX, playerY);
             }
 
             if (e.KeyCode == Keys.A || e.KeyCode == Keys.Left)
             {
                 moveLeft();
-                squareState = checkEnv(playerX, playerY);
+                checkEnv(playerX, playerY);
             }
 
             if (e.KeyCode == Keys.S || e.KeyCode == Keys.Down)
             {
                 moveDown();
-                squareState = checkEnv(playerX, playerY);
+                checkEnv(playerX, playerY);
             }
 
             if (e.KeyCode == Keys.D || e.KeyCode == Keys.Right)
             {
                 moveRight();
-                squareState = checkEnv(playerX, playerY);
+                checkEnv(playerX, playerY);
             }
 
         }
