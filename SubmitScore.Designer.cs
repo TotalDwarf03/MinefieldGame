@@ -206,6 +206,7 @@ namespace Minefield
             this.btnChar1Up.Text = "▲";
             this.btnChar1Up.UseVisualStyleBackColor = false;
             this.btnChar1Up.Visible = false;
+            this.btnChar1Up.Click += new System.EventHandler(this.upChar);
             // 
             // btnChar2Up
             // 
@@ -221,6 +222,7 @@ namespace Minefield
             this.btnChar2Up.Text = "▲";
             this.btnChar2Up.UseVisualStyleBackColor = false;
             this.btnChar2Up.Visible = false;
+            this.btnChar2Up.Click += new System.EventHandler(this.upChar);
             // 
             // btnChar3Up
             // 
@@ -236,6 +238,7 @@ namespace Minefield
             this.btnChar3Up.Text = "▲";
             this.btnChar3Up.UseVisualStyleBackColor = false;
             this.btnChar3Up.Visible = false;
+            this.btnChar3Up.Click += new System.EventHandler(this.upChar);
             // 
             // btnChar3Down
             // 
@@ -251,6 +254,7 @@ namespace Minefield
             this.btnChar3Down.Text = "▼";
             this.btnChar3Down.UseVisualStyleBackColor = false;
             this.btnChar3Down.Visible = false;
+            this.btnChar3Down.Click += new System.EventHandler(this.downChar);
             // 
             // btnChar2Down
             // 
@@ -266,6 +270,7 @@ namespace Minefield
             this.btnChar2Down.Text = "▼";
             this.btnChar2Down.UseVisualStyleBackColor = false;
             this.btnChar2Down.Visible = false;
+            this.btnChar2Down.Click += new System.EventHandler(this.downChar);
             // 
             // btnChar1Down
             // 
@@ -281,6 +286,7 @@ namespace Minefield
             this.btnChar1Down.Text = "▼";
             this.btnChar1Down.UseVisualStyleBackColor = false;
             this.btnChar1Down.Visible = false;
+            this.btnChar1Down.Click += new System.EventHandler(this.downChar);
             // 
             // btnSubmitScore
             // 
@@ -297,6 +303,7 @@ namespace Minefield
             this.btnSubmitScore.Text = "SAVE";
             this.btnSubmitScore.UseVisualStyleBackColor = false;
             this.btnSubmitScore.Visible = false;
+            this.btnSubmitScore.Click += new System.EventHandler(this.btnSubmitScore_Click);
             // 
             // SubmitScore
             // 

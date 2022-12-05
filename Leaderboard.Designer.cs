@@ -51,9 +51,9 @@
             this.lblLeaderboard.BackColor = System.Drawing.Color.Transparent;
             this.lblLeaderboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblLeaderboard.ForeColor = System.Drawing.Color.White;
-            this.lblLeaderboard.Location = new System.Drawing.Point(229, 160);
+            this.lblLeaderboard.Location = new System.Drawing.Point(94, 160);
             this.lblLeaderboard.Name = "lblLeaderboard";
-            this.lblLeaderboard.Size = new System.Drawing.Size(343, 331);
+            this.lblLeaderboard.Size = new System.Drawing.Size(613, 331);
             this.lblLeaderboard.TabIndex = 1;
             this.lblLeaderboard.Text = "1 - AAA - 000\r\n2 - BBB - 000\r\n3 - CCC - 000\r\n4 - DDD - 000\r\n5 - EEE - 000\r\n";
             this.lblLeaderboard.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -88,6 +88,7 @@
             this.MinimizeBox = false;
             this.Name = "Leaderboard";
             this.Text = "Minefield: Can you get to the end?";
+            this.Load += new System.EventHandler(this.Leaderboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
