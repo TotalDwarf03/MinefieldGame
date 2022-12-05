@@ -4207,7 +4207,7 @@ namespace Minefield
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(490, 591);
+            this.ClientSize = new System.Drawing.Size(484, 591);
             this.Controls.Add(this.pbLife);
             this.Controls.Add(this.pbDanger);
             this.Controls.Add(this.PnlDpad);

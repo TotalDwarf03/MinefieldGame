@@ -253,6 +253,26 @@ namespace Minefield.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap leaderboardBG {
+            get {
+                object obj = ResourceManager.GetObject("leaderboardBG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap leaderboardlogo {
+            get {
+                object obj = ResourceManager.GetObject("leaderboardlogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap left {
             get {
                 object obj = ResourceManager.GetObject("left", resourceCulture);
@@ -273,9 +293,9 @@ namespace Minefield.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap mainMenuBG {
+        internal static System.Drawing.Bitmap mainMenuBG2 {
             get {
-                object obj = ResourceManager.GetObject("mainMenuBG", resourceCulture);
+                object obj = ResourceManager.GetObject("mainMenuBG2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

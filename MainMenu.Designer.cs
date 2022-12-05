@@ -92,9 +92,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Minefield.Properties.Resources.mainMenuBG;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackgroundImage = global::Minefield.Properties.Resources.mainMenuBG2;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(800, 500);
             this.Controls.Add(this.btnQuit);
             this.Controls.Add(this.btnLeaderboard);
             this.Controls.Add(this.btnStartGame);
