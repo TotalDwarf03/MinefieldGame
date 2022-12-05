@@ -111,7 +111,7 @@ namespace Minefield
         }
 
         /// <summary>
-        /// Shows Next Level UI
+        /// Calculates Final Score and goes to the Score Submit Screen
         /// </summary>
         private void completeLevel()
         {
@@ -122,8 +122,6 @@ namespace Minefield
             int timeBonus = 10000 / seconds;
 
             int totalScore = score + timeBonus;
-
-            showMines();
             
             //High Score Screen?
         }
@@ -185,8 +183,6 @@ namespace Minefield
 
             MineMap[0, 19] = 0; //Start Square cannot be a mine
             MineMap[19, 0] = 2; //Designates end square
-
-            MineMap[3, 19] = 2; //TESTING PURPOSES -> PLEASE REMOVE
         }
 
         /// <summary>
@@ -298,7 +294,12 @@ namespace Minefield
 
             if (MineMap[x, y] == 1)
             {
-                if(lives >= 1)
+                if (btnEndGame.Visible == true)
+                {
+                    btnEndGame.Visible = false;
+                }
+
+                if (lives >= 1)
                 {
                     switch (lives)
                     {
@@ -336,10 +337,15 @@ namespace Minefield
             }
             else if (MineMap[x, y] == 2)
             {
-                completeLevel();
+                btnEndGame.Visible = true;
             }
             else
-            {
+            {   
+                if (btnEndGame.Visible == true)
+                {
+                    btnEndGame.Visible = false;
+                }
+
                 label.BackColor = Color.Transparent;
 
                 //Score Logic
@@ -485,6 +491,11 @@ namespace Minefield
             }
 
             this.Close();
+        }
+
+        private void btnEndGame_Click(object sender, EventArgs e)
+        {
+            completeLevel();
         }
 
         private void UpdateStopwatchInterval_Tick(object sender, EventArgs e)

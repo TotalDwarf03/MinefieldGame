@@ -434,6 +434,7 @@ namespace Minefield
             this.label400 = new System.Windows.Forms.Label();
             this.lblPlayer = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnEndGame = new System.Windows.Forms.Button();
             this.btnQuit = new System.Windows.Forms.Button();
             this.btnReplay = new System.Windows.Forms.Button();
             this.pbGameOver = new System.Windows.Forms.PictureBox();
@@ -3659,6 +3660,7 @@ namespace Minefield
             // panel1
             // 
             this.panel1.BackgroundImage = global::Minefield.Properties.Resources.desertmockuplarger;
+            this.panel1.Controls.Add(this.btnEndGame);
             this.panel1.Controls.Add(this.btnQuit);
             this.panel1.Controls.Add(this.btnReplay);
             this.panel1.Controls.Add(this.pbGameOver);
@@ -4067,6 +4069,19 @@ namespace Minefield
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(400, 400);
             this.panel1.TabIndex = 3;
+            // 
+            // btnEndGame
+            // 
+            this.btnEndGame.BackColor = System.Drawing.Color.Magenta;
+            this.btnEndGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEndGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnEndGame.Location = new System.Drawing.Point(88, 357);
+            this.btnEndGame.Name = "btnEndGame";
+            this.btnEndGame.Size = new System.Drawing.Size(224, 40);
+            this.btnEndGame.TabIndex = 9;
+            this.btnEndGame.Text = "ENTER HOME";
+            this.btnEndGame.UseVisualStyleBackColor = false;
+            this.btnEndGame.Click += new System.EventHandler(this.btnEndGame_Click);
             // 
             // btnQuit
             // 
@@ -4679,6 +4694,7 @@ namespace Minefield
         private Label lblScore;
         private Label lblTimer;
         private Timer UpdateStopwatchInterval;
+        private Button btnEndGame;
     }
 }
 

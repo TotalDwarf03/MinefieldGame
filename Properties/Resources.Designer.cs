@@ -343,9 +343,9 @@ namespace Minefield.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap up {
+        internal static System.Drawing.Bitmap submitScoreBG {
             get {
-                object obj = ResourceManager.GetObject("up", resourceCulture);
+                object obj = ResourceManager.GetObject("submitScoreBG", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -353,9 +353,9 @@ namespace Minefield.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap you_win {
+        internal static System.Drawing.Bitmap up {
             get {
-                object obj = ResourceManager.GetObject("you win", resourceCulture);
+                object obj = ResourceManager.GetObject("up", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
