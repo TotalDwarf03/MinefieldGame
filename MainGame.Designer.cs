@@ -31,6 +31,7 @@ namespace Minefield
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainGame));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -444,6 +445,9 @@ namespace Minefield
             this.btnDpadUp = new System.Windows.Forms.Button();
             this.pbDanger = new System.Windows.Forms.PictureBox();
             this.pbLife = new System.Windows.Forms.PictureBox();
+            this.lblScore = new System.Windows.Forms.Label();
+            this.lblTimer = new System.Windows.Forms.Label();
+            this.UpdateStopwatchInterval = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbGameOver)).BeginInit();
             this.PnlDpad.SuspendLayout();
@@ -4059,7 +4063,7 @@ namespace Minefield
             this.panel1.Controls.Add(this.label398);
             this.panel1.Controls.Add(this.label399);
             this.panel1.Controls.Add(this.label400);
-            this.panel1.Location = new System.Drawing.Point(39, 12);
+            this.panel1.Location = new System.Drawing.Point(39, 44);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(400, 400);
             this.panel1.TabIndex = 3;
@@ -4122,7 +4126,7 @@ namespace Minefield
             this.PnlDpad.Controls.Add(this.btnDpadDown);
             this.PnlDpad.Controls.Add(this.btnDpadLeft);
             this.PnlDpad.Controls.Add(this.btnDpadUp);
-            this.PnlDpad.Location = new System.Drawing.Point(279, 418);
+            this.PnlDpad.Location = new System.Drawing.Point(279, 450);
             this.PnlDpad.Name = "PnlDpad";
             this.PnlDpad.Size = new System.Drawing.Size(160, 160);
             this.PnlDpad.TabIndex = 4;
@@ -4187,7 +4191,7 @@ namespace Minefield
             // 
             this.pbDanger.BackgroundImage = global::Minefield.Properties.Resources.nobomb;
             this.pbDanger.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbDanger.Location = new System.Drawing.Point(39, 489);
+            this.pbDanger.Location = new System.Drawing.Point(39, 521);
             this.pbDanger.Name = "pbDanger";
             this.pbDanger.Size = new System.Drawing.Size(200, 65);
             this.pbDanger.TabIndex = 5;
@@ -4197,17 +4201,47 @@ namespace Minefield
             // 
             this.pbLife.BackgroundImage = global::Minefield.Properties.Resources._3Lives;
             this.pbLife.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbLife.Location = new System.Drawing.Point(39, 418);
+            this.pbLife.Location = new System.Drawing.Point(39, 450);
             this.pbLife.Name = "pbLife";
             this.pbLife.Size = new System.Drawing.Size(200, 65);
             this.pbLife.TabIndex = 6;
             this.pbLife.TabStop = false;
             // 
+            // lblScore
+            // 
+            this.lblScore.BackColor = System.Drawing.Color.Magenta;
+            this.lblScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblScore.Location = new System.Drawing.Point(39, 18);
+            this.lblScore.Name = "lblScore";
+            this.lblScore.Size = new System.Drawing.Size(120, 23);
+            this.lblScore.TabIndex = 7;
+            this.lblScore.Text = "SCORE: 0";
+            // 
+            // lblTimer
+            // 
+            this.lblTimer.BackColor = System.Drawing.Color.Aqua;
+            this.lblTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTimer.Image = global::Minefield.Properties.Resources.stopwatchSmall;
+            this.lblTimer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblTimer.Location = new System.Drawing.Point(319, 18);
+            this.lblTimer.Name = "lblTimer";
+            this.lblTimer.Size = new System.Drawing.Size(120, 23);
+            this.lblTimer.TabIndex = 8;
+            this.lblTimer.Text = "00:00.00";
+            this.lblTimer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // UpdateStopwatchInterval
+            // 
+            this.UpdateStopwatchInterval.Enabled = true;
+            this.UpdateStopwatchInterval.Tick += new System.EventHandler(this.UpdateStopwatchInterval_Tick);
+            // 
             // MainGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 591);
+            this.ClientSize = new System.Drawing.Size(484, 622);
+            this.Controls.Add(this.lblTimer);
+            this.Controls.Add(this.lblScore);
             this.Controls.Add(this.pbLife);
             this.Controls.Add(this.pbDanger);
             this.Controls.Add(this.PnlDpad);
@@ -4642,6 +4676,9 @@ namespace Minefield
         private PictureBox pbGameOver;
         private Button btnQuit;
         private Button btnReplay;
+        private Label lblScore;
+        private Label lblTimer;
+        private Timer UpdateStopwatchInterval;
     }
 }
 

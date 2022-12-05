@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace Minefield
 {
@@ -18,6 +19,9 @@ namespace Minefield
             InitializeComponent();
         }
 
+        // Holds the player's Score
+        int score = 0;
+
         // (0, 19) refers to the bottom left of the panel which is location (0, 380)
         int playerX = 0;
         int playerY = 19;
@@ -27,6 +31,14 @@ namespace Minefield
 
         // Holds the amount of lives the player has left
         int lives;
+
+        // List to hold all squares which have already been discovered
+        // Used a list over array because the size is variable
+        List<String> discoveredSquares = new List<string>();
+
+        // Create an instance of Stopwatch to record time taken to complete level
+        // Stopwatch is imported from System.Diagnostics
+        Stopwatch stopwatch = new Stopwatch();
 
         /// <summary>
         /// <para> Restarts the game by: </para>
@@ -44,6 +56,8 @@ namespace Minefield
             label381.BackColor = Color.Transparent; //Set starting square to be transparent
 
             lives = 3;
+            score = 0;
+            lblScore.Text = $"SCORE: {score}";
 
             playerX = 0;
             playerY = 19;
@@ -58,6 +72,9 @@ namespace Minefield
             lblPlayer.Visible = true;
 
             checkEnv(playerX, playerY);
+
+            stopwatch.Reset();
+            stopwatch.Start();
         }
 
         /// <summary>
@@ -86,6 +103,8 @@ namespace Minefield
         /// </summary>
         private void gameOver()
         {
+            stopwatch.Stop();
+
             pbGameOver.Visible = true;
             btnReplay.Visible = true;
             btnQuit.Visible = true;
@@ -96,6 +115,14 @@ namespace Minefield
         /// </summary>
         private void completeLevel()
         {
+            stopwatch.Stop();
+            TimeSpan ts = stopwatch.Elapsed;
+            int seconds = Convert.ToInt32(ts.TotalSeconds);
+
+            int timeBonus = 10000 / seconds;
+
+            int totalScore = score + timeBonus;
+
             showMines();
             
             //High Score Screen?
@@ -158,6 +185,8 @@ namespace Minefield
 
             MineMap[0, 19] = 0; //Start Square cannot be a mine
             MineMap[19, 0] = 2; //Designates end square
+
+            MineMap[3, 19] = 2; //TESTING PURPOSES -> PLEASE REMOVE
         }
 
         /// <summary>
@@ -276,16 +305,28 @@ namespace Minefield
                         case 3:
                             pbLife.BackgroundImage = Resources._2Lives;
                             lives -= 1;
+
+                            score -= 5;
+                            lblScore.Text = $"SCORE: {score}";
+
                             explodeAsync();
                             break;
                         case 2:
                             pbLife.BackgroundImage = Resources._1life;
                             lives -= 1;
+
+                            score -= 5;
+                            lblScore.Text = $"SCORE: {score}";
+
                             explodeAsync();                            
                             break;
                         case 1:
                             pbLife.BackgroundImage = Resources.nolife;
                             lives -= 1;
+
+                            score -= 5;
+                            lblScore.Text = $"SCORE: {score}";
+
                             explodeAsync();
                             showMines();
                             gameOver();
@@ -300,6 +341,26 @@ namespace Minefield
             else
             {
                 label.BackColor = Color.Transparent;
+
+                //Score Logic
+                bool isSquareDiscovered = false;
+
+                foreach (String square in discoveredSquares)
+                {
+                    if ($"({playerX},{playerY})" == square)
+                    {
+                        isSquareDiscovered = true;
+                    }
+                }
+
+                if (isSquareDiscovered == false)
+                {
+                    score += 1;
+                    lblScore.Text = $"SCORE: {score}";
+                }
+
+                //Add Square to discovered list
+                discoveredSquares.Add($"({playerX},{playerY})");
             }
 
             //Danger Level Calculation
@@ -424,6 +485,13 @@ namespace Minefield
             }
 
             this.Close();
+        }
+
+        private void UpdateStopwatchInterval_Tick(object sender, EventArgs e)
+        {
+            TimeSpan ts = stopwatch.Elapsed; 
+            String time = String.Format("{0:00}:{1:00}.{2:00}", ts.Minutes, ts.Seconds, ts.Milliseconds / 10);
+            lblTimer.Text = time;
         }
     }
 }
