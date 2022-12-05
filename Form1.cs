@@ -66,8 +66,8 @@ namespace Minefield
         private void completeLevel()
         {
             showMines();
-            pbWin.Visible = true;
-            btnNextLevel.Visible = true;
+            
+            //High Score Screen?
         }
 
         /// <summary>
