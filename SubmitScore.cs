@@ -258,8 +258,9 @@ namespace Minefield
                 MessageBox.Show("Unlucky! You didn't make it on the leaderboard this time!", "Better Luck Next Time!");
             }
 
-
-
+            var Leaderboard = new Leaderboard();
+            Leaderboard.Show();
+            this.Hide();
         }
     }
 }

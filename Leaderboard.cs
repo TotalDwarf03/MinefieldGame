@@ -49,12 +49,26 @@ namespace Minefield
 
         private void btnQuit_Click(object sender, EventArgs e)
         {
+            List<Form> formsToClose = new List<Form>();
+
+            // Identify which forms other than the MainMenu are open in the background (not visible)
             foreach (Form form in Application.OpenForms)
             {
-                form.Show();
+                if (form.Name != "MainMenu")
+                {
+                    formsToClose.Add(form);
+                }
+                else
+                {
+                    form.Show();
+                }
             }
 
-            this.Close();
+            // Close the open forms
+            foreach (Form form in formsToClose)
+            {
+                form.Close();
+            }
         }
     }
 }
