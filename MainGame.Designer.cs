@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace Minefield
 {
-    partial class Form1
+    partial class MainGame
     {
         /// <summary>
         ///  Required designer variable.
@@ -31,7 +31,7 @@ namespace Minefield
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainGame));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -4203,7 +4203,7 @@ namespace Minefield
             this.pbLife.TabIndex = 6;
             this.pbLife.TabStop = false;
             // 
-            // Form1
+            // MainGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -4216,7 +4216,9 @@ namespace Minefield
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.KeyPreview = true;
-            this.Name = "Form1";
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "MainGame";
             this.Text = "Minefield: Can you get to the end?";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);

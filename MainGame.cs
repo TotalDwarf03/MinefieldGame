@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Minefield
 {
-    public partial class Form1 : Form
+    public partial class MainGame : Form
     {   
-        public Form1()
+        public MainGame()
         {
             InitializeComponent();
         }
@@ -28,6 +28,37 @@ namespace Minefield
         // Holds the amount of lives the player has left
         int lives;
 
+        /// <summary>
+        /// <para> Restarts the game by: </para>
+        /// <br> - Generating a new minefield </br>
+        /// <br> - Hiding the mines </br>
+        /// <br> - Setting Lives to 3 </br>
+        /// <br> - Moving player to starting point </br>
+        /// <br> - Hiding the game over controls </br>
+        /// </summary>
+        private void startGame()
+        {
+            hideMines();
+            GenerateMinefield();
+
+            label381.BackColor = Color.Transparent; //Set starting square to be transparent
+
+            lives = 3;
+
+            playerX = 0;
+            playerY = 19;
+
+            pbGameOver.Visible = false;
+            btnReplay.Visible = false;
+            btnQuit.Visible = false;
+
+            lblPlayer.Location = new Point(0, 380);
+
+            lblPlayer.Image = Resources.up;
+            lblPlayer.Visible = true;
+
+            checkEnv(playerX, playerY);
+        }
 
         /// <summary>
         /// Gets the label at the given x and y coordinates
@@ -95,6 +126,8 @@ namespace Minefield
                 hideMines();
                 lblPlayer.Image = Resources.up;
                 lblPlayer.Visible = true;
+
+                checkEnv(playerX, playerY);
             }
         }
 
@@ -164,6 +197,7 @@ namespace Minefield
                 else
                 {
                     c.BackColor = Color.MidnightBlue;
+                    ((Label)c).Image = null;
                 }
             }
         }
@@ -252,8 +286,8 @@ namespace Minefield
                         case 1:
                             pbLife.BackgroundImage = Resources.nolife;
                             lives -= 1;
-                            showMines();
                             explodeAsync();
+                            showMines();
                             gameOver();
                             break;
                     }
@@ -319,12 +353,7 @@ namespace Minefield
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            GenerateMinefield();
-            label381.BackColor = Color.Transparent; //Set starting square to be transparent
-
-            lives = 3;
-
-            checkEnv(playerX, playerY);
+            startGame();
         }
 
         #region DPadControls
@@ -384,12 +413,17 @@ namespace Minefield
 
         private void btnReplay_Click(object sender, EventArgs e)
         {
-            Application.Restart();
+            startGame();
         }
 
         private void btnQuit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            foreach (Form form in Application.OpenForms)
+            {
+                form.Show();
+            }
+
+            this.Close();
         }
     }
 }
