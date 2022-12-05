@@ -73,6 +73,7 @@ namespace Minefield
             this.lblScoreHeading.Size = new System.Drawing.Size(99, 31);
             this.lblScoreHeading.TabIndex = 1;
             this.lblScoreHeading.Text = "Score:";
+            this.lblScoreHeading.Visible = false;
             // 
             // lblTimeBonusHeading
             // 
@@ -85,6 +86,7 @@ namespace Minefield
             this.lblTimeBonusHeading.Size = new System.Drawing.Size(177, 31);
             this.lblTimeBonusHeading.TabIndex = 2;
             this.lblTimeBonusHeading.Text = "Time Bonus:";
+            this.lblTimeBonusHeading.Visible = false;
             // 
             // lblTotalHeading
             // 
@@ -97,45 +99,46 @@ namespace Minefield
             this.lblTotalHeading.Size = new System.Drawing.Size(173, 31);
             this.lblTotalHeading.TabIndex = 3;
             this.lblTotalHeading.Text = "Total Score:";
+            this.lblTotalHeading.Visible = false;
             // 
             // lblTotalScoreVal
             // 
-            this.lblTotalScoreVal.AutoSize = true;
             this.lblTotalScoreVal.BackColor = System.Drawing.Color.Transparent;
             this.lblTotalScoreVal.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTotalScoreVal.ForeColor = System.Drawing.Color.White;
-            this.lblTotalScoreVal.Location = new System.Drawing.Point(442, 179);
+            this.lblTotalScoreVal.Location = new System.Drawing.Point(366, 179);
             this.lblTotalScoreVal.Name = "lblTotalScoreVal";
-            this.lblTotalScoreVal.Size = new System.Drawing.Size(30, 31);
+            this.lblTotalScoreVal.Size = new System.Drawing.Size(106, 31);
             this.lblTotalScoreVal.TabIndex = 6;
             this.lblTotalScoreVal.Text = "0";
             this.lblTotalScoreVal.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblTotalScoreVal.Visible = false;
             // 
             // lblTimeBonusVal
             // 
-            this.lblTimeBonusVal.AutoSize = true;
             this.lblTimeBonusVal.BackColor = System.Drawing.Color.Transparent;
             this.lblTimeBonusVal.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTimeBonusVal.ForeColor = System.Drawing.Color.White;
-            this.lblTimeBonusVal.Location = new System.Drawing.Point(442, 117);
+            this.lblTimeBonusVal.Location = new System.Drawing.Point(366, 117);
             this.lblTimeBonusVal.Name = "lblTimeBonusVal";
-            this.lblTimeBonusVal.Size = new System.Drawing.Size(30, 31);
+            this.lblTimeBonusVal.Size = new System.Drawing.Size(106, 31);
             this.lblTimeBonusVal.TabIndex = 5;
             this.lblTimeBonusVal.Text = "0";
             this.lblTimeBonusVal.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblTimeBonusVal.Visible = false;
             // 
             // lblScoreVal
             // 
-            this.lblScoreVal.AutoSize = true;
             this.lblScoreVal.BackColor = System.Drawing.Color.Transparent;
             this.lblScoreVal.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblScoreVal.ForeColor = System.Drawing.Color.White;
-            this.lblScoreVal.Location = new System.Drawing.Point(442, 55);
+            this.lblScoreVal.Location = new System.Drawing.Point(366, 55);
             this.lblScoreVal.Name = "lblScoreVal";
-            this.lblScoreVal.Size = new System.Drawing.Size(30, 31);
+            this.lblScoreVal.Size = new System.Drawing.Size(106, 31);
             this.lblScoreVal.TabIndex = 4;
             this.lblScoreVal.Text = "0";
             this.lblScoreVal.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblScoreVal.Visible = false;
             // 
             // lblChar1
             // 
@@ -148,6 +151,7 @@ namespace Minefield
             this.lblChar1.Size = new System.Drawing.Size(33, 31);
             this.lblChar1.TabIndex = 7;
             this.lblChar1.Text = "A";
+            this.lblChar1.Visible = false;
             // 
             // lblChar2
             // 
@@ -160,6 +164,7 @@ namespace Minefield
             this.lblChar2.Size = new System.Drawing.Size(33, 31);
             this.lblChar2.TabIndex = 8;
             this.lblChar2.Text = "A";
+            this.lblChar2.Visible = false;
             // 
             // lblChar3
             // 
@@ -172,6 +177,7 @@ namespace Minefield
             this.lblChar3.Size = new System.Drawing.Size(33, 31);
             this.lblChar3.TabIndex = 9;
             this.lblChar3.Text = "A";
+            this.lblChar3.Visible = false;
             // 
             // lblNameHeading
             // 
@@ -184,6 +190,7 @@ namespace Minefield
             this.lblNameHeading.Size = new System.Drawing.Size(99, 31);
             this.lblNameHeading.TabIndex = 10;
             this.lblNameHeading.Text = "Name:";
+            this.lblNameHeading.Visible = false;
             // 
             // btnChar1Up
             // 
@@ -198,6 +205,7 @@ namespace Minefield
             this.btnChar1Up.TabIndex = 11;
             this.btnChar1Up.Text = "▲";
             this.btnChar1Up.UseVisualStyleBackColor = false;
+            this.btnChar1Up.Visible = false;
             // 
             // btnChar2Up
             // 
@@ -212,6 +220,7 @@ namespace Minefield
             this.btnChar2Up.TabIndex = 12;
             this.btnChar2Up.Text = "▲";
             this.btnChar2Up.UseVisualStyleBackColor = false;
+            this.btnChar2Up.Visible = false;
             // 
             // btnChar3Up
             // 
@@ -226,6 +235,7 @@ namespace Minefield
             this.btnChar3Up.TabIndex = 13;
             this.btnChar3Up.Text = "▲";
             this.btnChar3Up.UseVisualStyleBackColor = false;
+            this.btnChar3Up.Visible = false;
             // 
             // btnChar3Down
             // 
@@ -240,6 +250,7 @@ namespace Minefield
             this.btnChar3Down.TabIndex = 16;
             this.btnChar3Down.Text = "▼";
             this.btnChar3Down.UseVisualStyleBackColor = false;
+            this.btnChar3Down.Visible = false;
             // 
             // btnChar2Down
             // 
@@ -254,6 +265,7 @@ namespace Minefield
             this.btnChar2Down.TabIndex = 15;
             this.btnChar2Down.Text = "▼";
             this.btnChar2Down.UseVisualStyleBackColor = false;
+            this.btnChar2Down.Visible = false;
             // 
             // btnChar1Down
             // 
@@ -268,6 +280,7 @@ namespace Minefield
             this.btnChar1Down.TabIndex = 14;
             this.btnChar1Down.Text = "▼";
             this.btnChar1Down.UseVisualStyleBackColor = false;
+            this.btnChar1Down.Visible = false;
             // 
             // btnSubmitScore
             // 
@@ -283,6 +296,7 @@ namespace Minefield
             this.btnSubmitScore.TabIndex = 17;
             this.btnSubmitScore.Text = "SAVE";
             this.btnSubmitScore.UseVisualStyleBackColor = false;
+            this.btnSubmitScore.Visible = false;
             // 
             // SubmitScore
             // 
@@ -315,6 +329,7 @@ namespace Minefield
             this.MinimizeBox = false;
             this.Name = "SubmitScore";
             this.Text = "Minefield: Can you get to the end?";
+            this.Load += new System.EventHandler(this.SubmitScore_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

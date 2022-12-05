@@ -122,14 +122,16 @@ namespace Minefield
             int timeBonus = 10000 / seconds;
 
             int totalScore = score + timeBonus;
-            
-            //High Score Screen?
+
+            var SubmitScore = new SubmitScore(score, timeBonus, totalScore);
+            SubmitScore.Show();
+            this.Hide();
         }
 
         /// <summary>
         /// Shows the Player exploding animation
         /// </summary>
-        private async Task explodeAsync()
+        public async void explodeAnimation()
         {
             lblPlayer.Image = Resources.explosionP1;
             await Task.Delay(500);
@@ -183,6 +185,8 @@ namespace Minefield
 
             MineMap[0, 19] = 0; //Start Square cannot be a mine
             MineMap[19, 0] = 2; //Designates end square
+
+            MineMap[3, 19] = 2; //TEST PURPOSES PLEASE REMOVE
         }
 
         /// <summary>
@@ -216,7 +220,7 @@ namespace Minefield
         {
             foreach (Control c in panel1.Controls)
             {
-                if (c.Name == "lblPlayer" || c.Name == "label381" || c.Name == "label20" || c.Name == "pbGameOver" || c.Name == "btnReplay" || c.Name == "btnQuit")
+                if (c.Name == "lblPlayer" || c.Name == "label381" || c.Name == "label20" || c.Name == "pbGameOver" || c.Name == "btnReplay" || c.Name == "btnQuit" || c.Name == "btnEndGame")
                     ;   //Skip
 
                 else
@@ -310,7 +314,7 @@ namespace Minefield
                             score -= 5;
                             lblScore.Text = $"SCORE: {score}";
 
-                            explodeAsync();
+                            explodeAnimation();
                             break;
                         case 2:
                             pbLife.BackgroundImage = Resources._1life;
@@ -319,7 +323,7 @@ namespace Minefield
                             score -= 5;
                             lblScore.Text = $"SCORE: {score}";
 
-                            explodeAsync();                            
+                            explodeAnimation();                            
                             break;
                         case 1:
                             pbLife.BackgroundImage = Resources.nolife;
@@ -328,7 +332,7 @@ namespace Minefield
                             score -= 5;
                             lblScore.Text = $"SCORE: {score}";
 
-                            explodeAsync();
+                            explodeAnimation();
                             showMines();
                             gameOver();
                             break;
