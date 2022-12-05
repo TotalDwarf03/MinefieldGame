@@ -16,5 +16,15 @@ namespace Minefield
         {
             InitializeComponent();
         }
+
+        private void btnQuit_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                form.Show();
+            }
+
+            this.Close();
+        }
     }
 }

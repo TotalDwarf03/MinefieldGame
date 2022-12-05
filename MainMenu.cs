@@ -33,5 +33,12 @@ namespace Minefield
             MainGame.Show();
             this.Hide();
         }
+
+        private void btnLeaderboard_Click(object sender, EventArgs e)
+        {
+            var Leaderboard = new Leaderboard();
+            Leaderboard.Show();
+            this.Hide();
+        }
     }
 }

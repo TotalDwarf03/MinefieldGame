@@ -73,6 +73,7 @@
             this.btnLeaderboard.TabIndex = 6;
             this.btnLeaderboard.Text = "LEADERBOARD";
             this.btnLeaderboard.UseVisualStyleBackColor = false;
+            this.btnLeaderboard.Click += new System.EventHandler(this.btnLeaderboard_Click);
             // 
             // btnQuit
             // 
