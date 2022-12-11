@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Media;
 
 namespace Minefield
 {
@@ -40,6 +41,89 @@ namespace Minefield
         // Stopwatch is imported from System.Diagnostics
         Stopwatch stopwatch = new Stopwatch();
 
+        // Holds the current soundplayer
+        SoundPlayer player;
+
+        /// <summary>
+        /// Gets the label at the given x and y coordinates
+        /// </summary>
+        /// <param name="x"> The x Position of the label </param>
+        /// <param name="y"> The y Position of the label </param>
+        /// <returns> Returns the label at the position </returns>
+        private Label getLabel(int x, int y)
+        {
+            int labelNo = (y * 20) + x + 1;
+            String labelName = "label" + labelNo.ToString();
+
+            foreach (Control c in panel1.Controls)
+            {
+                if (c.Name == labelName)
+                {
+                    return (Label)c;
+                }
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Plays a given soundfile.
+        /// </summary>
+        /// <param name="soundFile">The name of the soundfile to play</param>
+        /// <param name="looping">Whether or not the file should loop</param>
+        private void playSound(string soundFile, bool looping)
+        {
+            if (looping)
+            {
+                using (player = new SoundPlayer(@$"{soundFile}"))
+                {
+                    player.Load();
+                    player.PlayLooping();
+                }
+            }
+            else
+            {
+                using (player = new SoundPlayer(@$"{soundFile}"))
+                {
+                    player.Play();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Shows the Player exploding animation
+        /// </summary>
+        public async void explodeAnimation()
+        {
+            playSound("Explosion.wav", false);
+
+            lblPlayer.Image = Resources.explosionP1;
+            await Task.Delay(500);
+            lblPlayer.Image = Resources.explosionP2;
+            await Task.Delay(500);
+            lblPlayer.Image = Resources.explosionP3;
+            await Task.Delay(500);
+            lblPlayer.Image = Resources.explosionP4;
+            await Task.Delay(500);
+
+            lblPlayer.Visible = false;
+
+            lblPlayer.Location = new Point(0, 380);
+            playerX = 0;
+            playerY = 19;
+
+            if (lives != 0)
+            {
+                hideMines();
+                lblPlayer.Image = Resources.up;
+                lblPlayer.Visible = true;
+
+                checkEnv(playerX, playerY);
+
+                playSound("Game.wav", true);
+            }
+        }
+
+        #region GameLogic
         /// <summary>
         /// <para> Restarts the game by: </para>
         /// <br> - Generating a new minefield </br>
@@ -50,6 +134,8 @@ namespace Minefield
         /// </summary>
         private void startGame()
         {
+            playSound("Game.wav", true);
+
             hideMines();
             GenerateMinefield();
 
@@ -78,27 +164,6 @@ namespace Minefield
         }
 
         /// <summary>
-        /// Gets the label at the given x and y coordinates
-        /// </summary>
-        /// <param name="x"> The x Position of the label </param>
-        /// <param name="y"> The y Position of the label </param>
-        /// <returns> Returns the label at the position </returns>
-        private Label getLabel(int x, int y)
-        {
-            int labelNo = (y * 20) + x + 1;
-            String labelName = "label" + labelNo.ToString();
-
-            foreach (Control c in panel1.Controls)
-            {
-                if (c.Name == labelName)
-                {
-                    return (Label)c;
-                }
-            }
-            return null;
-        }
-
-        /// <summary>
         /// Shows Game Over UI
         /// </summary>
         private void gameOver()
@@ -115,6 +180,8 @@ namespace Minefield
         /// </summary>
         private void completeLevel()
         {
+            player.Stop();
+
             stopwatch.Stop();
             TimeSpan ts = stopwatch.Elapsed;
             int seconds = Convert.ToInt32(ts.TotalSeconds);
@@ -127,36 +194,7 @@ namespace Minefield
             SubmitScore.Show();
             this.Hide();
         }
-
-        /// <summary>
-        /// Shows the Player exploding animation
-        /// </summary>
-        public async void explodeAnimation()
-        {
-            lblPlayer.Image = Resources.explosionP1;
-            await Task.Delay(500);
-            lblPlayer.Image = Resources.explosionP2;
-            await Task.Delay(500);
-            lblPlayer.Image = Resources.explosionP3;
-            await Task.Delay(500);
-            lblPlayer.Image = Resources.explosionP4;
-            await Task.Delay(500);
-
-            lblPlayer.Visible = false;
-
-            lblPlayer.Location = new Point(0, 380);
-            playerX = 0;
-            playerY = 19;
-
-            if (lives != 0)
-            {
-                hideMines();
-                lblPlayer.Image = Resources.up;
-                lblPlayer.Visible = true;
-
-                checkEnv(playerX, playerY);
-            }
-        }
+        #endregion
 
         #region MineLogic
 

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace Minefield
 {
@@ -16,6 +17,33 @@ namespace Minefield
         public Leaderboard()
         {
             InitializeComponent();
+        }
+
+        // Soundplayer to play select sound
+        SoundPlayer player;
+
+        /// <summary>
+        /// Plays a given soundfile.
+        /// </summary>
+        /// <param name="soundFile">The name of the soundfile to play</param>
+        /// <param name="looping">Whether or not the file should loop</param>
+        private void playSound(string soundFile, bool looping)
+        {
+            if (looping)
+            {
+                using (player = new SoundPlayer(@$"{soundFile}"))
+                {
+                    player.Load();
+                    player.PlayLooping();
+                }
+            }
+            else
+            {
+                using (player = new SoundPlayer(@$"{soundFile}"))
+                {
+                    player.PlaySync();
+                }
+            }
         }
 
         private void Leaderboard_Load(object sender, EventArgs e)
@@ -51,6 +79,8 @@ namespace Minefield
         {
             List<Form> formsToClose = new List<Form>();
 
+            playSound("select.wav", false);
+
             // Identify which forms other than the MainMenu are open in the background (not visible)
             foreach (Form form in Application.OpenForms)
             {
@@ -68,6 +98,14 @@ namespace Minefield
             foreach (Form form in formsToClose)
             {
                 form.Close();
+            }
+        }
+
+        private void Leaderboard_VisibleChanged(object sender, EventArgs e)
+        {
+            if (this.Visible == true)
+            {
+                playSound("Leaderboard.wav", true);
             }
         }
     }

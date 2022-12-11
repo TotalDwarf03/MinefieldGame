@@ -106,6 +106,8 @@
             this.MinimizeBox = false;
             this.Name = "MainMenu";
             this.Text = "Minefield: Can you get to the end?";
+            this.Load += new System.EventHandler(this.MainMenu_Load);
+            this.VisibleChanged += new System.EventHandler(this.MainMenu_VisibleChanged);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
 

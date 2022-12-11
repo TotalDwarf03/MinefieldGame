@@ -89,6 +89,7 @@
             this.Name = "Leaderboard";
             this.Text = "Minefield: Can you get to the end?";
             this.Load += new System.EventHandler(this.Leaderboard_Load);
+            this.VisibleChanged += new System.EventHandler(this.Leaderboard_VisibleChanged);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
