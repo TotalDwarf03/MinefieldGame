@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
+using System.IO;
 
 namespace Minefield
 {
@@ -16,6 +17,17 @@ namespace Minefield
         public MainMenu()
         {
             InitializeComponent();
+
+            if (File.Exists("Scores.txt") == false)
+            {
+                using (FileStream f = new FileStream("Scores.txt", FileMode.OpenOrCreate))
+                {
+                    using (StreamWriter s = new StreamWriter(f))
+                    {
+                        s.WriteLine(Minefield.Properties.Resources.Scores);
+                    }
+                }
+            }
         }
 
 
@@ -27,11 +39,11 @@ namespace Minefield
         /// </summary>
         /// <param name="soundFile">The name of the soundfile to play</param>
         /// <param name="looping">Whether or not the file should loop</param>
-        private void playSound(string soundFile, bool looping)
+        private void playSound(UnmanagedMemoryStream soundFile, bool looping)
         {
             if (looping)
             {
-                using (player = new SoundPlayer(@$"{soundFile}"))
+                using (player = new SoundPlayer(soundFile))
                 {
                     player.Load();
                     player.PlayLooping();
@@ -39,7 +51,7 @@ namespace Minefield
             }
             else
             {
-                using (player = new SoundPlayer(@$"{soundFile}"))
+                using (player = new SoundPlayer(soundFile))
                 {
                     player.PlaySync();
                 }
@@ -48,12 +60,12 @@ namespace Minefield
 
         private void MainMenu_Load(object sender, EventArgs e)
         {
-            playSound("MainMenu.wav", true);
+            playSound(Minefield.Properties.Resources.MainMenu, true);
         }
 
         private void btnQuit_Click(object sender, EventArgs e)
         {
-            playSound("select.wav", false);
+            playSound(Minefield.Properties.Resources.select, false);
 
             DialogResult dialogResult = MessageBox.Show("Are you sure you want to Quit?", "Quit?", MessageBoxButtons.YesNo);
 
@@ -63,13 +75,13 @@ namespace Minefield
             }
             else
             {
-                playSound("MainMenu.wav", true);
+                playSound(Minefield.Properties.Resources.MainMenu, true);
             }
         }
 
         private void btnStartGame_Click(object sender, EventArgs e)
         {
-            playSound("select.wav", false);
+            playSound(Minefield.Properties.Resources.select, false);
 
             var MainGame = new MainGame();
             MainGame.Show();
@@ -78,7 +90,7 @@ namespace Minefield
 
         private void btnLeaderboard_Click(object sender, EventArgs e)
         {
-            playSound("select.wav", false);
+            playSound(Minefield.Properties.Resources.select, false);
 
             var Leaderboard = new Leaderboard();
             Leaderboard.Show();
@@ -89,7 +101,7 @@ namespace Minefield
         {
             if (this.Visible == true)
             {
-                playSound("MainMenu.wav", true);
+                playSound(Minefield.Properties.Resources.MainMenu, true);
             }
         }
     }

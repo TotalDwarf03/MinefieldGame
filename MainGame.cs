@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.Media;
+using System.IO;
 
 namespace Minefield
 {
@@ -70,11 +71,11 @@ namespace Minefield
         /// </summary>
         /// <param name="soundFile">The name of the soundfile to play</param>
         /// <param name="looping">Whether or not the file should loop</param>
-        private void playSound(string soundFile, bool looping)
+        private void playSound(UnmanagedMemoryStream soundFile, bool looping)
         {
             if (looping)
             {
-                using (player = new SoundPlayer(@$"{soundFile}"))
+                using (player = new SoundPlayer(soundFile))
                 {
                     player.Load();
                     player.PlayLooping();
@@ -82,7 +83,7 @@ namespace Minefield
             }
             else
             {
-                using (player = new SoundPlayer(@$"{soundFile}"))
+                using (player = new SoundPlayer(soundFile))
                 {
                     player.Play();
                 }
@@ -94,7 +95,7 @@ namespace Minefield
         /// </summary>
         public async void explodeAnimation()
         {
-            playSound("Explosion.wav", false);
+            playSound(Minefield.Properties.Resources.Explosion, false);
 
             lblPlayer.Image = Resources.explosionP1;
             await Task.Delay(500);
@@ -119,7 +120,7 @@ namespace Minefield
 
                 checkEnv(playerX, playerY);
 
-                playSound("Game.wav", true);
+                playSound(Minefield.Properties.Resources.Game, true);
             }
         }
 
@@ -134,7 +135,7 @@ namespace Minefield
         /// </summary>
         private void startGame()
         {
-            playSound("Game.wav", true);
+            playSound(Minefield.Properties.Resources.Game, true);
 
             hideMines();
             GenerateMinefield();

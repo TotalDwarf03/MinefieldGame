@@ -22,7 +22,7 @@ namespace Minefield.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Minefield.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Minefield.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace Minefield.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace Minefield.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _1bomb {
+        public static System.Drawing.Bitmap _1bomb {
             get {
                 object obj = ResourceManager.GetObject("_1bomb", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -73,7 +73,7 @@ namespace Minefield.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _1life {
+        public static System.Drawing.Bitmap _1life {
             get {
                 object obj = ResourceManager.GetObject("_1life", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -83,7 +83,7 @@ namespace Minefield.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _2bomb {
+        public static System.Drawing.Bitmap _2bomb {
             get {
                 object obj = ResourceManager.GetObject("_2bomb", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -93,7 +93,7 @@ namespace Minefield.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _2Lives {
+        public static System.Drawing.Bitmap _2Lives {
             get {
                 object obj = ResourceManager.GetObject("_2Lives", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -103,7 +103,7 @@ namespace Minefield.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _3bomb {
+        public static System.Drawing.Bitmap _3bomb {
             get {
                 object obj = ResourceManager.GetObject("_3bomb", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -113,7 +113,7 @@ namespace Minefield.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _3Lives {
+        public static System.Drawing.Bitmap _3Lives {
             get {
                 object obj = ResourceManager.GetObject("_3Lives", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -123,7 +123,7 @@ namespace Minefield.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bombsmall {
+        public static System.Drawing.Bitmap bombsmall {
             get {
                 object obj = ResourceManager.GetObject("bombsmall", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -133,7 +133,7 @@ namespace Minefield.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap D_PadDown {
+        public static System.Drawing.Bitmap D_PadDown {
             get {
                 object obj = ResourceManager.GetObject("D-PadDown", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -143,7 +143,7 @@ namespace Minefield.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap D_PadLeft {
+        public static System.Drawing.Bitmap D_PadLeft {
             get {
                 object obj = ResourceManager.GetObject("D-PadLeft", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -153,7 +153,7 @@ namespace Minefield.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap D_PadRight {
+        public static System.Drawing.Bitmap D_PadRight {
             get {
                 object obj = ResourceManager.GetObject("D-PadRight", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -163,7 +163,7 @@ namespace Minefield.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap D_PadUp {
+        public static System.Drawing.Bitmap D_PadUp {
             get {
                 object obj = ResourceManager.GetObject("D-PadUp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -173,7 +173,7 @@ namespace Minefield.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap desertmockuplarger {
+        public static System.Drawing.Bitmap desertmockuplarger {
             get {
                 object obj = ResourceManager.GetObject("desertmockuplarger", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -183,7 +183,7 @@ namespace Minefield.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap down {
+        public static System.Drawing.Bitmap down {
             get {
                 object obj = ResourceManager.GetObject("down", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -191,9 +191,18 @@ namespace Minefield.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream Explosion {
+            get {
+                return ResourceManager.GetStream("Explosion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap explosionP1 {
+        public static System.Drawing.Bitmap explosionP1 {
             get {
                 object obj = ResourceManager.GetObject("explosionP1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -203,7 +212,7 @@ namespace Minefield.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap explosionP2 {
+        public static System.Drawing.Bitmap explosionP2 {
             get {
                 object obj = ResourceManager.GetObject("explosionP2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -213,7 +222,7 @@ namespace Minefield.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap explosionP3 {
+        public static System.Drawing.Bitmap explosionP3 {
             get {
                 object obj = ResourceManager.GetObject("explosionP3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -223,7 +232,7 @@ namespace Minefield.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap explosionP4 {
+        public static System.Drawing.Bitmap explosionP4 {
             get {
                 object obj = ResourceManager.GetObject("explosionP4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -231,9 +240,18 @@ namespace Minefield.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream Game {
+            get {
+                return ResourceManager.GetStream("Game", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap gameoverCrop {
+        public static System.Drawing.Bitmap gameoverCrop {
             get {
                 object obj = ResourceManager.GetObject("gameoverCrop", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -243,7 +261,7 @@ namespace Minefield.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap house {
+        public static System.Drawing.Bitmap house {
             get {
                 object obj = ResourceManager.GetObject("house", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -251,9 +269,18 @@ namespace Minefield.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream Leaderboard {
+            get {
+                return ResourceManager.GetStream("Leaderboard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap leaderboardBG {
+        public static System.Drawing.Bitmap leaderboardBG {
             get {
                 object obj = ResourceManager.GetObject("leaderboardBG", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -263,7 +290,7 @@ namespace Minefield.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap leaderboardlogo {
+        public static System.Drawing.Bitmap leaderboardlogo {
             get {
                 object obj = ResourceManager.GetObject("leaderboardlogo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -273,7 +300,7 @@ namespace Minefield.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap left {
+        public static System.Drawing.Bitmap left {
             get {
                 object obj = ResourceManager.GetObject("left", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -283,7 +310,7 @@ namespace Minefield.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Logo {
+        public static System.Drawing.Bitmap Logo {
             get {
                 object obj = ResourceManager.GetObject("Logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -291,9 +318,18 @@ namespace Minefield.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream MainMenu {
+            get {
+                return ResourceManager.GetStream("MainMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap mainMenuBG2 {
+        public static System.Drawing.Bitmap mainMenuBG2 {
             get {
                 object obj = ResourceManager.GetObject("mainMenuBG2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -301,9 +337,18 @@ namespace Minefield.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream newHighScore {
+            get {
+                return ResourceManager.GetStream("newHighScore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap nobomb {
+        public static System.Drawing.Bitmap nobomb {
             get {
                 object obj = ResourceManager.GetObject("nobomb", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -313,7 +358,7 @@ namespace Minefield.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap nolife {
+        public static System.Drawing.Bitmap nolife {
             get {
                 object obj = ResourceManager.GetObject("nolife", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -323,7 +368,7 @@ namespace Minefield.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap right {
+        public static System.Drawing.Bitmap right {
             get {
                 object obj = ResourceManager.GetObject("right", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -331,9 +376,45 @@ namespace Minefield.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream scoreLine {
+            get {
+                return ResourceManager.GetStream("scoreLine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to AAA-000,BBB-000,CCC-000,DDD-000,EEE-000.
+        /// </summary>
+        public static string Scores {
+            get {
+                return ResourceManager.GetString("Scores", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream scoreTotal {
+            get {
+                return ResourceManager.GetStream("scoreTotal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream select {
+            get {
+                return ResourceManager.GetStream("select", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap stopwatchSmall {
+        public static System.Drawing.Bitmap stopwatchSmall {
             get {
                 object obj = ResourceManager.GetObject("stopwatchSmall", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -343,7 +424,7 @@ namespace Minefield.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap submitScoreBG {
+        public static System.Drawing.Bitmap submitScoreBG {
             get {
                 object obj = ResourceManager.GetObject("submitScoreBG", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -353,7 +434,7 @@ namespace Minefield.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap up {
+        public static System.Drawing.Bitmap up {
             get {
                 object obj = ResourceManager.GetObject("up", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));

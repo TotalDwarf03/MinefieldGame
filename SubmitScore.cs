@@ -36,11 +36,11 @@ namespace Minefield
         /// </summary>
         /// <param name="soundFile">The name of the soundfile to play</param>
         /// <param name="looping">Whether or not the file should loop</param>
-        private void playSound(string soundFile, bool looping)
+        private void playSound(UnmanagedMemoryStream soundFile, bool looping)
         {
             if (looping)
             {
-                using (player = new SoundPlayer(@$"{soundFile}"))
+                using (player = new SoundPlayer(soundFile))
                 {
                     player.Load();
                     player.PlayLooping();
@@ -48,7 +48,7 @@ namespace Minefield
             }
             else
             {
-                using (player = new SoundPlayer(@$"{soundFile}"))
+                using (player = new SoundPlayer(soundFile))
                 {
                     player.Play();
                 }
@@ -57,25 +57,25 @@ namespace Minefield
 
         public async void statsAnimation()
         {
-            playSound("scoreLine.wav", false);
+            playSound(Minefield.Properties.Resources.scoreLine, false);
             lblScoreHeading.Visible = true;
             lblScoreVal.Visible = true;
 
             await Task.Delay(1000);
 
-            playSound("scoreLine.wav", false);
+            playSound(Minefield.Properties.Resources.scoreLine, false);
             lblTimeBonusHeading.Visible = true;
             lblTimeBonusVal.Visible = true;
 
             await Task.Delay(1000);
 
-            playSound("scoreLine.wav", false);
+            playSound(Minefield.Properties.Resources.scoreLine, false);
             lblTotalHeading.Visible = true;
             lblTotalScoreVal.Visible = true;
 
             await Task.Delay(1000);
 
-            playSound("scoreLine.wav", false);
+            playSound(Minefield.Properties.Resources.scoreLine, false);
             lblNameHeading.Visible = true;
 
             lblChar1.Visible = true;
@@ -92,7 +92,7 @@ namespace Minefield
 
             await Task.Delay(1000);
 
-            playSound("scoreTotal.wav", false);
+            playSound(Minefield.Properties.Resources.scoreTotal, false);
             btnSubmitScore.Visible = true;
         }
 
@@ -122,7 +122,7 @@ namespace Minefield
 
         private void upChar(object sender, EventArgs e)
         {
-            playSound("select.wav", false);
+            playSound(Minefield.Properties.Resources.select, false);
 
             Button button = (Button)sender;
             string buttonName = button.Name;
@@ -171,7 +171,7 @@ namespace Minefield
 
         private void downChar(object sender, EventArgs e)
         {
-            playSound("select.wav", false);
+            playSound(Minefield.Properties.Resources.select, false);
 
             Button button = (Button)sender;
             string buttonName = button.Name;
@@ -220,7 +220,7 @@ namespace Minefield
 
         private void btnSubmitScore_Click(object sender, EventArgs e)
         {
-            playSound("select.wav", false);
+            playSound(Minefield.Properties.Resources.select, false);
 
             string contents;
 
@@ -287,7 +287,7 @@ namespace Minefield
                     {
                         s.WriteLine(leaderboard);
 
-                        playSound("newHighScore.wav", false);
+                        playSound(Minefield.Properties.Resources.newHighScore, false);
                         MessageBox.Show($"Well Done! You made it onto the {newScorePosition + 1}{findNumberPrefix(newScorePosition + 1)} spot on the Leaderboard!", "Congratulations!");
                     }
                 }
