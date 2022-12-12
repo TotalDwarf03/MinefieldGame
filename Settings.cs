@@ -39,6 +39,8 @@ namespace Minefield
 
         Bitmap[] LoadoutIcons = { Minefield.Properties.Resources.arsonistLoadType, Minefield.Properties.Resources.ninjaLoadType };
 
+        UnmanagedMemoryStream[] LoadoutSounds = { Minefield.Properties.Resources.IgniteCrop, Minefield.Properties.Resources.Dash };
+
         // Indexes to determine current gamemode and loadout
 
         int gamemodeIndex;
@@ -66,7 +68,8 @@ namespace Minefield
             {
                 using (player = new SoundPlayer(soundFile))
                 {
-                    player.PlaySync();
+                    player.Stream.Position = 0;
+                    player.Play();
                 }
             }
         }
@@ -149,8 +152,6 @@ namespace Minefield
 
         private void btnQuit_Click(object sender, EventArgs e)
         {
-            playSound(Minefield.Properties.Resources.select, false);
-
             foreach(Form form in Application.OpenForms)
             {
                 form.Show();
@@ -170,6 +171,8 @@ namespace Minefield
                 gamemodeIndex += 1;
             }
 
+            playSound(Minefield.Properties.Resources.select, false);
+
             UpdateSettingsFile();
             UpdateSettingsUI();
         }
@@ -184,6 +187,8 @@ namespace Minefield
             {
                 loadoutIndex += 1;
             }
+
+            playSound(LoadoutSounds[loadoutIndex], false);
 
             UpdateSettingsFile();
             UpdateSettingsUI();

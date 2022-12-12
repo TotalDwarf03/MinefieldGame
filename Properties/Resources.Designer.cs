@@ -19,7 +19,7 @@ namespace Minefield.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Resources {
@@ -143,6 +143,16 @@ namespace Minefield.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap campfire {
+            get {
+                object obj = ResourceManager.GetObject("campfire", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap D_PadDown {
             get {
                 object obj = ResourceManager.GetObject("D-PadDown", resourceCulture);
@@ -177,6 +187,15 @@ namespace Minefield.Properties {
             get {
                 object obj = ResourceManager.GetObject("D-PadUp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream Dash {
+            get {
+                return ResourceManager.GetStream("Dash", resourceCulture);
             }
         }
         
@@ -285,6 +304,24 @@ namespace Minefield.Properties {
             get {
                 object obj = ResourceManager.GetObject("house", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream Ignite {
+            get {
+                return ResourceManager.GetStream("Ignite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream IgniteCrop {
+            get {
+                return ResourceManager.GetStream("IgniteCrop", resourceCulture);
             }
         }
         
@@ -452,7 +489,7 @@ namespace Minefield.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to gametype-search,gamedesc-The further you go, the less you remember, a true test of memory and skill!,loadout-arsonist,loaddesc-Use your love for pyrotechnics to light up the nearby area!.
+        ///   Looks up a localized string similar to gametype-Search,loadout-Arsonist.
         /// </summary>
         public static string Settings {
             get {
