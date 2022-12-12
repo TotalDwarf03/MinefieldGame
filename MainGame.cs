@@ -38,6 +38,10 @@ namespace Minefield
         // Used a list over array because the size is variable
         List<String> discoveredSquares = new List<string>();
 
+        // Holds the current Gamemode/Loadout index
+        int gamemodeIndex;
+        int loadoutIndex;
+
         // Create an instance of Stopwatch to record time taken to complete level
         // Stopwatch is imported from System.Diagnostics
         Stopwatch stopwatch = new Stopwatch();
@@ -195,6 +199,79 @@ namespace Minefield
             SubmitScore.Show();
             this.Hide();
         }
+        #endregion
+
+        #region LoadoutsAndGamemode
+
+        // Holds Choice of Gamemodes/Loadouts
+        string[] Gamemodes = { "Search", "Flag" };
+
+        string[] Loadouts = { "Arsonist", "Ninja" };
+
+        UnmanagedMemoryStream[] LoadoutSounds = { Minefield.Properties.Resources.IgniteCrop, Minefield.Properties.Resources.Dash };
+
+        /// <summary>
+        /// Updates Gamemode and Loadout Indexes so the correct abilities/features are loaded
+        /// </summary>
+        private void getGameSettings()
+        {
+            string contents;
+
+            List<string> SettingValues = new List<string>();
+
+            string curGamemode;
+            string curLoadout;
+
+            using (FileStream f = new FileStream("Settings.txt", FileMode.OpenOrCreate))
+            {
+                using (StreamReader r = new StreamReader(f))
+                {
+                    contents = r.ReadLine();
+                }
+            }
+
+            string[] options = contents.Split(",");
+
+            foreach (string option in options)
+            {
+                string[] splitElements = option.Split("-");
+
+                // Add 2nd element in array to list as that is the value of the setting (<SettingName>-<SettingValue>) from Settings.txt
+                SettingValues.Add(splitElements[1]);
+            }
+
+            curGamemode = SettingValues[0];
+            curLoadout = SettingValues[1];
+
+            for (int i = 0; i < Gamemodes.Length; i++)
+            {
+                if (curGamemode == Gamemodes[i])
+                {
+                    gamemodeIndex = i;
+                }
+            }
+
+            for (int i = 0; i < Loadouts.Length; i++)
+            {
+                if (curLoadout == Loadouts[i])
+                {
+                    loadoutIndex = i;
+                }
+            }
+        }
+
+        private void activateAbility()
+        {
+            if (Loadouts[loadoutIndex] == "Arsonist")
+            {
+
+            }
+            else if (Loadouts[loadoutIndex] == "Ninja")
+            {
+
+            }
+        }
+
         #endregion
 
         #region MineLogic
@@ -463,6 +540,7 @@ namespace Minefield
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            getGameSettings();
             startGame();
         }
 

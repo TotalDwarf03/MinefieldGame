@@ -449,6 +449,9 @@ namespace Minefield
             this.lblScore = new System.Windows.Forms.Label();
             this.lblTimer = new System.Windows.Forms.Label();
             this.UpdateStopwatchInterval = new System.Windows.Forms.Timer(this.components);
+            this.button1 = new System.Windows.Forms.Button();
+            this.AbilityCooldown = new System.Windows.Forms.Timer(this.components);
+            this.lblAbilityCooldown = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbGameOver)).BeginInit();
             this.PnlDpad.SuspendLayout();
@@ -4206,7 +4209,7 @@ namespace Minefield
             // 
             this.pbDanger.BackgroundImage = global::Minefield.Properties.Resources.nobomb;
             this.pbDanger.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbDanger.Location = new System.Drawing.Point(39, 521);
+            this.pbDanger.Location = new System.Drawing.Point(39, 527);
             this.pbDanger.Name = "pbDanger";
             this.pbDanger.Size = new System.Drawing.Size(200, 65);
             this.pbDanger.TabIndex = 5;
@@ -4250,11 +4253,42 @@ namespace Minefield
             this.UpdateStopwatchInterval.Enabled = true;
             this.UpdateStopwatchInterval.Tick += new System.EventHandler(this.UpdateStopwatchInterval_Tick);
             // 
+            // button1
+            // 
+            this.button1.BackgroundImage = global::Minefield.Properties.Resources.arsonistLoadType;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.ForestGreen;
+            this.button1.FlatAppearance.BorderSize = 2;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(39, 599);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(80, 70);
+            this.button1.TabIndex = 9;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // AbilityCooldown
+            // 
+            this.AbilityCooldown.Enabled = true;
+            this.AbilityCooldown.Interval = 20000;
+            // 
+            // lblAbilityCooldown
+            // 
+            this.lblAbilityCooldown.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblAbilityCooldown.Location = new System.Drawing.Point(125, 599);
+            this.lblAbilityCooldown.Name = "lblAbilityCooldown";
+            this.lblAbilityCooldown.Size = new System.Drawing.Size(114, 70);
+            this.lblAbilityCooldown.TabIndex = 10;
+            this.lblAbilityCooldown.Text = "0s";
+            this.lblAbilityCooldown.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblAbilityCooldown.Visible = false;
+            // 
             // MainGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 622);
+            this.ClientSize = new System.Drawing.Size(484, 680);
+            this.Controls.Add(this.lblAbilityCooldown);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblTimer);
             this.Controls.Add(this.lblScore);
             this.Controls.Add(this.pbLife);
@@ -4695,6 +4729,9 @@ namespace Minefield
         private Label lblTimer;
         private Timer UpdateStopwatchInterval;
         private Button btnEndGame;
+        private Button button1;
+        private Timer AbilityCooldown;
+        private Label lblAbilityCooldown;
     }
 }
 
