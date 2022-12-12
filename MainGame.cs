@@ -42,6 +42,9 @@ namespace Minefield
         int gamemodeIndex;
         int loadoutIndex;
 
+        // Determines whether the Player's ability is ready to use
+        bool isAbilityReady = true;
+
         // Create an instance of Stopwatch to record time taken to complete level
         // Stopwatch is imported from System.Diagnostics
         Stopwatch stopwatch = new Stopwatch();
@@ -75,7 +78,8 @@ namespace Minefield
         /// </summary>
         /// <param name="soundFile">The name of the soundfile to play</param>
         /// <param name="looping">Whether or not the file should loop</param>
-        private void playSound(UnmanagedMemoryStream soundFile, bool looping)
+        /// <param name="sync">Whether the file should play synchronous</param>
+        private void playSound(UnmanagedMemoryStream soundFile, bool looping, bool sync)
         {
             if (looping)
             {
@@ -89,7 +93,16 @@ namespace Minefield
             {
                 using (player = new SoundPlayer(soundFile))
                 {
-                    player.Play();
+                    if (sync == false)
+                    {
+                        player.Stream.Position = 0;
+                        player.Play();
+                    }
+                    else
+                    {
+                        player.Stream.Position = 0;
+                        player.PlaySync();
+                    }
                 }
             }
         }
@@ -99,7 +112,7 @@ namespace Minefield
         /// </summary>
         public async void explodeAnimation()
         {
-            playSound(Minefield.Properties.Resources.Explosion, false);
+            playSound(Minefield.Properties.Resources.Explosion, false, false);
 
             lblPlayer.Image = Resources.explosionP1;
             await Task.Delay(500);
@@ -124,11 +137,11 @@ namespace Minefield
 
                 checkEnv(playerX, playerY);
 
-                playSound(Minefield.Properties.Resources.Game, true);
+                playSound(Minefield.Properties.Resources.Game, true, false);
             }
         }
 
-        #region GameLogic
+       #region GameLogic
         /// <summary>
         /// <para> Restarts the game by: </para>
         /// <br> - Generating a new minefield </br>
@@ -139,7 +152,7 @@ namespace Minefield
         /// </summary>
         private void startGame()
         {
-            playSound(Minefield.Properties.Resources.Game, true);
+            playSound(Minefield.Properties.Resources.Game, true, false);
 
             hideMines();
             GenerateMinefield();
@@ -260,17 +273,57 @@ namespace Minefield
             }
         }
 
-        private void activateAbility()
+        private async void activateAbility()
         {
-            if (Loadouts[loadoutIndex] == "Arsonist")
+            if (isAbilityReady)
             {
-                Label label = getLabel(playerX, playerY);
+                btnActivateAbility.FlatAppearance.BorderColor = Color.Red;
+                lblAbilityCooldown.Text = "20s";
+                isAbilityReady = false;
 
-                label.Image = Minefield.Properties.Resources.campfire;
-            }
-            else if (Loadouts[loadoutIndex] == "Ninja")
-            {
+                if (Loadouts[loadoutIndex] == "Arsonist")
+                {
+                    playSound(Minefield.Properties.Resources.Ignite, false, false);
 
+                    Label centreLabel = getLabel(playerX, playerY);
+
+                    centreLabel.Image = Minefield.Properties.Resources.campfire;
+                    centreLabel.BackColor = Color.Transparent;
+
+                    int[,] revealRadius =
+                    {
+                    { playerX, playerY - 2 },
+                    { playerX-1, playerY-1 }, { playerX, playerY-1 }, { playerX+1, playerY-1 },
+                    { playerX-2, playerY }, { playerX-1, playerY }, { playerX+1, playerY }, { playerX+2, playerY },
+                    { playerX-1, playerY+1 }, { playerX, playerY+1 }, { playerX+1, playerY+1 },
+                    { playerX, playerY+2 }
+                };
+
+                    for (int i = 0; i < 12; i++)
+                    {
+                        Label label = getLabel(revealRadius[i, 0], revealRadius[i, 1]);
+
+                        if (label != null)
+                        {
+                            if (revealRadius[i, 0] >= 0 && revealRadius[i, 1] >= 0)
+                            {
+                                label.BackColor = Color.Transparent;
+
+                                if (MineMap[revealRadius[i, 0], revealRadius[i, 1]] == 1)
+                                {
+                                    label.Image = Minefield.Properties.Resources.bombsmall;
+                                }
+                            }
+                        }
+                    }
+
+                    await Task.Delay(3000);
+                    playSound(Minefield.Properties.Resources.Game, true, false);
+                }
+                else if (Loadouts[loadoutIndex] == "Ninja")
+                {
+
+                }
             }
         }
 
@@ -485,10 +538,10 @@ namespace Minefield
                 {
                     score += 1;
                     lblScore.Text = $"SCORE: {score}";
-                }
 
-                //Add Square to discovered list
-                discoveredSquares.Add($"({playerX},{playerY})");
+                    //Add Square to discovered list
+                    discoveredSquares.Add($"({playerX},{playerY})");
+                }
             }
 
             //Danger Level Calculation
@@ -601,6 +654,11 @@ namespace Minefield
 
         }
 
+        private void btnActivateAbility_Click(object sender, EventArgs e)
+        {
+            activateAbility();
+        }
+
         private void btnReplay_Click(object sender, EventArgs e)
         {
             startGame();
@@ -626,6 +684,21 @@ namespace Minefield
             TimeSpan ts = stopwatch.Elapsed; 
             String time = String.Format("{0:00}:{1:00}.{2:00}", ts.Minutes, ts.Seconds, ts.Milliseconds / 10);
             lblTimer.Text = time;
+        }
+
+        private void EverySecond_Tick(object sender, EventArgs e)
+        {
+            int cooldown = Convert.ToInt32(lblAbilityCooldown.Text.Remove(lblAbilityCooldown.Text.Length - 1));
+
+            if (cooldown > 0)
+            {
+                lblAbilityCooldown.Text = $"{(cooldown - 1).ToString()}s";
+            }
+            else
+            {
+                btnActivateAbility.FlatAppearance.BorderColor = Color.ForestGreen;
+                isAbilityReady = true;
+            }
         }
     }
 }

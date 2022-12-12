@@ -450,8 +450,8 @@ namespace Minefield
             this.lblTimer = new System.Windows.Forms.Label();
             this.UpdateStopwatchInterval = new System.Windows.Forms.Timer(this.components);
             this.btnActivateAbility = new System.Windows.Forms.Button();
-            this.AbilityCooldown = new System.Windows.Forms.Timer(this.components);
             this.lblAbilityCooldown = new System.Windows.Forms.Label();
+            this.EverySecond = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbGameOver)).BeginInit();
             this.PnlDpad.SuspendLayout();
@@ -4265,11 +4265,7 @@ namespace Minefield
             this.btnActivateAbility.Size = new System.Drawing.Size(80, 70);
             this.btnActivateAbility.TabIndex = 9;
             this.btnActivateAbility.UseVisualStyleBackColor = true;
-            // 
-            // AbilityCooldown
-            // 
-            this.AbilityCooldown.Enabled = true;
-            this.AbilityCooldown.Interval = 20000;
+            this.btnActivateAbility.Click += new System.EventHandler(this.btnActivateAbility_Click);
             // 
             // lblAbilityCooldown
             // 
@@ -4280,7 +4276,12 @@ namespace Minefield
             this.lblAbilityCooldown.TabIndex = 10;
             this.lblAbilityCooldown.Text = "0s";
             this.lblAbilityCooldown.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblAbilityCooldown.Visible = false;
+            // 
+            // EverySecond
+            // 
+            this.EverySecond.Enabled = true;
+            this.EverySecond.Interval = 1000;
+            this.EverySecond.Tick += new System.EventHandler(this.EverySecond_Tick);
             // 
             // MainGame
             // 
@@ -4730,8 +4731,8 @@ namespace Minefield
         private Timer UpdateStopwatchInterval;
         private Button btnEndGame;
         private Button btnActivateAbility;
-        private Timer AbilityCooldown;
         private Label lblAbilityCooldown;
+        private Timer EverySecond;
     }
 }
 

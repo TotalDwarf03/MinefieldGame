@@ -56,7 +56,6 @@ namespace Minefield
             {
                 using (player = new SoundPlayer(soundFile))
                 {
-                    player.Load();
                     player.PlayLooping();
                 }
             }
@@ -64,6 +63,7 @@ namespace Minefield
             {
                 using (player = new SoundPlayer(soundFile))
                 {
+                    player.Stream.Position = 0;
                     player.PlaySync();
                 }
             }
