@@ -19,7 +19,7 @@ namespace Minefield.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Resources {
@@ -116,6 +116,16 @@ namespace Minefield.Properties {
         public static System.Drawing.Bitmap _3Lives {
             get {
                 object obj = ResourceManager.GetObject("_3Lives", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap arsonistLoadType {
+            get {
+                object obj = ResourceManager.GetObject("arsonistLoadType", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -240,6 +250,16 @@ namespace Minefield.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap flagGameType {
+            get {
+                object obj = ResourceManager.GetObject("flagGameType", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
         public static System.IO.UnmanagedMemoryStream Game {
@@ -348,6 +368,16 @@ namespace Minefield.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap ninjaLoadType {
+            get {
+                object obj = ResourceManager.GetObject("ninjaLoadType", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap nobomb {
             get {
                 object obj = ResourceManager.GetObject("nobomb", resourceCulture);
@@ -403,11 +433,50 @@ namespace Minefield.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap searchGameType {
+            get {
+                object obj = ResourceManager.GetObject("searchGameType", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
         public static System.IO.UnmanagedMemoryStream select {
             get {
                 return ResourceManager.GetStream("select", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to gametype-search,gamedesc-The further you go, the less you remember, a true test of memory and skill!,loadout-arsonist,loaddesc-Use your love for pyrotechnics to light up the nearby area!.
+        /// </summary>
+        public static string Settings {
+            get {
+                return ResourceManager.GetString("Settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap settingsBG {
+            get {
+                object obj = ResourceManager.GetObject("settingsBG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap settingsLogo {
+            get {
+                object obj = ResourceManager.GetObject("settingsLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

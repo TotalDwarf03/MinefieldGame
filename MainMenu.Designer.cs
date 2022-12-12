@@ -33,6 +33,7 @@
             this.btnStartGame = new System.Windows.Forms.Button();
             this.btnLeaderboard = new System.Windows.Forms.Button();
             this.btnQuit = new System.Windows.Forms.Button();
+            this.btnSettings = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,17 +78,31 @@
             // 
             // btnQuit
             // 
-            this.btnQuit.BackColor = System.Drawing.Color.Magenta;
+            this.btnQuit.BackColor = System.Drawing.Color.Aqua;
             this.btnQuit.FlatAppearance.BorderSize = 0;
             this.btnQuit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuit.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnQuit.Location = new System.Drawing.Point(321, 333);
+            this.btnQuit.Location = new System.Drawing.Point(321, 392);
             this.btnQuit.Name = "btnQuit";
             this.btnQuit.Size = new System.Drawing.Size(158, 37);
             this.btnQuit.TabIndex = 7;
             this.btnQuit.Text = "QUIT";
             this.btnQuit.UseVisualStyleBackColor = false;
             this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
+            // 
+            // btnSettings
+            // 
+            this.btnSettings.BackColor = System.Drawing.Color.Magenta;
+            this.btnSettings.FlatAppearance.BorderSize = 0;
+            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnSettings.Location = new System.Drawing.Point(289, 333);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Size = new System.Drawing.Size(219, 37);
+            this.btnSettings.TabIndex = 8;
+            this.btnSettings.Text = "SETTINGS";
+            this.btnSettings.UseVisualStyleBackColor = false;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
             // MainMenu
             // 
@@ -96,6 +111,7 @@
             this.BackgroundImage = global::Minefield.Properties.Resources.mainMenuBG2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 500);
+            this.Controls.Add(this.btnSettings);
             this.Controls.Add(this.btnQuit);
             this.Controls.Add(this.btnLeaderboard);
             this.Controls.Add(this.btnStartGame);
@@ -119,5 +135,6 @@
         private System.Windows.Forms.Button btnStartGame;
         private System.Windows.Forms.Button btnLeaderboard;
         private System.Windows.Forms.Button btnQuit;
+        private System.Windows.Forms.Button btnSettings;
     }
 }

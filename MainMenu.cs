@@ -28,6 +28,17 @@ namespace Minefield
                     }
                 }
             }
+
+            if (File.Exists("Settings.txt") == false)
+            {
+                using (FileStream f = new FileStream("Settings.txt", FileMode.OpenOrCreate))
+                {
+                    using (StreamWriter s = new StreamWriter(f))
+                    {
+                        s.WriteLine(Minefield.Properties.Resources.Settings);
+                    }
+                }
+            }
         }
 
 
@@ -63,22 +74,6 @@ namespace Minefield
             playSound(Minefield.Properties.Resources.MainMenu, true);
         }
 
-        private void btnQuit_Click(object sender, EventArgs e)
-        {
-            playSound(Minefield.Properties.Resources.select, false);
-
-            DialogResult dialogResult = MessageBox.Show("Are you sure you want to Quit?", "Quit?", MessageBoxButtons.YesNo);
-
-            if (dialogResult == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-            else
-            {
-                playSound(Minefield.Properties.Resources.MainMenu, true);
-            }
-        }
-
         private void btnStartGame_Click(object sender, EventArgs e)
         {
             playSound(Minefield.Properties.Resources.select, false);
@@ -95,6 +90,31 @@ namespace Minefield
             var Leaderboard = new Leaderboard();
             Leaderboard.Show();
             this.Hide();
+        }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            playSound(Minefield.Properties.Resources.select, false);
+
+            var Settings = new Settings();
+            Settings.Show();
+            this.Hide();
+        }
+
+        private void btnQuit_Click(object sender, EventArgs e)
+        {
+            playSound(Minefield.Properties.Resources.select, false);
+
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to Quit?", "Quit?", MessageBoxButtons.YesNo);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else
+            {
+                playSound(Minefield.Properties.Resources.MainMenu, true);
+            }
         }
 
         private void MainMenu_VisibleChanged(object sender, EventArgs e)
