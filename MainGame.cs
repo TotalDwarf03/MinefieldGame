@@ -264,7 +264,9 @@ namespace Minefield
         {
             if (Loadouts[loadoutIndex] == "Arsonist")
             {
+                Label label = getLabel(playerX, playerY);
 
+                label.Image = Minefield.Properties.Resources.campfire;
             }
             else if (Loadouts[loadoutIndex] == "Ninja")
             {
