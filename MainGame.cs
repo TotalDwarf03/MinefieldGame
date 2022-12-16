@@ -590,10 +590,17 @@ namespace Minefield
                 }
             }
 
-            MineMap[0, 19] = 0; //Start Square cannot be a mine
+            // Stop Start Square from being a mine
+            MineMap[0, 19] = 0; 
+
+            // Stops Squares adjacent to starting and ending tile from being mines (stops level from being impossible)
+            MineMap[1, 19] = 0;
+            MineMap[0, 18] = 0;
+            MineMap[19, 0] = 0;
+            MineMap[19, 1] = 0;
+
             MineMap[19, 0] = 2; //Designates end square
 
-            MineMap[3, 19] = 2; //TEST PURPOSES PLEASE REMOVE
         }
 
         /// <summary>
@@ -990,7 +997,7 @@ namespace Minefield
                     label.Image = null;
                     flaggedSquares.Remove(label);
                 }
-                else
+                else if (label.BackColor != Color.Transparent)
                 {
                     label.Image = Minefield.Properties.Resources.flagGameTypeSmall;
                     flaggedSquares.Add(label);
