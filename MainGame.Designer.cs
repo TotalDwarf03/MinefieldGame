@@ -452,6 +452,7 @@ namespace Minefield
             this.btnActivateAbility = new System.Windows.Forms.Button();
             this.lblAbilityCooldown = new System.Windows.Forms.Label();
             this.EverySecond = new System.Windows.Forms.Timer(this.components);
+            this.FiveSeconds = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbGameOver)).BeginInit();
             this.PnlDpad.SuspendLayout();
@@ -4682,6 +4683,11 @@ namespace Minefield
             this.EverySecond.Interval = 1000;
             this.EverySecond.Tick += new System.EventHandler(this.EverySecond_Tick);
             // 
+            // FiveSeconds
+            // 
+            this.FiveSeconds.Interval = 5000;
+            this.FiveSeconds.Tick += new System.EventHandler(this.FiveSeconds_Tick);
+            // 
             // MainGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -5132,6 +5138,7 @@ namespace Minefield
         private Button btnActivateAbility;
         private Label lblAbilityCooldown;
         private Timer EverySecond;
+        private Timer FiveSeconds;
     }
 }
 

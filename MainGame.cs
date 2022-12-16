@@ -43,7 +43,7 @@ namespace Minefield
 
         // List to hold all squares which have already been discovered
         // Used a list over array because the size is variable
-        List<string> discoveredSquares = new List<string>();
+        List<Label> discoveredSquares = new List<Label>();
 
         // List to hold all flagged squares
         List<Label> flaggedSquares = new List<Label>();
@@ -124,6 +124,11 @@ namespace Minefield
         {
             isPlayerExploding = true;
 
+            if (lives == 0)
+            {
+                showMines();
+            }
+
             playSound(Minefield.Properties.Resources.Explosion, false, false);
 
             lblPlayer.Image = Resources.explosionP1;
@@ -149,13 +154,23 @@ namespace Minefield
 
                 checkEnv(playerX, playerY);
 
+                btnActivateAbility.FlatAppearance.BorderColor = Color.ForestGreen;
+                lblAbilityCooldown.Text = "0s";
+                isAbilityReady = true;
+
+                // Reset Discovered Squares List
+                discoveredSquares.RemoveRange(0, discoveredSquares.Count);
+                discoveredSquares.Add(getLabel(playerX, playerY));
+
+                removeAllFlags();
+
                 playSound(Minefield.Properties.Resources.Game, true, false);
             }
 
             isPlayerExploding = false;
         }
 
-       #region GameLogic
+        #region GameLogic
         /// <summary>
         /// <para> Restarts the game by: </para>
         /// <br> - Generating a new minefield </br>
@@ -242,6 +257,9 @@ namespace Minefield
 
         string[] Loadouts = { "Arsonist", "Ninja" };
 
+        // Holds the cooldowns for each loadout
+        int[] LoadoutCooldowns = { 40, 20 };
+
         // Holds the icons for each loadout
         Bitmap[] LoadoutIcons = { Minefield.Properties.Resources.arsonistLoadType, Minefield.Properties.Resources.ninjaLoadType };
 
@@ -300,7 +318,7 @@ namespace Minefield
             if (isAbilityReady)
             {
                 btnActivateAbility.FlatAppearance.BorderColor = Color.Red;
-                lblAbilityCooldown.Text = "20s";
+                lblAbilityCooldown.Text = $"{LoadoutCooldowns[loadoutIndex]}s";
                 isAbilityReady = false;
 
                 if (Loadouts[loadoutIndex] == "Arsonist")
@@ -312,14 +330,27 @@ namespace Minefield
                     centreLabel.Image = Minefield.Properties.Resources.campfire;
                     centreLabel.BackColor = Color.Transparent;
 
+                    // Old reveal layout (top to bottom)
+
+                    //int[,] revealRadius =
+                    //{
+                    //  { playerX, playerY - 2 },
+                    //  { playerX-1, playerY-1 }, { playerX, playerY-1 }, { playerX+1, playerY-1 },
+                    //  { playerX-2, playerY }, { playerX-1, playerY }, { playerX+1, playerY }, { playerX+2, playerY },
+                    //  { playerX-1, playerY+1 }, { playerX, playerY+1 }, { playerX+1, playerY+1 },
+                    //  { playerX, playerY+2 }
+                    //};
+
+                    // New reveal layout (outside to inside) - for search gamemode
+
                     int[,] revealRadius =
                     {
-                    { playerX, playerY - 2 },
-                    { playerX-1, playerY-1 }, { playerX, playerY-1 }, { playerX+1, playerY-1 },
-                    { playerX-2, playerY }, { playerX-1, playerY }, { playerX+1, playerY }, { playerX+2, playerY },
-                    { playerX-1, playerY+1 }, { playerX, playerY+1 }, { playerX+1, playerY+1 },
-                    { playerX, playerY+2 }
-                };
+                        // Outer Ring
+                        { playerX, playerY - 2 }, { playerX+1, playerY-1 }, { playerX+2, playerY }, { playerX+1, playerY+1 }, { playerX, playerY+2 }, { playerX-1, playerY+1 }, { playerX-2, playerY }, { playerX-1, playerY-1 },
+
+                        // Inner Ring
+                        { playerX, playerY-1 }, { playerX+1, playerY }, { playerX-1, playerY }, { playerX, playerY+1 }
+                    };
 
                     for (int i = 0; i < 12; i++)
                     {
@@ -335,9 +366,24 @@ namespace Minefield
                                 {
                                     label.Image = Minefield.Properties.Resources.bombsmall;
                                 }
+
+                                if (checkIfSquareDiscovered(0, 0, label) == true)
+                                {
+                                    discoveredSquares.Remove(label);
+                                    discoveredSquares.Add(label);
+                                }
+                                else
+                                {
+                                    discoveredSquares.Add(label);
+                                }
                             }
                         }
                     }
+
+                    // Move the square the player is on to the end of the list
+                    Label labelUnderPlayer = getLabel(playerX, playerY);
+                    discoveredSquares.Remove(labelUnderPlayer);
+                    discoveredSquares.Add(labelUnderPlayer);
 
                     await Task.Delay(3000);
                     playSound(Minefield.Properties.Resources.Game, true, false);
@@ -370,7 +416,7 @@ namespace Minefield
                                     if (checkIfSquareDiscovered(playerX, playerY - i) == false)
                                     {
                                         //Add Square to discovered list
-                                        discoveredSquares.Add($"({playerX},{playerY - i})");
+                                        discoveredSquares.Add(label);
                                     }
                                 }
                             }
@@ -382,7 +428,7 @@ namespace Minefield
                             if (checkIfSquareDiscovered(playerX, playerY) == false)
                             {
                                 //Add Square to discovered list
-                                discoveredSquares.Add($"({playerX},{playerY})");
+                                discoveredSquares.Add(getLabel(playerX, playerY));
                             }
                             break;
 
@@ -408,7 +454,7 @@ namespace Minefield
                                     if (checkIfSquareDiscovered(playerX, playerY + i) == false)
                                     {
                                         //Add Square to discovered list
-                                        discoveredSquares.Add($"({playerX},{playerY + i})");
+                                        discoveredSquares.Add(label);
                                     }
                                 }
                             }
@@ -420,7 +466,7 @@ namespace Minefield
                             if (checkIfSquareDiscovered(playerX, playerY) == false)
                             {
                                 //Add Square to discovered list
-                                discoveredSquares.Add($"({playerX},{playerY})");
+                                discoveredSquares.Add(getLabel(playerX, playerY));
                             }
                             break;
 
@@ -446,7 +492,7 @@ namespace Minefield
                                     if (checkIfSquareDiscovered(playerX - i, playerY) == false)
                                     {
                                         //Add Square to discovered list
-                                        discoveredSquares.Add($"({playerX - i},{playerY})");
+                                        discoveredSquares.Add(label);
                                     }
                                 }
                             }
@@ -458,7 +504,7 @@ namespace Minefield
                             if (checkIfSquareDiscovered(playerX, playerY) == false)
                             {
                                 //Add Square to discovered list
-                                discoveredSquares.Add($"({playerX},{playerY})");
+                                discoveredSquares.Add(getLabel(playerX, playerY));
                             }
                             break;
 
@@ -484,7 +530,7 @@ namespace Minefield
                                     if (checkIfSquareDiscovered(playerX + i, playerY) == false)
                                     {
                                         //Add Square to discovered list
-                                        discoveredSquares.Add($"({playerX + i},{playerY})");
+                                        discoveredSquares.Add(label);
                                     }
                                 }
                             }
@@ -496,7 +542,7 @@ namespace Minefield
                             if (checkIfSquareDiscovered(playerX, playerY) == false)
                             {
                                 //Add Square to discovered list
-                                discoveredSquares.Add($"({playerX},{playerY})");
+                                discoveredSquares.Add(getLabel(playerX, playerY));
                             }
                             break;
                     }
@@ -505,6 +551,16 @@ namespace Minefield
                     playSound(Minefield.Properties.Resources.Game, true, false);
                 }
             }
+        }
+
+        private void removeAllFlags()
+        {
+            foreach (Label label in flaggedSquares)
+            {
+                label.Image = null;
+            }
+
+            flaggedSquares.RemoveRange(0, flaggedSquares.Count);
         }
 
         #endregion
@@ -657,13 +713,18 @@ namespace Minefield
 
         #region EnvironmentChecks
 
-        private bool checkIfSquareDiscovered(int x, int y)
+        private bool checkIfSquareDiscovered(int x, int y, Label label = null)
         {
             bool isSquareDiscovered = false;
 
-            foreach (String square in discoveredSquares)
+            if (label == null)
             {
-                if ($"({x},{y})" == square)
+                label = getLabel(x, y);
+            }
+
+            foreach (Label square in discoveredSquares)
+            {
+                if (label == square)
                 {
                     isSquareDiscovered = true;
                 }
@@ -705,41 +766,38 @@ namespace Minefield
                     btnEndGame.Visible = false;
                 }
 
-                if (lives >= 1)
+                switch (lives)
                 {
-                    switch (lives)
-                    {
-                        case 3:
-                            pbLife.BackgroundImage = Resources._2Lives;
-                            lives -= 1;
+                    case 3:
+                        pbLife.BackgroundImage = Resources._2Lives;
+                        lives -= 1;
 
-                            score -= 5;
-                            lblScore.Text = $"SCORE: {score}";
+                        score -= 5;
+                        lblScore.Text = $"SCORE: {score}";
 
-                            explodeAnimation();
-                            break;
-                        case 2:
-                            pbLife.BackgroundImage = Resources._1life;
-                            lives -= 1;
+                        explodeAnimation();
+                        break;
+                    case 2:
+                        pbLife.BackgroundImage = Resources._1life;
+                        lives -= 1;
 
-                            score -= 5;
-                            lblScore.Text = $"SCORE: {score}";
+                        score -= 5;
+                        lblScore.Text = $"SCORE: {score}";
 
-                            explodeAnimation();                            
-                            break;
-                        case 1:
-                            pbLife.BackgroundImage = Resources.nolife;
-                            lives -= 1;
+                        explodeAnimation();                            
+                        break;
+                    case 1:
+                        pbLife.BackgroundImage = Resources.nolife;
+                        lives -= 1;
 
-                            score -= 5;
-                            lblScore.Text = $"SCORE: {score}";
+                        score -= 5;
+                        lblScore.Text = $"SCORE: {score}";
 
-                            explodeAnimation();
-                            showMines();
-                            gameOver();
-                            break;
-                    }
+                        explodeAnimation();
+                        gameOver();
+                        break;
                 }
+                
             }
             else if (MineMap[x, y] == 2)
             {
@@ -760,8 +818,7 @@ namespace Minefield
                     score += 1;
                     lblScore.Text = $"SCORE: {score}";
 
-                    //Add Square to discovered list
-                    discoveredSquares.Add($"({playerX},{playerY})");
+                    discoveredSquares.Add(getLabel(playerX, playerY));
                 }
             }
 
@@ -818,6 +875,11 @@ namespace Minefield
         {
             getGameSettings();
             btnActivateAbility.BackgroundImage = LoadoutIcons[loadoutIndex];
+
+            if (Gamemodes[gamemodeIndex] == "Search")
+            {
+                FiveSeconds.Enabled = true;
+            }
 
             startGame();
         }
@@ -915,6 +977,7 @@ namespace Minefield
             }
         }
 
+
         // If one of the covering labels are clicked
         private void flagSquare(object sender, EventArgs e)
         {
@@ -932,6 +995,19 @@ namespace Minefield
                     label.Image = Minefield.Properties.Resources.flagGameTypeSmall;
                     flaggedSquares.Add(label);
                 }
+            }
+        }
+
+        private void FiveSeconds_Tick(object sender, EventArgs e)
+        {
+            Label oldestDiscoveredLabel = discoveredSquares[0];
+
+            if (oldestDiscoveredLabel != getLabel(playerX, playerY))
+            {
+                oldestDiscoveredLabel.BackColor = Color.MidnightBlue;
+                oldestDiscoveredLabel.Image = null;
+
+                discoveredSquares.Remove(oldestDiscoveredLabel);
             }
         }
     }
