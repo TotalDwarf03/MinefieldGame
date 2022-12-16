@@ -466,6 +466,7 @@ namespace Minefield
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(20, 20);
             this.label1.TabIndex = 1;
+            this.label1.Click += new System.EventHandler(this.flagSquare);
             // 
             // label2
             // 
@@ -474,6 +475,7 @@ namespace Minefield
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(20, 20);
             this.label2.TabIndex = 1;
+            this.label2.Click += new System.EventHandler(this.flagSquare);
             // 
             // label3
             // 
@@ -482,6 +484,7 @@ namespace Minefield
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(20, 20);
             this.label3.TabIndex = 1;
+            this.label3.Click += new System.EventHandler(this.flagSquare);
             // 
             // label4
             // 
@@ -490,6 +493,7 @@ namespace Minefield
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(20, 20);
             this.label4.TabIndex = 1;
+            this.label4.Click += new System.EventHandler(this.flagSquare);
             // 
             // label5
             // 
@@ -498,6 +502,7 @@ namespace Minefield
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(20, 20);
             this.label5.TabIndex = 1;
+            this.label5.Click += new System.EventHandler(this.flagSquare);
             // 
             // label6
             // 
@@ -506,6 +511,7 @@ namespace Minefield
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(20, 20);
             this.label6.TabIndex = 1;
+            this.label6.Click += new System.EventHandler(this.flagSquare);
             // 
             // label7
             // 
@@ -514,6 +520,7 @@ namespace Minefield
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(20, 20);
             this.label7.TabIndex = 1;
+            this.label7.Click += new System.EventHandler(this.flagSquare);
             // 
             // label8
             // 
@@ -522,6 +529,7 @@ namespace Minefield
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(20, 20);
             this.label8.TabIndex = 1;
+            this.label8.Click += new System.EventHandler(this.flagSquare);
             // 
             // label9
             // 
@@ -530,6 +538,7 @@ namespace Minefield
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(20, 20);
             this.label9.TabIndex = 1;
+            this.label9.Click += new System.EventHandler(this.flagSquare);
             // 
             // label10
             // 
@@ -538,6 +547,7 @@ namespace Minefield
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(20, 20);
             this.label10.TabIndex = 1;
+            this.label10.Click += new System.EventHandler(this.flagSquare);
             // 
             // label11
             // 
@@ -546,6 +556,7 @@ namespace Minefield
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(20, 20);
             this.label11.TabIndex = 1;
+            this.label11.Click += new System.EventHandler(this.flagSquare);
             // 
             // label12
             // 
@@ -554,6 +565,7 @@ namespace Minefield
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(20, 20);
             this.label12.TabIndex = 1;
+            this.label12.Click += new System.EventHandler(this.flagSquare);
             // 
             // label13
             // 
@@ -562,6 +574,7 @@ namespace Minefield
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(20, 20);
             this.label13.TabIndex = 1;
+            this.label13.Click += new System.EventHandler(this.flagSquare);
             // 
             // label14
             // 
@@ -570,6 +583,7 @@ namespace Minefield
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(20, 20);
             this.label14.TabIndex = 1;
+            this.label14.Click += new System.EventHandler(this.flagSquare);
             // 
             // label15
             // 
@@ -578,6 +592,7 @@ namespace Minefield
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(20, 20);
             this.label15.TabIndex = 1;
+            this.label15.Click += new System.EventHandler(this.flagSquare);
             // 
             // label16
             // 
@@ -586,6 +601,7 @@ namespace Minefield
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(20, 20);
             this.label16.TabIndex = 1;
+            this.label16.Click += new System.EventHandler(this.flagSquare);
             // 
             // label17
             // 
@@ -594,6 +610,7 @@ namespace Minefield
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(20, 20);
             this.label17.TabIndex = 1;
+            this.label17.Click += new System.EventHandler(this.flagSquare);
             // 
             // label18
             // 
@@ -602,6 +619,7 @@ namespace Minefield
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(20, 20);
             this.label18.TabIndex = 1;
+            this.label18.Click += new System.EventHandler(this.flagSquare);
             // 
             // label19
             // 
@@ -610,6 +628,7 @@ namespace Minefield
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(20, 20);
             this.label19.TabIndex = 1;
+            this.label19.Click += new System.EventHandler(this.flagSquare);
             // 
             // label21
             // 
@@ -618,6 +637,7 @@ namespace Minefield
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(20, 20);
             this.label21.TabIndex = 1;
+            this.label21.Click += new System.EventHandler(this.flagSquare);
             // 
             // label22
             // 
@@ -626,6 +646,7 @@ namespace Minefield
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(20, 20);
             this.label22.TabIndex = 1;
+            this.label22.Click += new System.EventHandler(this.flagSquare);
             // 
             // label23
             // 
@@ -634,6 +655,7 @@ namespace Minefield
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(20, 20);
             this.label23.TabIndex = 1;
+            this.label23.Click += new System.EventHandler(this.flagSquare);
             // 
             // label24
             // 
@@ -642,6 +664,7 @@ namespace Minefield
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(20, 20);
             this.label24.TabIndex = 1;
+            this.label24.Click += new System.EventHandler(this.flagSquare);
             // 
             // label25
             // 
@@ -650,6 +673,7 @@ namespace Minefield
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(20, 20);
             this.label25.TabIndex = 1;
+            this.label25.Click += new System.EventHandler(this.flagSquare);
             // 
             // label26
             // 
@@ -658,6 +682,7 @@ namespace Minefield
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(20, 20);
             this.label26.TabIndex = 1;
+            this.label26.Click += new System.EventHandler(this.flagSquare);
             // 
             // label27
             // 
@@ -666,6 +691,7 @@ namespace Minefield
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(20, 20);
             this.label27.TabIndex = 1;
+            this.label27.Click += new System.EventHandler(this.flagSquare);
             // 
             // label28
             // 
@@ -674,6 +700,7 @@ namespace Minefield
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(20, 20);
             this.label28.TabIndex = 1;
+            this.label28.Click += new System.EventHandler(this.flagSquare);
             // 
             // label29
             // 
@@ -682,6 +709,7 @@ namespace Minefield
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(20, 20);
             this.label29.TabIndex = 1;
+            this.label29.Click += new System.EventHandler(this.flagSquare);
             // 
             // label30
             // 
@@ -690,6 +718,7 @@ namespace Minefield
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(20, 20);
             this.label30.TabIndex = 1;
+            this.label30.Click += new System.EventHandler(this.flagSquare);
             // 
             // label31
             // 
@@ -698,6 +727,7 @@ namespace Minefield
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(20, 20);
             this.label31.TabIndex = 1;
+            this.label31.Click += new System.EventHandler(this.flagSquare);
             // 
             // label32
             // 
@@ -706,6 +736,7 @@ namespace Minefield
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(20, 20);
             this.label32.TabIndex = 1;
+            this.label32.Click += new System.EventHandler(this.flagSquare);
             // 
             // label33
             // 
@@ -714,6 +745,7 @@ namespace Minefield
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(20, 20);
             this.label33.TabIndex = 1;
+            this.label33.Click += new System.EventHandler(this.flagSquare);
             // 
             // label34
             // 
@@ -722,6 +754,7 @@ namespace Minefield
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(20, 20);
             this.label34.TabIndex = 1;
+            this.label34.Click += new System.EventHandler(this.flagSquare);
             // 
             // label35
             // 
@@ -730,6 +763,7 @@ namespace Minefield
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(20, 20);
             this.label35.TabIndex = 1;
+            this.label35.Click += new System.EventHandler(this.flagSquare);
             // 
             // label36
             // 
@@ -738,6 +772,7 @@ namespace Minefield
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(20, 20);
             this.label36.TabIndex = 1;
+            this.label36.Click += new System.EventHandler(this.flagSquare);
             // 
             // label37
             // 
@@ -746,6 +781,7 @@ namespace Minefield
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(20, 20);
             this.label37.TabIndex = 1;
+            this.label37.Click += new System.EventHandler(this.flagSquare);
             // 
             // label38
             // 
@@ -754,6 +790,7 @@ namespace Minefield
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(20, 20);
             this.label38.TabIndex = 1;
+            this.label38.Click += new System.EventHandler(this.flagSquare);
             // 
             // label39
             // 
@@ -762,6 +799,7 @@ namespace Minefield
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(20, 20);
             this.label39.TabIndex = 1;
+            this.label39.Click += new System.EventHandler(this.flagSquare);
             // 
             // label40
             // 
@@ -770,6 +808,7 @@ namespace Minefield
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(20, 20);
             this.label40.TabIndex = 1;
+            this.label40.Click += new System.EventHandler(this.flagSquare);
             // 
             // label41
             // 
@@ -778,6 +817,7 @@ namespace Minefield
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(20, 20);
             this.label41.TabIndex = 1;
+            this.label41.Click += new System.EventHandler(this.flagSquare);
             // 
             // label42
             // 
@@ -786,6 +826,7 @@ namespace Minefield
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(20, 20);
             this.label42.TabIndex = 1;
+            this.label42.Click += new System.EventHandler(this.flagSquare);
             // 
             // label43
             // 
@@ -794,6 +835,7 @@ namespace Minefield
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(20, 20);
             this.label43.TabIndex = 1;
+            this.label43.Click += new System.EventHandler(this.flagSquare);
             // 
             // label44
             // 
@@ -802,6 +844,7 @@ namespace Minefield
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(20, 20);
             this.label44.TabIndex = 1;
+            this.label44.Click += new System.EventHandler(this.flagSquare);
             // 
             // label45
             // 
@@ -810,6 +853,7 @@ namespace Minefield
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(20, 20);
             this.label45.TabIndex = 1;
+            this.label45.Click += new System.EventHandler(this.flagSquare);
             // 
             // label46
             // 
@@ -818,6 +862,7 @@ namespace Minefield
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(20, 20);
             this.label46.TabIndex = 1;
+            this.label46.Click += new System.EventHandler(this.flagSquare);
             // 
             // label47
             // 
@@ -826,6 +871,7 @@ namespace Minefield
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(20, 20);
             this.label47.TabIndex = 1;
+            this.label47.Click += new System.EventHandler(this.flagSquare);
             // 
             // label48
             // 
@@ -834,6 +880,7 @@ namespace Minefield
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(20, 20);
             this.label48.TabIndex = 1;
+            this.label48.Click += new System.EventHandler(this.flagSquare);
             // 
             // label49
             // 
@@ -842,6 +889,7 @@ namespace Minefield
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(20, 20);
             this.label49.TabIndex = 1;
+            this.label49.Click += new System.EventHandler(this.flagSquare);
             // 
             // label50
             // 
@@ -850,6 +898,7 @@ namespace Minefield
             this.label50.Name = "label50";
             this.label50.Size = new System.Drawing.Size(20, 20);
             this.label50.TabIndex = 1;
+            this.label50.Click += new System.EventHandler(this.flagSquare);
             // 
             // label51
             // 
@@ -858,6 +907,7 @@ namespace Minefield
             this.label51.Name = "label51";
             this.label51.Size = new System.Drawing.Size(20, 20);
             this.label51.TabIndex = 1;
+            this.label51.Click += new System.EventHandler(this.flagSquare);
             // 
             // label52
             // 
@@ -866,6 +916,7 @@ namespace Minefield
             this.label52.Name = "label52";
             this.label52.Size = new System.Drawing.Size(20, 20);
             this.label52.TabIndex = 1;
+            this.label52.Click += new System.EventHandler(this.flagSquare);
             // 
             // label53
             // 
@@ -874,6 +925,7 @@ namespace Minefield
             this.label53.Name = "label53";
             this.label53.Size = new System.Drawing.Size(20, 20);
             this.label53.TabIndex = 1;
+            this.label53.Click += new System.EventHandler(this.flagSquare);
             // 
             // label54
             // 
@@ -882,6 +934,7 @@ namespace Minefield
             this.label54.Name = "label54";
             this.label54.Size = new System.Drawing.Size(20, 20);
             this.label54.TabIndex = 1;
+            this.label54.Click += new System.EventHandler(this.flagSquare);
             // 
             // label55
             // 
@@ -890,6 +943,7 @@ namespace Minefield
             this.label55.Name = "label55";
             this.label55.Size = new System.Drawing.Size(20, 20);
             this.label55.TabIndex = 1;
+            this.label55.Click += new System.EventHandler(this.flagSquare);
             // 
             // label56
             // 
@@ -898,6 +952,7 @@ namespace Minefield
             this.label56.Name = "label56";
             this.label56.Size = new System.Drawing.Size(20, 20);
             this.label56.TabIndex = 1;
+            this.label56.Click += new System.EventHandler(this.flagSquare);
             // 
             // label57
             // 
@@ -906,6 +961,7 @@ namespace Minefield
             this.label57.Name = "label57";
             this.label57.Size = new System.Drawing.Size(20, 20);
             this.label57.TabIndex = 1;
+            this.label57.Click += new System.EventHandler(this.flagSquare);
             // 
             // label58
             // 
@@ -914,6 +970,7 @@ namespace Minefield
             this.label58.Name = "label58";
             this.label58.Size = new System.Drawing.Size(20, 20);
             this.label58.TabIndex = 1;
+            this.label58.Click += new System.EventHandler(this.flagSquare);
             // 
             // label59
             // 
@@ -922,6 +979,7 @@ namespace Minefield
             this.label59.Name = "label59";
             this.label59.Size = new System.Drawing.Size(20, 20);
             this.label59.TabIndex = 1;
+            this.label59.Click += new System.EventHandler(this.flagSquare);
             // 
             // label60
             // 
@@ -930,6 +988,7 @@ namespace Minefield
             this.label60.Name = "label60";
             this.label60.Size = new System.Drawing.Size(20, 20);
             this.label60.TabIndex = 1;
+            this.label60.Click += new System.EventHandler(this.flagSquare);
             // 
             // label61
             // 
@@ -938,6 +997,7 @@ namespace Minefield
             this.label61.Name = "label61";
             this.label61.Size = new System.Drawing.Size(20, 20);
             this.label61.TabIndex = 1;
+            this.label61.Click += new System.EventHandler(this.flagSquare);
             // 
             // label62
             // 
@@ -946,6 +1006,7 @@ namespace Minefield
             this.label62.Name = "label62";
             this.label62.Size = new System.Drawing.Size(20, 20);
             this.label62.TabIndex = 1;
+            this.label62.Click += new System.EventHandler(this.flagSquare);
             // 
             // label63
             // 
@@ -954,6 +1015,7 @@ namespace Minefield
             this.label63.Name = "label63";
             this.label63.Size = new System.Drawing.Size(20, 20);
             this.label63.TabIndex = 1;
+            this.label63.Click += new System.EventHandler(this.flagSquare);
             // 
             // label64
             // 
@@ -962,6 +1024,7 @@ namespace Minefield
             this.label64.Name = "label64";
             this.label64.Size = new System.Drawing.Size(20, 20);
             this.label64.TabIndex = 1;
+            this.label64.Click += new System.EventHandler(this.flagSquare);
             // 
             // label65
             // 
@@ -970,6 +1033,7 @@ namespace Minefield
             this.label65.Name = "label65";
             this.label65.Size = new System.Drawing.Size(20, 20);
             this.label65.TabIndex = 1;
+            this.label65.Click += new System.EventHandler(this.flagSquare);
             // 
             // label66
             // 
@@ -978,6 +1042,7 @@ namespace Minefield
             this.label66.Name = "label66";
             this.label66.Size = new System.Drawing.Size(20, 20);
             this.label66.TabIndex = 1;
+            this.label66.Click += new System.EventHandler(this.flagSquare);
             // 
             // label67
             // 
@@ -986,6 +1051,7 @@ namespace Minefield
             this.label67.Name = "label67";
             this.label67.Size = new System.Drawing.Size(20, 20);
             this.label67.TabIndex = 1;
+            this.label67.Click += new System.EventHandler(this.flagSquare);
             // 
             // label68
             // 
@@ -994,6 +1060,7 @@ namespace Minefield
             this.label68.Name = "label68";
             this.label68.Size = new System.Drawing.Size(20, 20);
             this.label68.TabIndex = 1;
+            this.label68.Click += new System.EventHandler(this.flagSquare);
             // 
             // label69
             // 
@@ -1002,6 +1069,7 @@ namespace Minefield
             this.label69.Name = "label69";
             this.label69.Size = new System.Drawing.Size(20, 20);
             this.label69.TabIndex = 1;
+            this.label69.Click += new System.EventHandler(this.flagSquare);
             // 
             // label70
             // 
@@ -1010,6 +1078,7 @@ namespace Minefield
             this.label70.Name = "label70";
             this.label70.Size = new System.Drawing.Size(20, 20);
             this.label70.TabIndex = 1;
+            this.label70.Click += new System.EventHandler(this.flagSquare);
             // 
             // label71
             // 
@@ -1018,6 +1087,7 @@ namespace Minefield
             this.label71.Name = "label71";
             this.label71.Size = new System.Drawing.Size(20, 20);
             this.label71.TabIndex = 1;
+            this.label71.Click += new System.EventHandler(this.flagSquare);
             // 
             // label72
             // 
@@ -1026,6 +1096,7 @@ namespace Minefield
             this.label72.Name = "label72";
             this.label72.Size = new System.Drawing.Size(20, 20);
             this.label72.TabIndex = 1;
+            this.label72.Click += new System.EventHandler(this.flagSquare);
             // 
             // label73
             // 
@@ -1034,6 +1105,7 @@ namespace Minefield
             this.label73.Name = "label73";
             this.label73.Size = new System.Drawing.Size(20, 20);
             this.label73.TabIndex = 1;
+            this.label73.Click += new System.EventHandler(this.flagSquare);
             // 
             // label74
             // 
@@ -1042,6 +1114,7 @@ namespace Minefield
             this.label74.Name = "label74";
             this.label74.Size = new System.Drawing.Size(20, 20);
             this.label74.TabIndex = 1;
+            this.label74.Click += new System.EventHandler(this.flagSquare);
             // 
             // label75
             // 
@@ -1050,6 +1123,7 @@ namespace Minefield
             this.label75.Name = "label75";
             this.label75.Size = new System.Drawing.Size(20, 20);
             this.label75.TabIndex = 1;
+            this.label75.Click += new System.EventHandler(this.flagSquare);
             // 
             // label76
             // 
@@ -1058,6 +1132,7 @@ namespace Minefield
             this.label76.Name = "label76";
             this.label76.Size = new System.Drawing.Size(20, 20);
             this.label76.TabIndex = 1;
+            this.label76.Click += new System.EventHandler(this.flagSquare);
             // 
             // label77
             // 
@@ -1066,6 +1141,7 @@ namespace Minefield
             this.label77.Name = "label77";
             this.label77.Size = new System.Drawing.Size(20, 20);
             this.label77.TabIndex = 1;
+            this.label77.Click += new System.EventHandler(this.flagSquare);
             // 
             // label78
             // 
@@ -1074,6 +1150,7 @@ namespace Minefield
             this.label78.Name = "label78";
             this.label78.Size = new System.Drawing.Size(20, 20);
             this.label78.TabIndex = 1;
+            this.label78.Click += new System.EventHandler(this.flagSquare);
             // 
             // label79
             // 
@@ -1082,6 +1159,7 @@ namespace Minefield
             this.label79.Name = "label79";
             this.label79.Size = new System.Drawing.Size(20, 20);
             this.label79.TabIndex = 1;
+            this.label79.Click += new System.EventHandler(this.flagSquare);
             // 
             // label80
             // 
@@ -1090,6 +1168,7 @@ namespace Minefield
             this.label80.Name = "label80";
             this.label80.Size = new System.Drawing.Size(20, 20);
             this.label80.TabIndex = 1;
+            this.label80.Click += new System.EventHandler(this.flagSquare);
             // 
             // label81
             // 
@@ -1098,6 +1177,7 @@ namespace Minefield
             this.label81.Name = "label81";
             this.label81.Size = new System.Drawing.Size(20, 20);
             this.label81.TabIndex = 1;
+            this.label81.Click += new System.EventHandler(this.flagSquare);
             // 
             // label82
             // 
@@ -1106,6 +1186,7 @@ namespace Minefield
             this.label82.Name = "label82";
             this.label82.Size = new System.Drawing.Size(20, 20);
             this.label82.TabIndex = 1;
+            this.label82.Click += new System.EventHandler(this.flagSquare);
             // 
             // label83
             // 
@@ -1114,6 +1195,7 @@ namespace Minefield
             this.label83.Name = "label83";
             this.label83.Size = new System.Drawing.Size(20, 20);
             this.label83.TabIndex = 1;
+            this.label83.Click += new System.EventHandler(this.flagSquare);
             // 
             // label84
             // 
@@ -1122,6 +1204,7 @@ namespace Minefield
             this.label84.Name = "label84";
             this.label84.Size = new System.Drawing.Size(20, 20);
             this.label84.TabIndex = 1;
+            this.label84.Click += new System.EventHandler(this.flagSquare);
             // 
             // label85
             // 
@@ -1130,6 +1213,7 @@ namespace Minefield
             this.label85.Name = "label85";
             this.label85.Size = new System.Drawing.Size(20, 20);
             this.label85.TabIndex = 1;
+            this.label85.Click += new System.EventHandler(this.flagSquare);
             // 
             // label86
             // 
@@ -1138,6 +1222,7 @@ namespace Minefield
             this.label86.Name = "label86";
             this.label86.Size = new System.Drawing.Size(20, 20);
             this.label86.TabIndex = 1;
+            this.label86.Click += new System.EventHandler(this.flagSquare);
             // 
             // label87
             // 
@@ -1146,6 +1231,7 @@ namespace Minefield
             this.label87.Name = "label87";
             this.label87.Size = new System.Drawing.Size(20, 20);
             this.label87.TabIndex = 1;
+            this.label87.Click += new System.EventHandler(this.flagSquare);
             // 
             // label88
             // 
@@ -1154,6 +1240,7 @@ namespace Minefield
             this.label88.Name = "label88";
             this.label88.Size = new System.Drawing.Size(20, 20);
             this.label88.TabIndex = 1;
+            this.label88.Click += new System.EventHandler(this.flagSquare);
             // 
             // label89
             // 
@@ -1162,6 +1249,7 @@ namespace Minefield
             this.label89.Name = "label89";
             this.label89.Size = new System.Drawing.Size(20, 20);
             this.label89.TabIndex = 1;
+            this.label89.Click += new System.EventHandler(this.flagSquare);
             // 
             // label90
             // 
@@ -1170,6 +1258,7 @@ namespace Minefield
             this.label90.Name = "label90";
             this.label90.Size = new System.Drawing.Size(20, 20);
             this.label90.TabIndex = 1;
+            this.label90.Click += new System.EventHandler(this.flagSquare);
             // 
             // label91
             // 
@@ -1178,6 +1267,7 @@ namespace Minefield
             this.label91.Name = "label91";
             this.label91.Size = new System.Drawing.Size(20, 20);
             this.label91.TabIndex = 1;
+            this.label91.Click += new System.EventHandler(this.flagSquare);
             // 
             // label92
             // 
@@ -1186,6 +1276,7 @@ namespace Minefield
             this.label92.Name = "label92";
             this.label92.Size = new System.Drawing.Size(20, 20);
             this.label92.TabIndex = 1;
+            this.label92.Click += new System.EventHandler(this.flagSquare);
             // 
             // label93
             // 
@@ -1194,6 +1285,7 @@ namespace Minefield
             this.label93.Name = "label93";
             this.label93.Size = new System.Drawing.Size(20, 20);
             this.label93.TabIndex = 1;
+            this.label93.Click += new System.EventHandler(this.flagSquare);
             // 
             // label94
             // 
@@ -1202,6 +1294,7 @@ namespace Minefield
             this.label94.Name = "label94";
             this.label94.Size = new System.Drawing.Size(20, 20);
             this.label94.TabIndex = 1;
+            this.label94.Click += new System.EventHandler(this.flagSquare);
             // 
             // label95
             // 
@@ -1210,6 +1303,7 @@ namespace Minefield
             this.label95.Name = "label95";
             this.label95.Size = new System.Drawing.Size(20, 20);
             this.label95.TabIndex = 1;
+            this.label95.Click += new System.EventHandler(this.flagSquare);
             // 
             // label96
             // 
@@ -1218,6 +1312,7 @@ namespace Minefield
             this.label96.Name = "label96";
             this.label96.Size = new System.Drawing.Size(20, 20);
             this.label96.TabIndex = 1;
+            this.label96.Click += new System.EventHandler(this.flagSquare);
             // 
             // label97
             // 
@@ -1226,6 +1321,7 @@ namespace Minefield
             this.label97.Name = "label97";
             this.label97.Size = new System.Drawing.Size(20, 20);
             this.label97.TabIndex = 1;
+            this.label97.Click += new System.EventHandler(this.flagSquare);
             // 
             // label98
             // 
@@ -1234,6 +1330,7 @@ namespace Minefield
             this.label98.Name = "label98";
             this.label98.Size = new System.Drawing.Size(20, 20);
             this.label98.TabIndex = 1;
+            this.label98.Click += new System.EventHandler(this.flagSquare);
             // 
             // label99
             // 
@@ -1242,6 +1339,7 @@ namespace Minefield
             this.label99.Name = "label99";
             this.label99.Size = new System.Drawing.Size(20, 20);
             this.label99.TabIndex = 1;
+            this.label99.Click += new System.EventHandler(this.flagSquare);
             // 
             // label100
             // 
@@ -1250,6 +1348,7 @@ namespace Minefield
             this.label100.Name = "label100";
             this.label100.Size = new System.Drawing.Size(20, 20);
             this.label100.TabIndex = 1;
+            this.label100.Click += new System.EventHandler(this.flagSquare);
             // 
             // label101
             // 
@@ -1258,6 +1357,7 @@ namespace Minefield
             this.label101.Name = "label101";
             this.label101.Size = new System.Drawing.Size(20, 20);
             this.label101.TabIndex = 1;
+            this.label101.Click += new System.EventHandler(this.flagSquare);
             // 
             // label102
             // 
@@ -1266,6 +1366,7 @@ namespace Minefield
             this.label102.Name = "label102";
             this.label102.Size = new System.Drawing.Size(20, 20);
             this.label102.TabIndex = 1;
+            this.label102.Click += new System.EventHandler(this.flagSquare);
             // 
             // label103
             // 
@@ -1274,6 +1375,7 @@ namespace Minefield
             this.label103.Name = "label103";
             this.label103.Size = new System.Drawing.Size(20, 20);
             this.label103.TabIndex = 1;
+            this.label103.Click += new System.EventHandler(this.flagSquare);
             // 
             // label104
             // 
@@ -1282,6 +1384,7 @@ namespace Minefield
             this.label104.Name = "label104";
             this.label104.Size = new System.Drawing.Size(20, 20);
             this.label104.TabIndex = 1;
+            this.label104.Click += new System.EventHandler(this.flagSquare);
             // 
             // label105
             // 
@@ -1290,6 +1393,7 @@ namespace Minefield
             this.label105.Name = "label105";
             this.label105.Size = new System.Drawing.Size(20, 20);
             this.label105.TabIndex = 1;
+            this.label105.Click += new System.EventHandler(this.flagSquare);
             // 
             // label106
             // 
@@ -1298,6 +1402,7 @@ namespace Minefield
             this.label106.Name = "label106";
             this.label106.Size = new System.Drawing.Size(20, 20);
             this.label106.TabIndex = 1;
+            this.label106.Click += new System.EventHandler(this.flagSquare);
             // 
             // label107
             // 
@@ -1306,6 +1411,7 @@ namespace Minefield
             this.label107.Name = "label107";
             this.label107.Size = new System.Drawing.Size(20, 20);
             this.label107.TabIndex = 1;
+            this.label107.Click += new System.EventHandler(this.flagSquare);
             // 
             // label108
             // 
@@ -1314,6 +1420,7 @@ namespace Minefield
             this.label108.Name = "label108";
             this.label108.Size = new System.Drawing.Size(20, 20);
             this.label108.TabIndex = 1;
+            this.label108.Click += new System.EventHandler(this.flagSquare);
             // 
             // label109
             // 
@@ -1322,6 +1429,7 @@ namespace Minefield
             this.label109.Name = "label109";
             this.label109.Size = new System.Drawing.Size(20, 20);
             this.label109.TabIndex = 1;
+            this.label109.Click += new System.EventHandler(this.flagSquare);
             // 
             // label110
             // 
@@ -1330,6 +1438,7 @@ namespace Minefield
             this.label110.Name = "label110";
             this.label110.Size = new System.Drawing.Size(20, 20);
             this.label110.TabIndex = 1;
+            this.label110.Click += new System.EventHandler(this.flagSquare);
             // 
             // label111
             // 
@@ -1338,6 +1447,7 @@ namespace Minefield
             this.label111.Name = "label111";
             this.label111.Size = new System.Drawing.Size(20, 20);
             this.label111.TabIndex = 1;
+            this.label111.Click += new System.EventHandler(this.flagSquare);
             // 
             // label112
             // 
@@ -1346,6 +1456,7 @@ namespace Minefield
             this.label112.Name = "label112";
             this.label112.Size = new System.Drawing.Size(20, 20);
             this.label112.TabIndex = 1;
+            this.label112.Click += new System.EventHandler(this.flagSquare);
             // 
             // label113
             // 
@@ -1354,6 +1465,7 @@ namespace Minefield
             this.label113.Name = "label113";
             this.label113.Size = new System.Drawing.Size(20, 20);
             this.label113.TabIndex = 1;
+            this.label113.Click += new System.EventHandler(this.flagSquare);
             // 
             // label114
             // 
@@ -1362,6 +1474,7 @@ namespace Minefield
             this.label114.Name = "label114";
             this.label114.Size = new System.Drawing.Size(20, 20);
             this.label114.TabIndex = 1;
+            this.label114.Click += new System.EventHandler(this.flagSquare);
             // 
             // label115
             // 
@@ -1370,6 +1483,7 @@ namespace Minefield
             this.label115.Name = "label115";
             this.label115.Size = new System.Drawing.Size(20, 20);
             this.label115.TabIndex = 1;
+            this.label115.Click += new System.EventHandler(this.flagSquare);
             // 
             // label116
             // 
@@ -1378,6 +1492,7 @@ namespace Minefield
             this.label116.Name = "label116";
             this.label116.Size = new System.Drawing.Size(20, 20);
             this.label116.TabIndex = 1;
+            this.label116.Click += new System.EventHandler(this.flagSquare);
             // 
             // label117
             // 
@@ -1386,6 +1501,7 @@ namespace Minefield
             this.label117.Name = "label117";
             this.label117.Size = new System.Drawing.Size(20, 20);
             this.label117.TabIndex = 1;
+            this.label117.Click += new System.EventHandler(this.flagSquare);
             // 
             // label118
             // 
@@ -1394,6 +1510,7 @@ namespace Minefield
             this.label118.Name = "label118";
             this.label118.Size = new System.Drawing.Size(20, 20);
             this.label118.TabIndex = 1;
+            this.label118.Click += new System.EventHandler(this.flagSquare);
             // 
             // label119
             // 
@@ -1402,6 +1519,7 @@ namespace Minefield
             this.label119.Name = "label119";
             this.label119.Size = new System.Drawing.Size(20, 20);
             this.label119.TabIndex = 1;
+            this.label119.Click += new System.EventHandler(this.flagSquare);
             // 
             // label120
             // 
@@ -1410,6 +1528,7 @@ namespace Minefield
             this.label120.Name = "label120";
             this.label120.Size = new System.Drawing.Size(20, 20);
             this.label120.TabIndex = 1;
+            this.label120.Click += new System.EventHandler(this.flagSquare);
             // 
             // label121
             // 
@@ -1418,6 +1537,7 @@ namespace Minefield
             this.label121.Name = "label121";
             this.label121.Size = new System.Drawing.Size(20, 20);
             this.label121.TabIndex = 1;
+            this.label121.Click += new System.EventHandler(this.flagSquare);
             // 
             // label122
             // 
@@ -1426,6 +1546,7 @@ namespace Minefield
             this.label122.Name = "label122";
             this.label122.Size = new System.Drawing.Size(20, 20);
             this.label122.TabIndex = 1;
+            this.label122.Click += new System.EventHandler(this.flagSquare);
             // 
             // label123
             // 
@@ -1434,6 +1555,7 @@ namespace Minefield
             this.label123.Name = "label123";
             this.label123.Size = new System.Drawing.Size(20, 20);
             this.label123.TabIndex = 1;
+            this.label123.Click += new System.EventHandler(this.flagSquare);
             // 
             // label124
             // 
@@ -1442,6 +1564,7 @@ namespace Minefield
             this.label124.Name = "label124";
             this.label124.Size = new System.Drawing.Size(20, 20);
             this.label124.TabIndex = 1;
+            this.label124.Click += new System.EventHandler(this.flagSquare);
             // 
             // label125
             // 
@@ -1450,6 +1573,7 @@ namespace Minefield
             this.label125.Name = "label125";
             this.label125.Size = new System.Drawing.Size(20, 20);
             this.label125.TabIndex = 1;
+            this.label125.Click += new System.EventHandler(this.flagSquare);
             // 
             // label126
             // 
@@ -1458,6 +1582,7 @@ namespace Minefield
             this.label126.Name = "label126";
             this.label126.Size = new System.Drawing.Size(20, 20);
             this.label126.TabIndex = 1;
+            this.label126.Click += new System.EventHandler(this.flagSquare);
             // 
             // label127
             // 
@@ -1466,6 +1591,7 @@ namespace Minefield
             this.label127.Name = "label127";
             this.label127.Size = new System.Drawing.Size(20, 20);
             this.label127.TabIndex = 1;
+            this.label127.Click += new System.EventHandler(this.flagSquare);
             // 
             // label128
             // 
@@ -1474,6 +1600,7 @@ namespace Minefield
             this.label128.Name = "label128";
             this.label128.Size = new System.Drawing.Size(20, 20);
             this.label128.TabIndex = 1;
+            this.label128.Click += new System.EventHandler(this.flagSquare);
             // 
             // label129
             // 
@@ -1482,6 +1609,7 @@ namespace Minefield
             this.label129.Name = "label129";
             this.label129.Size = new System.Drawing.Size(20, 20);
             this.label129.TabIndex = 1;
+            this.label129.Click += new System.EventHandler(this.flagSquare);
             // 
             // label130
             // 
@@ -1490,6 +1618,7 @@ namespace Minefield
             this.label130.Name = "label130";
             this.label130.Size = new System.Drawing.Size(20, 20);
             this.label130.TabIndex = 1;
+            this.label130.Click += new System.EventHandler(this.flagSquare);
             // 
             // label131
             // 
@@ -1498,6 +1627,7 @@ namespace Minefield
             this.label131.Name = "label131";
             this.label131.Size = new System.Drawing.Size(20, 20);
             this.label131.TabIndex = 1;
+            this.label131.Click += new System.EventHandler(this.flagSquare);
             // 
             // label132
             // 
@@ -1506,6 +1636,7 @@ namespace Minefield
             this.label132.Name = "label132";
             this.label132.Size = new System.Drawing.Size(20, 20);
             this.label132.TabIndex = 1;
+            this.label132.Click += new System.EventHandler(this.flagSquare);
             // 
             // label133
             // 
@@ -1514,6 +1645,7 @@ namespace Minefield
             this.label133.Name = "label133";
             this.label133.Size = new System.Drawing.Size(20, 20);
             this.label133.TabIndex = 1;
+            this.label133.Click += new System.EventHandler(this.flagSquare);
             // 
             // label134
             // 
@@ -1522,6 +1654,7 @@ namespace Minefield
             this.label134.Name = "label134";
             this.label134.Size = new System.Drawing.Size(20, 20);
             this.label134.TabIndex = 1;
+            this.label134.Click += new System.EventHandler(this.flagSquare);
             // 
             // label135
             // 
@@ -1530,6 +1663,7 @@ namespace Minefield
             this.label135.Name = "label135";
             this.label135.Size = new System.Drawing.Size(20, 20);
             this.label135.TabIndex = 1;
+            this.label135.Click += new System.EventHandler(this.flagSquare);
             // 
             // label136
             // 
@@ -1538,6 +1672,7 @@ namespace Minefield
             this.label136.Name = "label136";
             this.label136.Size = new System.Drawing.Size(20, 20);
             this.label136.TabIndex = 1;
+            this.label136.Click += new System.EventHandler(this.flagSquare);
             // 
             // label137
             // 
@@ -1546,6 +1681,7 @@ namespace Minefield
             this.label137.Name = "label137";
             this.label137.Size = new System.Drawing.Size(20, 20);
             this.label137.TabIndex = 1;
+            this.label137.Click += new System.EventHandler(this.flagSquare);
             // 
             // label138
             // 
@@ -1554,6 +1690,7 @@ namespace Minefield
             this.label138.Name = "label138";
             this.label138.Size = new System.Drawing.Size(20, 20);
             this.label138.TabIndex = 1;
+            this.label138.Click += new System.EventHandler(this.flagSquare);
             // 
             // label139
             // 
@@ -1562,6 +1699,7 @@ namespace Minefield
             this.label139.Name = "label139";
             this.label139.Size = new System.Drawing.Size(20, 20);
             this.label139.TabIndex = 1;
+            this.label139.Click += new System.EventHandler(this.flagSquare);
             // 
             // label140
             // 
@@ -1570,6 +1708,7 @@ namespace Minefield
             this.label140.Name = "label140";
             this.label140.Size = new System.Drawing.Size(20, 20);
             this.label140.TabIndex = 1;
+            this.label140.Click += new System.EventHandler(this.flagSquare);
             // 
             // label141
             // 
@@ -1578,6 +1717,7 @@ namespace Minefield
             this.label141.Name = "label141";
             this.label141.Size = new System.Drawing.Size(20, 20);
             this.label141.TabIndex = 1;
+            this.label141.Click += new System.EventHandler(this.flagSquare);
             // 
             // label142
             // 
@@ -1586,6 +1726,7 @@ namespace Minefield
             this.label142.Name = "label142";
             this.label142.Size = new System.Drawing.Size(20, 20);
             this.label142.TabIndex = 1;
+            this.label142.Click += new System.EventHandler(this.flagSquare);
             // 
             // label143
             // 
@@ -1594,6 +1735,7 @@ namespace Minefield
             this.label143.Name = "label143";
             this.label143.Size = new System.Drawing.Size(20, 20);
             this.label143.TabIndex = 1;
+            this.label143.Click += new System.EventHandler(this.flagSquare);
             // 
             // label144
             // 
@@ -1602,6 +1744,7 @@ namespace Minefield
             this.label144.Name = "label144";
             this.label144.Size = new System.Drawing.Size(20, 20);
             this.label144.TabIndex = 1;
+            this.label144.Click += new System.EventHandler(this.flagSquare);
             // 
             // label145
             // 
@@ -1610,6 +1753,7 @@ namespace Minefield
             this.label145.Name = "label145";
             this.label145.Size = new System.Drawing.Size(20, 20);
             this.label145.TabIndex = 1;
+            this.label145.Click += new System.EventHandler(this.flagSquare);
             // 
             // label146
             // 
@@ -1618,6 +1762,7 @@ namespace Minefield
             this.label146.Name = "label146";
             this.label146.Size = new System.Drawing.Size(20, 20);
             this.label146.TabIndex = 1;
+            this.label146.Click += new System.EventHandler(this.flagSquare);
             // 
             // label147
             // 
@@ -1626,6 +1771,7 @@ namespace Minefield
             this.label147.Name = "label147";
             this.label147.Size = new System.Drawing.Size(20, 20);
             this.label147.TabIndex = 1;
+            this.label147.Click += new System.EventHandler(this.flagSquare);
             // 
             // label148
             // 
@@ -1634,6 +1780,7 @@ namespace Minefield
             this.label148.Name = "label148";
             this.label148.Size = new System.Drawing.Size(20, 20);
             this.label148.TabIndex = 1;
+            this.label148.Click += new System.EventHandler(this.flagSquare);
             // 
             // label149
             // 
@@ -1642,6 +1789,7 @@ namespace Minefield
             this.label149.Name = "label149";
             this.label149.Size = new System.Drawing.Size(20, 20);
             this.label149.TabIndex = 1;
+            this.label149.Click += new System.EventHandler(this.flagSquare);
             // 
             // label150
             // 
@@ -1650,6 +1798,7 @@ namespace Minefield
             this.label150.Name = "label150";
             this.label150.Size = new System.Drawing.Size(20, 20);
             this.label150.TabIndex = 1;
+            this.label150.Click += new System.EventHandler(this.flagSquare);
             // 
             // label151
             // 
@@ -1658,6 +1807,7 @@ namespace Minefield
             this.label151.Name = "label151";
             this.label151.Size = new System.Drawing.Size(20, 20);
             this.label151.TabIndex = 1;
+            this.label151.Click += new System.EventHandler(this.flagSquare);
             // 
             // label152
             // 
@@ -1666,6 +1816,7 @@ namespace Minefield
             this.label152.Name = "label152";
             this.label152.Size = new System.Drawing.Size(20, 20);
             this.label152.TabIndex = 1;
+            this.label152.Click += new System.EventHandler(this.flagSquare);
             // 
             // label153
             // 
@@ -1674,6 +1825,7 @@ namespace Minefield
             this.label153.Name = "label153";
             this.label153.Size = new System.Drawing.Size(20, 20);
             this.label153.TabIndex = 1;
+            this.label153.Click += new System.EventHandler(this.flagSquare);
             // 
             // label154
             // 
@@ -1682,6 +1834,7 @@ namespace Minefield
             this.label154.Name = "label154";
             this.label154.Size = new System.Drawing.Size(20, 20);
             this.label154.TabIndex = 1;
+            this.label154.Click += new System.EventHandler(this.flagSquare);
             // 
             // label155
             // 
@@ -1690,6 +1843,7 @@ namespace Minefield
             this.label155.Name = "label155";
             this.label155.Size = new System.Drawing.Size(20, 20);
             this.label155.TabIndex = 1;
+            this.label155.Click += new System.EventHandler(this.flagSquare);
             // 
             // label156
             // 
@@ -1698,6 +1852,7 @@ namespace Minefield
             this.label156.Name = "label156";
             this.label156.Size = new System.Drawing.Size(20, 20);
             this.label156.TabIndex = 1;
+            this.label156.Click += new System.EventHandler(this.flagSquare);
             // 
             // label157
             // 
@@ -1706,6 +1861,7 @@ namespace Minefield
             this.label157.Name = "label157";
             this.label157.Size = new System.Drawing.Size(20, 20);
             this.label157.TabIndex = 1;
+            this.label157.Click += new System.EventHandler(this.flagSquare);
             // 
             // label158
             // 
@@ -1714,6 +1870,7 @@ namespace Minefield
             this.label158.Name = "label158";
             this.label158.Size = new System.Drawing.Size(20, 20);
             this.label158.TabIndex = 1;
+            this.label158.Click += new System.EventHandler(this.flagSquare);
             // 
             // label159
             // 
@@ -1722,6 +1879,7 @@ namespace Minefield
             this.label159.Name = "label159";
             this.label159.Size = new System.Drawing.Size(20, 20);
             this.label159.TabIndex = 1;
+            this.label159.Click += new System.EventHandler(this.flagSquare);
             // 
             // label160
             // 
@@ -1730,6 +1888,7 @@ namespace Minefield
             this.label160.Name = "label160";
             this.label160.Size = new System.Drawing.Size(20, 20);
             this.label160.TabIndex = 1;
+            this.label160.Click += new System.EventHandler(this.flagSquare);
             // 
             // label161
             // 
@@ -1738,6 +1897,7 @@ namespace Minefield
             this.label161.Name = "label161";
             this.label161.Size = new System.Drawing.Size(20, 20);
             this.label161.TabIndex = 1;
+            this.label161.Click += new System.EventHandler(this.flagSquare);
             // 
             // label162
             // 
@@ -1746,6 +1906,7 @@ namespace Minefield
             this.label162.Name = "label162";
             this.label162.Size = new System.Drawing.Size(20, 20);
             this.label162.TabIndex = 1;
+            this.label162.Click += new System.EventHandler(this.flagSquare);
             // 
             // label163
             // 
@@ -1754,6 +1915,7 @@ namespace Minefield
             this.label163.Name = "label163";
             this.label163.Size = new System.Drawing.Size(20, 20);
             this.label163.TabIndex = 1;
+            this.label163.Click += new System.EventHandler(this.flagSquare);
             // 
             // label164
             // 
@@ -1762,6 +1924,7 @@ namespace Minefield
             this.label164.Name = "label164";
             this.label164.Size = new System.Drawing.Size(20, 20);
             this.label164.TabIndex = 1;
+            this.label164.Click += new System.EventHandler(this.flagSquare);
             // 
             // label165
             // 
@@ -1770,6 +1933,7 @@ namespace Minefield
             this.label165.Name = "label165";
             this.label165.Size = new System.Drawing.Size(20, 20);
             this.label165.TabIndex = 1;
+            this.label165.Click += new System.EventHandler(this.flagSquare);
             // 
             // label166
             // 
@@ -1778,6 +1942,7 @@ namespace Minefield
             this.label166.Name = "label166";
             this.label166.Size = new System.Drawing.Size(20, 20);
             this.label166.TabIndex = 1;
+            this.label166.Click += new System.EventHandler(this.flagSquare);
             // 
             // label167
             // 
@@ -1786,6 +1951,7 @@ namespace Minefield
             this.label167.Name = "label167";
             this.label167.Size = new System.Drawing.Size(20, 20);
             this.label167.TabIndex = 1;
+            this.label167.Click += new System.EventHandler(this.flagSquare);
             // 
             // label168
             // 
@@ -1794,6 +1960,7 @@ namespace Minefield
             this.label168.Name = "label168";
             this.label168.Size = new System.Drawing.Size(20, 20);
             this.label168.TabIndex = 1;
+            this.label168.Click += new System.EventHandler(this.flagSquare);
             // 
             // label169
             // 
@@ -1802,6 +1969,7 @@ namespace Minefield
             this.label169.Name = "label169";
             this.label169.Size = new System.Drawing.Size(20, 20);
             this.label169.TabIndex = 1;
+            this.label169.Click += new System.EventHandler(this.flagSquare);
             // 
             // label170
             // 
@@ -1810,6 +1978,7 @@ namespace Minefield
             this.label170.Name = "label170";
             this.label170.Size = new System.Drawing.Size(20, 20);
             this.label170.TabIndex = 1;
+            this.label170.Click += new System.EventHandler(this.flagSquare);
             // 
             // label171
             // 
@@ -1818,6 +1987,7 @@ namespace Minefield
             this.label171.Name = "label171";
             this.label171.Size = new System.Drawing.Size(20, 20);
             this.label171.TabIndex = 1;
+            this.label171.Click += new System.EventHandler(this.flagSquare);
             // 
             // label172
             // 
@@ -1826,6 +1996,7 @@ namespace Minefield
             this.label172.Name = "label172";
             this.label172.Size = new System.Drawing.Size(20, 20);
             this.label172.TabIndex = 1;
+            this.label172.Click += new System.EventHandler(this.flagSquare);
             // 
             // label173
             // 
@@ -1834,6 +2005,7 @@ namespace Minefield
             this.label173.Name = "label173";
             this.label173.Size = new System.Drawing.Size(20, 20);
             this.label173.TabIndex = 1;
+            this.label173.Click += new System.EventHandler(this.flagSquare);
             // 
             // label174
             // 
@@ -1842,6 +2014,7 @@ namespace Minefield
             this.label174.Name = "label174";
             this.label174.Size = new System.Drawing.Size(20, 20);
             this.label174.TabIndex = 1;
+            this.label174.Click += new System.EventHandler(this.flagSquare);
             // 
             // label175
             // 
@@ -1850,6 +2023,7 @@ namespace Minefield
             this.label175.Name = "label175";
             this.label175.Size = new System.Drawing.Size(20, 20);
             this.label175.TabIndex = 1;
+            this.label175.Click += new System.EventHandler(this.flagSquare);
             // 
             // label176
             // 
@@ -1858,6 +2032,7 @@ namespace Minefield
             this.label176.Name = "label176";
             this.label176.Size = new System.Drawing.Size(20, 20);
             this.label176.TabIndex = 1;
+            this.label176.Click += new System.EventHandler(this.flagSquare);
             // 
             // label177
             // 
@@ -1866,6 +2041,7 @@ namespace Minefield
             this.label177.Name = "label177";
             this.label177.Size = new System.Drawing.Size(20, 20);
             this.label177.TabIndex = 1;
+            this.label177.Click += new System.EventHandler(this.flagSquare);
             // 
             // label178
             // 
@@ -1874,6 +2050,7 @@ namespace Minefield
             this.label178.Name = "label178";
             this.label178.Size = new System.Drawing.Size(20, 20);
             this.label178.TabIndex = 1;
+            this.label178.Click += new System.EventHandler(this.flagSquare);
             // 
             // label179
             // 
@@ -1882,6 +2059,7 @@ namespace Minefield
             this.label179.Name = "label179";
             this.label179.Size = new System.Drawing.Size(20, 20);
             this.label179.TabIndex = 1;
+            this.label179.Click += new System.EventHandler(this.flagSquare);
             // 
             // label180
             // 
@@ -1890,6 +2068,7 @@ namespace Minefield
             this.label180.Name = "label180";
             this.label180.Size = new System.Drawing.Size(20, 20);
             this.label180.TabIndex = 1;
+            this.label180.Click += new System.EventHandler(this.flagSquare);
             // 
             // label181
             // 
@@ -1898,6 +2077,7 @@ namespace Minefield
             this.label181.Name = "label181";
             this.label181.Size = new System.Drawing.Size(20, 20);
             this.label181.TabIndex = 1;
+            this.label181.Click += new System.EventHandler(this.flagSquare);
             // 
             // label182
             // 
@@ -1906,6 +2086,7 @@ namespace Minefield
             this.label182.Name = "label182";
             this.label182.Size = new System.Drawing.Size(20, 20);
             this.label182.TabIndex = 1;
+            this.label182.Click += new System.EventHandler(this.flagSquare);
             // 
             // label183
             // 
@@ -1914,6 +2095,7 @@ namespace Minefield
             this.label183.Name = "label183";
             this.label183.Size = new System.Drawing.Size(20, 20);
             this.label183.TabIndex = 1;
+            this.label183.Click += new System.EventHandler(this.flagSquare);
             // 
             // label184
             // 
@@ -1922,6 +2104,7 @@ namespace Minefield
             this.label184.Name = "label184";
             this.label184.Size = new System.Drawing.Size(20, 20);
             this.label184.TabIndex = 1;
+            this.label184.Click += new System.EventHandler(this.flagSquare);
             // 
             // label185
             // 
@@ -1930,6 +2113,7 @@ namespace Minefield
             this.label185.Name = "label185";
             this.label185.Size = new System.Drawing.Size(20, 20);
             this.label185.TabIndex = 1;
+            this.label185.Click += new System.EventHandler(this.flagSquare);
             // 
             // label186
             // 
@@ -1938,6 +2122,7 @@ namespace Minefield
             this.label186.Name = "label186";
             this.label186.Size = new System.Drawing.Size(20, 20);
             this.label186.TabIndex = 1;
+            this.label186.Click += new System.EventHandler(this.flagSquare);
             // 
             // label187
             // 
@@ -1946,6 +2131,7 @@ namespace Minefield
             this.label187.Name = "label187";
             this.label187.Size = new System.Drawing.Size(20, 20);
             this.label187.TabIndex = 1;
+            this.label187.Click += new System.EventHandler(this.flagSquare);
             // 
             // label188
             // 
@@ -1954,6 +2140,7 @@ namespace Minefield
             this.label188.Name = "label188";
             this.label188.Size = new System.Drawing.Size(20, 20);
             this.label188.TabIndex = 1;
+            this.label188.Click += new System.EventHandler(this.flagSquare);
             // 
             // label189
             // 
@@ -1962,6 +2149,7 @@ namespace Minefield
             this.label189.Name = "label189";
             this.label189.Size = new System.Drawing.Size(20, 20);
             this.label189.TabIndex = 1;
+            this.label189.Click += new System.EventHandler(this.flagSquare);
             // 
             // label190
             // 
@@ -1970,6 +2158,7 @@ namespace Minefield
             this.label190.Name = "label190";
             this.label190.Size = new System.Drawing.Size(20, 20);
             this.label190.TabIndex = 1;
+            this.label190.Click += new System.EventHandler(this.flagSquare);
             // 
             // label191
             // 
@@ -1978,6 +2167,7 @@ namespace Minefield
             this.label191.Name = "label191";
             this.label191.Size = new System.Drawing.Size(20, 20);
             this.label191.TabIndex = 1;
+            this.label191.Click += new System.EventHandler(this.flagSquare);
             // 
             // label192
             // 
@@ -1986,6 +2176,7 @@ namespace Minefield
             this.label192.Name = "label192";
             this.label192.Size = new System.Drawing.Size(20, 20);
             this.label192.TabIndex = 1;
+            this.label192.Click += new System.EventHandler(this.flagSquare);
             // 
             // label193
             // 
@@ -1994,6 +2185,7 @@ namespace Minefield
             this.label193.Name = "label193";
             this.label193.Size = new System.Drawing.Size(20, 20);
             this.label193.TabIndex = 1;
+            this.label193.Click += new System.EventHandler(this.flagSquare);
             // 
             // label194
             // 
@@ -2002,6 +2194,7 @@ namespace Minefield
             this.label194.Name = "label194";
             this.label194.Size = new System.Drawing.Size(20, 20);
             this.label194.TabIndex = 1;
+            this.label194.Click += new System.EventHandler(this.flagSquare);
             // 
             // label195
             // 
@@ -2010,6 +2203,7 @@ namespace Minefield
             this.label195.Name = "label195";
             this.label195.Size = new System.Drawing.Size(20, 20);
             this.label195.TabIndex = 1;
+            this.label195.Click += new System.EventHandler(this.flagSquare);
             // 
             // label196
             // 
@@ -2018,6 +2212,7 @@ namespace Minefield
             this.label196.Name = "label196";
             this.label196.Size = new System.Drawing.Size(20, 20);
             this.label196.TabIndex = 1;
+            this.label196.Click += new System.EventHandler(this.flagSquare);
             // 
             // label197
             // 
@@ -2026,6 +2221,7 @@ namespace Minefield
             this.label197.Name = "label197";
             this.label197.Size = new System.Drawing.Size(20, 20);
             this.label197.TabIndex = 1;
+            this.label197.Click += new System.EventHandler(this.flagSquare);
             // 
             // label198
             // 
@@ -2034,6 +2230,7 @@ namespace Minefield
             this.label198.Name = "label198";
             this.label198.Size = new System.Drawing.Size(20, 20);
             this.label198.TabIndex = 1;
+            this.label198.Click += new System.EventHandler(this.flagSquare);
             // 
             // label199
             // 
@@ -2042,6 +2239,7 @@ namespace Minefield
             this.label199.Name = "label199";
             this.label199.Size = new System.Drawing.Size(20, 20);
             this.label199.TabIndex = 1;
+            this.label199.Click += new System.EventHandler(this.flagSquare);
             // 
             // label200
             // 
@@ -2050,6 +2248,7 @@ namespace Minefield
             this.label200.Name = "label200";
             this.label200.Size = new System.Drawing.Size(20, 20);
             this.label200.TabIndex = 1;
+            this.label200.Click += new System.EventHandler(this.flagSquare);
             // 
             // label201
             // 
@@ -2058,6 +2257,7 @@ namespace Minefield
             this.label201.Name = "label201";
             this.label201.Size = new System.Drawing.Size(20, 20);
             this.label201.TabIndex = 1;
+            this.label201.Click += new System.EventHandler(this.flagSquare);
             // 
             // label202
             // 
@@ -2066,6 +2266,7 @@ namespace Minefield
             this.label202.Name = "label202";
             this.label202.Size = new System.Drawing.Size(20, 20);
             this.label202.TabIndex = 1;
+            this.label202.Click += new System.EventHandler(this.flagSquare);
             // 
             // label203
             // 
@@ -2074,6 +2275,7 @@ namespace Minefield
             this.label203.Name = "label203";
             this.label203.Size = new System.Drawing.Size(20, 20);
             this.label203.TabIndex = 1;
+            this.label203.Click += new System.EventHandler(this.flagSquare);
             // 
             // label204
             // 
@@ -2082,6 +2284,7 @@ namespace Minefield
             this.label204.Name = "label204";
             this.label204.Size = new System.Drawing.Size(20, 20);
             this.label204.TabIndex = 1;
+            this.label204.Click += new System.EventHandler(this.flagSquare);
             // 
             // label205
             // 
@@ -2090,6 +2293,7 @@ namespace Minefield
             this.label205.Name = "label205";
             this.label205.Size = new System.Drawing.Size(20, 20);
             this.label205.TabIndex = 1;
+            this.label205.Click += new System.EventHandler(this.flagSquare);
             // 
             // label206
             // 
@@ -2098,6 +2302,7 @@ namespace Minefield
             this.label206.Name = "label206";
             this.label206.Size = new System.Drawing.Size(20, 20);
             this.label206.TabIndex = 1;
+            this.label206.Click += new System.EventHandler(this.flagSquare);
             // 
             // label207
             // 
@@ -2106,6 +2311,7 @@ namespace Minefield
             this.label207.Name = "label207";
             this.label207.Size = new System.Drawing.Size(20, 20);
             this.label207.TabIndex = 1;
+            this.label207.Click += new System.EventHandler(this.flagSquare);
             // 
             // label208
             // 
@@ -2114,6 +2320,7 @@ namespace Minefield
             this.label208.Name = "label208";
             this.label208.Size = new System.Drawing.Size(20, 20);
             this.label208.TabIndex = 1;
+            this.label208.Click += new System.EventHandler(this.flagSquare);
             // 
             // label209
             // 
@@ -2122,6 +2329,7 @@ namespace Minefield
             this.label209.Name = "label209";
             this.label209.Size = new System.Drawing.Size(20, 20);
             this.label209.TabIndex = 1;
+            this.label209.Click += new System.EventHandler(this.flagSquare);
             // 
             // label210
             // 
@@ -2130,6 +2338,7 @@ namespace Minefield
             this.label210.Name = "label210";
             this.label210.Size = new System.Drawing.Size(20, 20);
             this.label210.TabIndex = 1;
+            this.label210.Click += new System.EventHandler(this.flagSquare);
             // 
             // label211
             // 
@@ -2138,6 +2347,7 @@ namespace Minefield
             this.label211.Name = "label211";
             this.label211.Size = new System.Drawing.Size(20, 20);
             this.label211.TabIndex = 1;
+            this.label211.Click += new System.EventHandler(this.flagSquare);
             // 
             // label212
             // 
@@ -2146,6 +2356,7 @@ namespace Minefield
             this.label212.Name = "label212";
             this.label212.Size = new System.Drawing.Size(20, 20);
             this.label212.TabIndex = 1;
+            this.label212.Click += new System.EventHandler(this.flagSquare);
             // 
             // label213
             // 
@@ -2154,6 +2365,7 @@ namespace Minefield
             this.label213.Name = "label213";
             this.label213.Size = new System.Drawing.Size(20, 20);
             this.label213.TabIndex = 1;
+            this.label213.Click += new System.EventHandler(this.flagSquare);
             // 
             // label214
             // 
@@ -2162,6 +2374,7 @@ namespace Minefield
             this.label214.Name = "label214";
             this.label214.Size = new System.Drawing.Size(20, 20);
             this.label214.TabIndex = 1;
+            this.label214.Click += new System.EventHandler(this.flagSquare);
             // 
             // label215
             // 
@@ -2170,6 +2383,7 @@ namespace Minefield
             this.label215.Name = "label215";
             this.label215.Size = new System.Drawing.Size(20, 20);
             this.label215.TabIndex = 1;
+            this.label215.Click += new System.EventHandler(this.flagSquare);
             // 
             // label216
             // 
@@ -2178,6 +2392,7 @@ namespace Minefield
             this.label216.Name = "label216";
             this.label216.Size = new System.Drawing.Size(20, 20);
             this.label216.TabIndex = 1;
+            this.label216.Click += new System.EventHandler(this.flagSquare);
             // 
             // label217
             // 
@@ -2186,6 +2401,7 @@ namespace Minefield
             this.label217.Name = "label217";
             this.label217.Size = new System.Drawing.Size(20, 20);
             this.label217.TabIndex = 1;
+            this.label217.Click += new System.EventHandler(this.flagSquare);
             // 
             // label218
             // 
@@ -2194,6 +2410,7 @@ namespace Minefield
             this.label218.Name = "label218";
             this.label218.Size = new System.Drawing.Size(20, 20);
             this.label218.TabIndex = 1;
+            this.label218.Click += new System.EventHandler(this.flagSquare);
             // 
             // label219
             // 
@@ -2202,6 +2419,7 @@ namespace Minefield
             this.label219.Name = "label219";
             this.label219.Size = new System.Drawing.Size(20, 20);
             this.label219.TabIndex = 1;
+            this.label219.Click += new System.EventHandler(this.flagSquare);
             // 
             // label220
             // 
@@ -2210,6 +2428,7 @@ namespace Minefield
             this.label220.Name = "label220";
             this.label220.Size = new System.Drawing.Size(20, 20);
             this.label220.TabIndex = 1;
+            this.label220.Click += new System.EventHandler(this.flagSquare);
             // 
             // label221
             // 
@@ -2218,6 +2437,7 @@ namespace Minefield
             this.label221.Name = "label221";
             this.label221.Size = new System.Drawing.Size(20, 20);
             this.label221.TabIndex = 1;
+            this.label221.Click += new System.EventHandler(this.flagSquare);
             // 
             // label222
             // 
@@ -2226,6 +2446,7 @@ namespace Minefield
             this.label222.Name = "label222";
             this.label222.Size = new System.Drawing.Size(20, 20);
             this.label222.TabIndex = 1;
+            this.label222.Click += new System.EventHandler(this.flagSquare);
             // 
             // label223
             // 
@@ -2234,6 +2455,7 @@ namespace Minefield
             this.label223.Name = "label223";
             this.label223.Size = new System.Drawing.Size(20, 20);
             this.label223.TabIndex = 1;
+            this.label223.Click += new System.EventHandler(this.flagSquare);
             // 
             // label224
             // 
@@ -2242,6 +2464,7 @@ namespace Minefield
             this.label224.Name = "label224";
             this.label224.Size = new System.Drawing.Size(20, 20);
             this.label224.TabIndex = 1;
+            this.label224.Click += new System.EventHandler(this.flagSquare);
             // 
             // label225
             // 
@@ -2250,6 +2473,7 @@ namespace Minefield
             this.label225.Name = "label225";
             this.label225.Size = new System.Drawing.Size(20, 20);
             this.label225.TabIndex = 1;
+            this.label225.Click += new System.EventHandler(this.flagSquare);
             // 
             // label226
             // 
@@ -2258,6 +2482,7 @@ namespace Minefield
             this.label226.Name = "label226";
             this.label226.Size = new System.Drawing.Size(20, 20);
             this.label226.TabIndex = 1;
+            this.label226.Click += new System.EventHandler(this.flagSquare);
             // 
             // label227
             // 
@@ -2266,6 +2491,7 @@ namespace Minefield
             this.label227.Name = "label227";
             this.label227.Size = new System.Drawing.Size(20, 20);
             this.label227.TabIndex = 1;
+            this.label227.Click += new System.EventHandler(this.flagSquare);
             // 
             // label228
             // 
@@ -2274,6 +2500,7 @@ namespace Minefield
             this.label228.Name = "label228";
             this.label228.Size = new System.Drawing.Size(20, 20);
             this.label228.TabIndex = 1;
+            this.label228.Click += new System.EventHandler(this.flagSquare);
             // 
             // label229
             // 
@@ -2282,6 +2509,7 @@ namespace Minefield
             this.label229.Name = "label229";
             this.label229.Size = new System.Drawing.Size(20, 20);
             this.label229.TabIndex = 1;
+            this.label229.Click += new System.EventHandler(this.flagSquare);
             // 
             // label230
             // 
@@ -2290,6 +2518,7 @@ namespace Minefield
             this.label230.Name = "label230";
             this.label230.Size = new System.Drawing.Size(20, 20);
             this.label230.TabIndex = 1;
+            this.label230.Click += new System.EventHandler(this.flagSquare);
             // 
             // label231
             // 
@@ -2298,6 +2527,7 @@ namespace Minefield
             this.label231.Name = "label231";
             this.label231.Size = new System.Drawing.Size(20, 20);
             this.label231.TabIndex = 1;
+            this.label231.Click += new System.EventHandler(this.flagSquare);
             // 
             // label232
             // 
@@ -2306,6 +2536,7 @@ namespace Minefield
             this.label232.Name = "label232";
             this.label232.Size = new System.Drawing.Size(20, 20);
             this.label232.TabIndex = 1;
+            this.label232.Click += new System.EventHandler(this.flagSquare);
             // 
             // label233
             // 
@@ -2314,6 +2545,7 @@ namespace Minefield
             this.label233.Name = "label233";
             this.label233.Size = new System.Drawing.Size(20, 20);
             this.label233.TabIndex = 1;
+            this.label233.Click += new System.EventHandler(this.flagSquare);
             // 
             // label234
             // 
@@ -2322,6 +2554,7 @@ namespace Minefield
             this.label234.Name = "label234";
             this.label234.Size = new System.Drawing.Size(20, 20);
             this.label234.TabIndex = 1;
+            this.label234.Click += new System.EventHandler(this.flagSquare);
             // 
             // label235
             // 
@@ -2330,6 +2563,7 @@ namespace Minefield
             this.label235.Name = "label235";
             this.label235.Size = new System.Drawing.Size(20, 20);
             this.label235.TabIndex = 1;
+            this.label235.Click += new System.EventHandler(this.flagSquare);
             // 
             // label236
             // 
@@ -2338,6 +2572,7 @@ namespace Minefield
             this.label236.Name = "label236";
             this.label236.Size = new System.Drawing.Size(20, 20);
             this.label236.TabIndex = 1;
+            this.label236.Click += new System.EventHandler(this.flagSquare);
             // 
             // label237
             // 
@@ -2346,6 +2581,7 @@ namespace Minefield
             this.label237.Name = "label237";
             this.label237.Size = new System.Drawing.Size(20, 20);
             this.label237.TabIndex = 1;
+            this.label237.Click += new System.EventHandler(this.flagSquare);
             // 
             // label238
             // 
@@ -2354,6 +2590,7 @@ namespace Minefield
             this.label238.Name = "label238";
             this.label238.Size = new System.Drawing.Size(20, 20);
             this.label238.TabIndex = 1;
+            this.label238.Click += new System.EventHandler(this.flagSquare);
             // 
             // label239
             // 
@@ -2362,6 +2599,7 @@ namespace Minefield
             this.label239.Name = "label239";
             this.label239.Size = new System.Drawing.Size(20, 20);
             this.label239.TabIndex = 1;
+            this.label239.Click += new System.EventHandler(this.flagSquare);
             // 
             // label240
             // 
@@ -2370,6 +2608,7 @@ namespace Minefield
             this.label240.Name = "label240";
             this.label240.Size = new System.Drawing.Size(20, 20);
             this.label240.TabIndex = 1;
+            this.label240.Click += new System.EventHandler(this.flagSquare);
             // 
             // label241
             // 
@@ -2378,6 +2617,7 @@ namespace Minefield
             this.label241.Name = "label241";
             this.label241.Size = new System.Drawing.Size(20, 20);
             this.label241.TabIndex = 1;
+            this.label241.Click += new System.EventHandler(this.flagSquare);
             // 
             // label242
             // 
@@ -2386,6 +2626,7 @@ namespace Minefield
             this.label242.Name = "label242";
             this.label242.Size = new System.Drawing.Size(20, 20);
             this.label242.TabIndex = 1;
+            this.label242.Click += new System.EventHandler(this.flagSquare);
             // 
             // label243
             // 
@@ -2394,6 +2635,7 @@ namespace Minefield
             this.label243.Name = "label243";
             this.label243.Size = new System.Drawing.Size(20, 20);
             this.label243.TabIndex = 1;
+            this.label243.Click += new System.EventHandler(this.flagSquare);
             // 
             // label244
             // 
@@ -2402,6 +2644,7 @@ namespace Minefield
             this.label244.Name = "label244";
             this.label244.Size = new System.Drawing.Size(20, 20);
             this.label244.TabIndex = 1;
+            this.label244.Click += new System.EventHandler(this.flagSquare);
             // 
             // label245
             // 
@@ -2410,6 +2653,7 @@ namespace Minefield
             this.label245.Name = "label245";
             this.label245.Size = new System.Drawing.Size(20, 20);
             this.label245.TabIndex = 1;
+            this.label245.Click += new System.EventHandler(this.flagSquare);
             // 
             // label246
             // 
@@ -2418,6 +2662,7 @@ namespace Minefield
             this.label246.Name = "label246";
             this.label246.Size = new System.Drawing.Size(20, 20);
             this.label246.TabIndex = 1;
+            this.label246.Click += new System.EventHandler(this.flagSquare);
             // 
             // label247
             // 
@@ -2426,6 +2671,7 @@ namespace Minefield
             this.label247.Name = "label247";
             this.label247.Size = new System.Drawing.Size(20, 20);
             this.label247.TabIndex = 1;
+            this.label247.Click += new System.EventHandler(this.flagSquare);
             // 
             // label248
             // 
@@ -2434,6 +2680,7 @@ namespace Minefield
             this.label248.Name = "label248";
             this.label248.Size = new System.Drawing.Size(20, 20);
             this.label248.TabIndex = 1;
+            this.label248.Click += new System.EventHandler(this.flagSquare);
             // 
             // label249
             // 
@@ -2442,6 +2689,7 @@ namespace Minefield
             this.label249.Name = "label249";
             this.label249.Size = new System.Drawing.Size(20, 20);
             this.label249.TabIndex = 1;
+            this.label249.Click += new System.EventHandler(this.flagSquare);
             // 
             // label250
             // 
@@ -2450,6 +2698,7 @@ namespace Minefield
             this.label250.Name = "label250";
             this.label250.Size = new System.Drawing.Size(20, 20);
             this.label250.TabIndex = 1;
+            this.label250.Click += new System.EventHandler(this.flagSquare);
             // 
             // label251
             // 
@@ -2458,6 +2707,7 @@ namespace Minefield
             this.label251.Name = "label251";
             this.label251.Size = new System.Drawing.Size(20, 20);
             this.label251.TabIndex = 1;
+            this.label251.Click += new System.EventHandler(this.flagSquare);
             // 
             // label252
             // 
@@ -2466,6 +2716,7 @@ namespace Minefield
             this.label252.Name = "label252";
             this.label252.Size = new System.Drawing.Size(20, 20);
             this.label252.TabIndex = 1;
+            this.label252.Click += new System.EventHandler(this.flagSquare);
             // 
             // label253
             // 
@@ -2474,6 +2725,7 @@ namespace Minefield
             this.label253.Name = "label253";
             this.label253.Size = new System.Drawing.Size(20, 20);
             this.label253.TabIndex = 1;
+            this.label253.Click += new System.EventHandler(this.flagSquare);
             // 
             // label254
             // 
@@ -2482,6 +2734,7 @@ namespace Minefield
             this.label254.Name = "label254";
             this.label254.Size = new System.Drawing.Size(20, 20);
             this.label254.TabIndex = 1;
+            this.label254.Click += new System.EventHandler(this.flagSquare);
             // 
             // label255
             // 
@@ -2490,6 +2743,7 @@ namespace Minefield
             this.label255.Name = "label255";
             this.label255.Size = new System.Drawing.Size(20, 20);
             this.label255.TabIndex = 1;
+            this.label255.Click += new System.EventHandler(this.flagSquare);
             // 
             // label256
             // 
@@ -2498,6 +2752,7 @@ namespace Minefield
             this.label256.Name = "label256";
             this.label256.Size = new System.Drawing.Size(20, 20);
             this.label256.TabIndex = 1;
+            this.label256.Click += new System.EventHandler(this.flagSquare);
             // 
             // label257
             // 
@@ -2506,6 +2761,7 @@ namespace Minefield
             this.label257.Name = "label257";
             this.label257.Size = new System.Drawing.Size(20, 20);
             this.label257.TabIndex = 1;
+            this.label257.Click += new System.EventHandler(this.flagSquare);
             // 
             // label258
             // 
@@ -2514,6 +2770,7 @@ namespace Minefield
             this.label258.Name = "label258";
             this.label258.Size = new System.Drawing.Size(20, 20);
             this.label258.TabIndex = 1;
+            this.label258.Click += new System.EventHandler(this.flagSquare);
             // 
             // label259
             // 
@@ -2522,6 +2779,7 @@ namespace Minefield
             this.label259.Name = "label259";
             this.label259.Size = new System.Drawing.Size(20, 20);
             this.label259.TabIndex = 1;
+            this.label259.Click += new System.EventHandler(this.flagSquare);
             // 
             // label260
             // 
@@ -2530,6 +2788,7 @@ namespace Minefield
             this.label260.Name = "label260";
             this.label260.Size = new System.Drawing.Size(20, 20);
             this.label260.TabIndex = 1;
+            this.label260.Click += new System.EventHandler(this.flagSquare);
             // 
             // label261
             // 
@@ -2538,6 +2797,7 @@ namespace Minefield
             this.label261.Name = "label261";
             this.label261.Size = new System.Drawing.Size(20, 20);
             this.label261.TabIndex = 1;
+            this.label261.Click += new System.EventHandler(this.flagSquare);
             // 
             // label262
             // 
@@ -2546,6 +2806,7 @@ namespace Minefield
             this.label262.Name = "label262";
             this.label262.Size = new System.Drawing.Size(20, 20);
             this.label262.TabIndex = 1;
+            this.label262.Click += new System.EventHandler(this.flagSquare);
             // 
             // label263
             // 
@@ -2554,6 +2815,7 @@ namespace Minefield
             this.label263.Name = "label263";
             this.label263.Size = new System.Drawing.Size(20, 20);
             this.label263.TabIndex = 1;
+            this.label263.Click += new System.EventHandler(this.flagSquare);
             // 
             // label264
             // 
@@ -2562,6 +2824,7 @@ namespace Minefield
             this.label264.Name = "label264";
             this.label264.Size = new System.Drawing.Size(20, 20);
             this.label264.TabIndex = 1;
+            this.label264.Click += new System.EventHandler(this.flagSquare);
             // 
             // label265
             // 
@@ -2570,6 +2833,7 @@ namespace Minefield
             this.label265.Name = "label265";
             this.label265.Size = new System.Drawing.Size(20, 20);
             this.label265.TabIndex = 1;
+            this.label265.Click += new System.EventHandler(this.flagSquare);
             // 
             // label266
             // 
@@ -2578,6 +2842,7 @@ namespace Minefield
             this.label266.Name = "label266";
             this.label266.Size = new System.Drawing.Size(20, 20);
             this.label266.TabIndex = 1;
+            this.label266.Click += new System.EventHandler(this.flagSquare);
             // 
             // label267
             // 
@@ -2586,6 +2851,7 @@ namespace Minefield
             this.label267.Name = "label267";
             this.label267.Size = new System.Drawing.Size(20, 20);
             this.label267.TabIndex = 1;
+            this.label267.Click += new System.EventHandler(this.flagSquare);
             // 
             // label268
             // 
@@ -2594,6 +2860,7 @@ namespace Minefield
             this.label268.Name = "label268";
             this.label268.Size = new System.Drawing.Size(20, 20);
             this.label268.TabIndex = 1;
+            this.label268.Click += new System.EventHandler(this.flagSquare);
             // 
             // label269
             // 
@@ -2602,6 +2869,7 @@ namespace Minefield
             this.label269.Name = "label269";
             this.label269.Size = new System.Drawing.Size(20, 20);
             this.label269.TabIndex = 1;
+            this.label269.Click += new System.EventHandler(this.flagSquare);
             // 
             // label270
             // 
@@ -2610,6 +2878,7 @@ namespace Minefield
             this.label270.Name = "label270";
             this.label270.Size = new System.Drawing.Size(20, 20);
             this.label270.TabIndex = 1;
+            this.label270.Click += new System.EventHandler(this.flagSquare);
             // 
             // label271
             // 
@@ -2618,6 +2887,7 @@ namespace Minefield
             this.label271.Name = "label271";
             this.label271.Size = new System.Drawing.Size(20, 20);
             this.label271.TabIndex = 1;
+            this.label271.Click += new System.EventHandler(this.flagSquare);
             // 
             // label272
             // 
@@ -2626,6 +2896,7 @@ namespace Minefield
             this.label272.Name = "label272";
             this.label272.Size = new System.Drawing.Size(20, 20);
             this.label272.TabIndex = 1;
+            this.label272.Click += new System.EventHandler(this.flagSquare);
             // 
             // label273
             // 
@@ -2634,6 +2905,7 @@ namespace Minefield
             this.label273.Name = "label273";
             this.label273.Size = new System.Drawing.Size(20, 20);
             this.label273.TabIndex = 1;
+            this.label273.Click += new System.EventHandler(this.flagSquare);
             // 
             // label274
             // 
@@ -2642,6 +2914,7 @@ namespace Minefield
             this.label274.Name = "label274";
             this.label274.Size = new System.Drawing.Size(20, 20);
             this.label274.TabIndex = 1;
+            this.label274.Click += new System.EventHandler(this.flagSquare);
             // 
             // label275
             // 
@@ -2650,6 +2923,7 @@ namespace Minefield
             this.label275.Name = "label275";
             this.label275.Size = new System.Drawing.Size(20, 20);
             this.label275.TabIndex = 1;
+            this.label275.Click += new System.EventHandler(this.flagSquare);
             // 
             // label276
             // 
@@ -2658,6 +2932,7 @@ namespace Minefield
             this.label276.Name = "label276";
             this.label276.Size = new System.Drawing.Size(20, 20);
             this.label276.TabIndex = 1;
+            this.label276.Click += new System.EventHandler(this.flagSquare);
             // 
             // label277
             // 
@@ -2666,6 +2941,7 @@ namespace Minefield
             this.label277.Name = "label277";
             this.label277.Size = new System.Drawing.Size(20, 20);
             this.label277.TabIndex = 1;
+            this.label277.Click += new System.EventHandler(this.flagSquare);
             // 
             // label278
             // 
@@ -2674,6 +2950,7 @@ namespace Minefield
             this.label278.Name = "label278";
             this.label278.Size = new System.Drawing.Size(20, 20);
             this.label278.TabIndex = 1;
+            this.label278.Click += new System.EventHandler(this.flagSquare);
             // 
             // label279
             // 
@@ -2682,6 +2959,7 @@ namespace Minefield
             this.label279.Name = "label279";
             this.label279.Size = new System.Drawing.Size(20, 20);
             this.label279.TabIndex = 1;
+            this.label279.Click += new System.EventHandler(this.flagSquare);
             // 
             // label280
             // 
@@ -2690,6 +2968,7 @@ namespace Minefield
             this.label280.Name = "label280";
             this.label280.Size = new System.Drawing.Size(20, 20);
             this.label280.TabIndex = 1;
+            this.label280.Click += new System.EventHandler(this.flagSquare);
             // 
             // label281
             // 
@@ -2698,6 +2977,7 @@ namespace Minefield
             this.label281.Name = "label281";
             this.label281.Size = new System.Drawing.Size(20, 20);
             this.label281.TabIndex = 1;
+            this.label281.Click += new System.EventHandler(this.flagSquare);
             // 
             // label282
             // 
@@ -2706,6 +2986,7 @@ namespace Minefield
             this.label282.Name = "label282";
             this.label282.Size = new System.Drawing.Size(20, 20);
             this.label282.TabIndex = 1;
+            this.label282.Click += new System.EventHandler(this.flagSquare);
             // 
             // label283
             // 
@@ -2714,6 +2995,7 @@ namespace Minefield
             this.label283.Name = "label283";
             this.label283.Size = new System.Drawing.Size(20, 20);
             this.label283.TabIndex = 1;
+            this.label283.Click += new System.EventHandler(this.flagSquare);
             // 
             // label284
             // 
@@ -2722,6 +3004,7 @@ namespace Minefield
             this.label284.Name = "label284";
             this.label284.Size = new System.Drawing.Size(20, 20);
             this.label284.TabIndex = 1;
+            this.label284.Click += new System.EventHandler(this.flagSquare);
             // 
             // label285
             // 
@@ -2730,6 +3013,7 @@ namespace Minefield
             this.label285.Name = "label285";
             this.label285.Size = new System.Drawing.Size(20, 20);
             this.label285.TabIndex = 1;
+            this.label285.Click += new System.EventHandler(this.flagSquare);
             // 
             // label286
             // 
@@ -2738,6 +3022,7 @@ namespace Minefield
             this.label286.Name = "label286";
             this.label286.Size = new System.Drawing.Size(20, 20);
             this.label286.TabIndex = 1;
+            this.label286.Click += new System.EventHandler(this.flagSquare);
             // 
             // label287
             // 
@@ -2746,6 +3031,7 @@ namespace Minefield
             this.label287.Name = "label287";
             this.label287.Size = new System.Drawing.Size(20, 20);
             this.label287.TabIndex = 1;
+            this.label287.Click += new System.EventHandler(this.flagSquare);
             // 
             // label288
             // 
@@ -2754,6 +3040,7 @@ namespace Minefield
             this.label288.Name = "label288";
             this.label288.Size = new System.Drawing.Size(20, 20);
             this.label288.TabIndex = 1;
+            this.label288.Click += new System.EventHandler(this.flagSquare);
             // 
             // label289
             // 
@@ -2762,6 +3049,7 @@ namespace Minefield
             this.label289.Name = "label289";
             this.label289.Size = new System.Drawing.Size(20, 20);
             this.label289.TabIndex = 1;
+            this.label289.Click += new System.EventHandler(this.flagSquare);
             // 
             // label290
             // 
@@ -2770,6 +3058,7 @@ namespace Minefield
             this.label290.Name = "label290";
             this.label290.Size = new System.Drawing.Size(20, 20);
             this.label290.TabIndex = 1;
+            this.label290.Click += new System.EventHandler(this.flagSquare);
             // 
             // label291
             // 
@@ -2778,6 +3067,7 @@ namespace Minefield
             this.label291.Name = "label291";
             this.label291.Size = new System.Drawing.Size(20, 20);
             this.label291.TabIndex = 1;
+            this.label291.Click += new System.EventHandler(this.flagSquare);
             // 
             // label292
             // 
@@ -2786,6 +3076,7 @@ namespace Minefield
             this.label292.Name = "label292";
             this.label292.Size = new System.Drawing.Size(20, 20);
             this.label292.TabIndex = 1;
+            this.label292.Click += new System.EventHandler(this.flagSquare);
             // 
             // label293
             // 
@@ -2794,6 +3085,7 @@ namespace Minefield
             this.label293.Name = "label293";
             this.label293.Size = new System.Drawing.Size(20, 20);
             this.label293.TabIndex = 1;
+            this.label293.Click += new System.EventHandler(this.flagSquare);
             // 
             // label294
             // 
@@ -2802,6 +3094,7 @@ namespace Minefield
             this.label294.Name = "label294";
             this.label294.Size = new System.Drawing.Size(20, 20);
             this.label294.TabIndex = 1;
+            this.label294.Click += new System.EventHandler(this.flagSquare);
             // 
             // label295
             // 
@@ -2810,6 +3103,7 @@ namespace Minefield
             this.label295.Name = "label295";
             this.label295.Size = new System.Drawing.Size(20, 20);
             this.label295.TabIndex = 1;
+            this.label295.Click += new System.EventHandler(this.flagSquare);
             // 
             // label296
             // 
@@ -2818,6 +3112,7 @@ namespace Minefield
             this.label296.Name = "label296";
             this.label296.Size = new System.Drawing.Size(20, 20);
             this.label296.TabIndex = 1;
+            this.label296.Click += new System.EventHandler(this.flagSquare);
             // 
             // label297
             // 
@@ -2826,6 +3121,7 @@ namespace Minefield
             this.label297.Name = "label297";
             this.label297.Size = new System.Drawing.Size(20, 20);
             this.label297.TabIndex = 1;
+            this.label297.Click += new System.EventHandler(this.flagSquare);
             // 
             // label298
             // 
@@ -2834,6 +3130,7 @@ namespace Minefield
             this.label298.Name = "label298";
             this.label298.Size = new System.Drawing.Size(20, 20);
             this.label298.TabIndex = 1;
+            this.label298.Click += new System.EventHandler(this.flagSquare);
             // 
             // label299
             // 
@@ -2842,6 +3139,7 @@ namespace Minefield
             this.label299.Name = "label299";
             this.label299.Size = new System.Drawing.Size(20, 20);
             this.label299.TabIndex = 1;
+            this.label299.Click += new System.EventHandler(this.flagSquare);
             // 
             // label300
             // 
@@ -2850,6 +3148,7 @@ namespace Minefield
             this.label300.Name = "label300";
             this.label300.Size = new System.Drawing.Size(20, 20);
             this.label300.TabIndex = 1;
+            this.label300.Click += new System.EventHandler(this.flagSquare);
             // 
             // label301
             // 
@@ -2858,6 +3157,7 @@ namespace Minefield
             this.label301.Name = "label301";
             this.label301.Size = new System.Drawing.Size(20, 20);
             this.label301.TabIndex = 1;
+            this.label301.Click += new System.EventHandler(this.flagSquare);
             // 
             // label302
             // 
@@ -2866,6 +3166,7 @@ namespace Minefield
             this.label302.Name = "label302";
             this.label302.Size = new System.Drawing.Size(20, 20);
             this.label302.TabIndex = 1;
+            this.label302.Click += new System.EventHandler(this.flagSquare);
             // 
             // label303
             // 
@@ -2874,6 +3175,7 @@ namespace Minefield
             this.label303.Name = "label303";
             this.label303.Size = new System.Drawing.Size(20, 20);
             this.label303.TabIndex = 1;
+            this.label303.Click += new System.EventHandler(this.flagSquare);
             // 
             // label304
             // 
@@ -2882,6 +3184,7 @@ namespace Minefield
             this.label304.Name = "label304";
             this.label304.Size = new System.Drawing.Size(20, 20);
             this.label304.TabIndex = 1;
+            this.label304.Click += new System.EventHandler(this.flagSquare);
             // 
             // label305
             // 
@@ -2890,6 +3193,7 @@ namespace Minefield
             this.label305.Name = "label305";
             this.label305.Size = new System.Drawing.Size(20, 20);
             this.label305.TabIndex = 1;
+            this.label305.Click += new System.EventHandler(this.flagSquare);
             // 
             // label306
             // 
@@ -2898,6 +3202,7 @@ namespace Minefield
             this.label306.Name = "label306";
             this.label306.Size = new System.Drawing.Size(20, 20);
             this.label306.TabIndex = 1;
+            this.label306.Click += new System.EventHandler(this.flagSquare);
             // 
             // label307
             // 
@@ -2906,6 +3211,7 @@ namespace Minefield
             this.label307.Name = "label307";
             this.label307.Size = new System.Drawing.Size(20, 20);
             this.label307.TabIndex = 1;
+            this.label307.Click += new System.EventHandler(this.flagSquare);
             // 
             // label308
             // 
@@ -2914,6 +3220,7 @@ namespace Minefield
             this.label308.Name = "label308";
             this.label308.Size = new System.Drawing.Size(20, 20);
             this.label308.TabIndex = 1;
+            this.label308.Click += new System.EventHandler(this.flagSquare);
             // 
             // label309
             // 
@@ -2922,6 +3229,7 @@ namespace Minefield
             this.label309.Name = "label309";
             this.label309.Size = new System.Drawing.Size(20, 20);
             this.label309.TabIndex = 1;
+            this.label309.Click += new System.EventHandler(this.flagSquare);
             // 
             // label310
             // 
@@ -2930,6 +3238,7 @@ namespace Minefield
             this.label310.Name = "label310";
             this.label310.Size = new System.Drawing.Size(20, 20);
             this.label310.TabIndex = 1;
+            this.label310.Click += new System.EventHandler(this.flagSquare);
             // 
             // label311
             // 
@@ -2938,6 +3247,7 @@ namespace Minefield
             this.label311.Name = "label311";
             this.label311.Size = new System.Drawing.Size(20, 20);
             this.label311.TabIndex = 1;
+            this.label311.Click += new System.EventHandler(this.flagSquare);
             // 
             // label312
             // 
@@ -2946,6 +3256,7 @@ namespace Minefield
             this.label312.Name = "label312";
             this.label312.Size = new System.Drawing.Size(20, 20);
             this.label312.TabIndex = 1;
+            this.label312.Click += new System.EventHandler(this.flagSquare);
             // 
             // label313
             // 
@@ -2954,6 +3265,7 @@ namespace Minefield
             this.label313.Name = "label313";
             this.label313.Size = new System.Drawing.Size(20, 20);
             this.label313.TabIndex = 1;
+            this.label313.Click += new System.EventHandler(this.flagSquare);
             // 
             // label314
             // 
@@ -2962,6 +3274,7 @@ namespace Minefield
             this.label314.Name = "label314";
             this.label314.Size = new System.Drawing.Size(20, 20);
             this.label314.TabIndex = 1;
+            this.label314.Click += new System.EventHandler(this.flagSquare);
             // 
             // label315
             // 
@@ -2970,6 +3283,7 @@ namespace Minefield
             this.label315.Name = "label315";
             this.label315.Size = new System.Drawing.Size(20, 20);
             this.label315.TabIndex = 1;
+            this.label315.Click += new System.EventHandler(this.flagSquare);
             // 
             // label316
             // 
@@ -2978,6 +3292,7 @@ namespace Minefield
             this.label316.Name = "label316";
             this.label316.Size = new System.Drawing.Size(20, 20);
             this.label316.TabIndex = 1;
+            this.label316.Click += new System.EventHandler(this.flagSquare);
             // 
             // label317
             // 
@@ -2986,6 +3301,7 @@ namespace Minefield
             this.label317.Name = "label317";
             this.label317.Size = new System.Drawing.Size(20, 20);
             this.label317.TabIndex = 1;
+            this.label317.Click += new System.EventHandler(this.flagSquare);
             // 
             // label318
             // 
@@ -2994,6 +3310,7 @@ namespace Minefield
             this.label318.Name = "label318";
             this.label318.Size = new System.Drawing.Size(20, 20);
             this.label318.TabIndex = 1;
+            this.label318.Click += new System.EventHandler(this.flagSquare);
             // 
             // label319
             // 
@@ -3002,6 +3319,7 @@ namespace Minefield
             this.label319.Name = "label319";
             this.label319.Size = new System.Drawing.Size(20, 20);
             this.label319.TabIndex = 1;
+            this.label319.Click += new System.EventHandler(this.flagSquare);
             // 
             // label320
             // 
@@ -3010,6 +3328,7 @@ namespace Minefield
             this.label320.Name = "label320";
             this.label320.Size = new System.Drawing.Size(20, 20);
             this.label320.TabIndex = 1;
+            this.label320.Click += new System.EventHandler(this.flagSquare);
             // 
             // label321
             // 
@@ -3018,6 +3337,7 @@ namespace Minefield
             this.label321.Name = "label321";
             this.label321.Size = new System.Drawing.Size(20, 20);
             this.label321.TabIndex = 1;
+            this.label321.Click += new System.EventHandler(this.flagSquare);
             // 
             // label322
             // 
@@ -3026,6 +3346,7 @@ namespace Minefield
             this.label322.Name = "label322";
             this.label322.Size = new System.Drawing.Size(20, 20);
             this.label322.TabIndex = 1;
+            this.label322.Click += new System.EventHandler(this.flagSquare);
             // 
             // label323
             // 
@@ -3034,6 +3355,7 @@ namespace Minefield
             this.label323.Name = "label323";
             this.label323.Size = new System.Drawing.Size(20, 20);
             this.label323.TabIndex = 1;
+            this.label323.Click += new System.EventHandler(this.flagSquare);
             // 
             // label324
             // 
@@ -3042,6 +3364,7 @@ namespace Minefield
             this.label324.Name = "label324";
             this.label324.Size = new System.Drawing.Size(20, 20);
             this.label324.TabIndex = 1;
+            this.label324.Click += new System.EventHandler(this.flagSquare);
             // 
             // label325
             // 
@@ -3050,6 +3373,7 @@ namespace Minefield
             this.label325.Name = "label325";
             this.label325.Size = new System.Drawing.Size(20, 20);
             this.label325.TabIndex = 1;
+            this.label325.Click += new System.EventHandler(this.flagSquare);
             // 
             // label326
             // 
@@ -3058,6 +3382,7 @@ namespace Minefield
             this.label326.Name = "label326";
             this.label326.Size = new System.Drawing.Size(20, 20);
             this.label326.TabIndex = 1;
+            this.label326.Click += new System.EventHandler(this.flagSquare);
             // 
             // label327
             // 
@@ -3066,6 +3391,7 @@ namespace Minefield
             this.label327.Name = "label327";
             this.label327.Size = new System.Drawing.Size(20, 20);
             this.label327.TabIndex = 1;
+            this.label327.Click += new System.EventHandler(this.flagSquare);
             // 
             // label328
             // 
@@ -3074,6 +3400,7 @@ namespace Minefield
             this.label328.Name = "label328";
             this.label328.Size = new System.Drawing.Size(20, 20);
             this.label328.TabIndex = 1;
+            this.label328.Click += new System.EventHandler(this.flagSquare);
             // 
             // label329
             // 
@@ -3082,6 +3409,7 @@ namespace Minefield
             this.label329.Name = "label329";
             this.label329.Size = new System.Drawing.Size(20, 20);
             this.label329.TabIndex = 1;
+            this.label329.Click += new System.EventHandler(this.flagSquare);
             // 
             // label330
             // 
@@ -3090,6 +3418,7 @@ namespace Minefield
             this.label330.Name = "label330";
             this.label330.Size = new System.Drawing.Size(20, 20);
             this.label330.TabIndex = 1;
+            this.label330.Click += new System.EventHandler(this.flagSquare);
             // 
             // label331
             // 
@@ -3098,6 +3427,7 @@ namespace Minefield
             this.label331.Name = "label331";
             this.label331.Size = new System.Drawing.Size(20, 20);
             this.label331.TabIndex = 1;
+            this.label331.Click += new System.EventHandler(this.flagSquare);
             // 
             // label332
             // 
@@ -3106,6 +3436,7 @@ namespace Minefield
             this.label332.Name = "label332";
             this.label332.Size = new System.Drawing.Size(20, 20);
             this.label332.TabIndex = 1;
+            this.label332.Click += new System.EventHandler(this.flagSquare);
             // 
             // label333
             // 
@@ -3114,6 +3445,7 @@ namespace Minefield
             this.label333.Name = "label333";
             this.label333.Size = new System.Drawing.Size(20, 20);
             this.label333.TabIndex = 1;
+            this.label333.Click += new System.EventHandler(this.flagSquare);
             // 
             // label334
             // 
@@ -3122,6 +3454,7 @@ namespace Minefield
             this.label334.Name = "label334";
             this.label334.Size = new System.Drawing.Size(20, 20);
             this.label334.TabIndex = 1;
+            this.label334.Click += new System.EventHandler(this.flagSquare);
             // 
             // label335
             // 
@@ -3130,6 +3463,7 @@ namespace Minefield
             this.label335.Name = "label335";
             this.label335.Size = new System.Drawing.Size(20, 20);
             this.label335.TabIndex = 1;
+            this.label335.Click += new System.EventHandler(this.flagSquare);
             // 
             // label336
             // 
@@ -3138,6 +3472,7 @@ namespace Minefield
             this.label336.Name = "label336";
             this.label336.Size = new System.Drawing.Size(20, 20);
             this.label336.TabIndex = 1;
+            this.label336.Click += new System.EventHandler(this.flagSquare);
             // 
             // label337
             // 
@@ -3146,6 +3481,7 @@ namespace Minefield
             this.label337.Name = "label337";
             this.label337.Size = new System.Drawing.Size(20, 20);
             this.label337.TabIndex = 1;
+            this.label337.Click += new System.EventHandler(this.flagSquare);
             // 
             // label338
             // 
@@ -3154,6 +3490,7 @@ namespace Minefield
             this.label338.Name = "label338";
             this.label338.Size = new System.Drawing.Size(20, 20);
             this.label338.TabIndex = 1;
+            this.label338.Click += new System.EventHandler(this.flagSquare);
             // 
             // label339
             // 
@@ -3162,6 +3499,7 @@ namespace Minefield
             this.label339.Name = "label339";
             this.label339.Size = new System.Drawing.Size(20, 20);
             this.label339.TabIndex = 1;
+            this.label339.Click += new System.EventHandler(this.flagSquare);
             // 
             // label340
             // 
@@ -3170,6 +3508,7 @@ namespace Minefield
             this.label340.Name = "label340";
             this.label340.Size = new System.Drawing.Size(20, 20);
             this.label340.TabIndex = 1;
+            this.label340.Click += new System.EventHandler(this.flagSquare);
             // 
             // label341
             // 
@@ -3178,6 +3517,7 @@ namespace Minefield
             this.label341.Name = "label341";
             this.label341.Size = new System.Drawing.Size(20, 20);
             this.label341.TabIndex = 1;
+            this.label341.Click += new System.EventHandler(this.flagSquare);
             // 
             // label342
             // 
@@ -3186,6 +3526,7 @@ namespace Minefield
             this.label342.Name = "label342";
             this.label342.Size = new System.Drawing.Size(20, 20);
             this.label342.TabIndex = 1;
+            this.label342.Click += new System.EventHandler(this.flagSquare);
             // 
             // label343
             // 
@@ -3194,6 +3535,7 @@ namespace Minefield
             this.label343.Name = "label343";
             this.label343.Size = new System.Drawing.Size(20, 20);
             this.label343.TabIndex = 1;
+            this.label343.Click += new System.EventHandler(this.flagSquare);
             // 
             // label344
             // 
@@ -3202,6 +3544,7 @@ namespace Minefield
             this.label344.Name = "label344";
             this.label344.Size = new System.Drawing.Size(20, 20);
             this.label344.TabIndex = 1;
+            this.label344.Click += new System.EventHandler(this.flagSquare);
             // 
             // label345
             // 
@@ -3210,6 +3553,7 @@ namespace Minefield
             this.label345.Name = "label345";
             this.label345.Size = new System.Drawing.Size(20, 20);
             this.label345.TabIndex = 1;
+            this.label345.Click += new System.EventHandler(this.flagSquare);
             // 
             // label346
             // 
@@ -3218,6 +3562,7 @@ namespace Minefield
             this.label346.Name = "label346";
             this.label346.Size = new System.Drawing.Size(20, 20);
             this.label346.TabIndex = 1;
+            this.label346.Click += new System.EventHandler(this.flagSquare);
             // 
             // label347
             // 
@@ -3226,6 +3571,7 @@ namespace Minefield
             this.label347.Name = "label347";
             this.label347.Size = new System.Drawing.Size(20, 20);
             this.label347.TabIndex = 1;
+            this.label347.Click += new System.EventHandler(this.flagSquare);
             // 
             // label348
             // 
@@ -3234,6 +3580,7 @@ namespace Minefield
             this.label348.Name = "label348";
             this.label348.Size = new System.Drawing.Size(20, 20);
             this.label348.TabIndex = 1;
+            this.label348.Click += new System.EventHandler(this.flagSquare);
             // 
             // label349
             // 
@@ -3242,6 +3589,7 @@ namespace Minefield
             this.label349.Name = "label349";
             this.label349.Size = new System.Drawing.Size(20, 20);
             this.label349.TabIndex = 1;
+            this.label349.Click += new System.EventHandler(this.flagSquare);
             // 
             // label350
             // 
@@ -3250,6 +3598,7 @@ namespace Minefield
             this.label350.Name = "label350";
             this.label350.Size = new System.Drawing.Size(20, 20);
             this.label350.TabIndex = 1;
+            this.label350.Click += new System.EventHandler(this.flagSquare);
             // 
             // label351
             // 
@@ -3258,6 +3607,7 @@ namespace Minefield
             this.label351.Name = "label351";
             this.label351.Size = new System.Drawing.Size(20, 20);
             this.label351.TabIndex = 1;
+            this.label351.Click += new System.EventHandler(this.flagSquare);
             // 
             // label352
             // 
@@ -3266,6 +3616,7 @@ namespace Minefield
             this.label352.Name = "label352";
             this.label352.Size = new System.Drawing.Size(20, 20);
             this.label352.TabIndex = 1;
+            this.label352.Click += new System.EventHandler(this.flagSquare);
             // 
             // label353
             // 
@@ -3274,6 +3625,7 @@ namespace Minefield
             this.label353.Name = "label353";
             this.label353.Size = new System.Drawing.Size(20, 20);
             this.label353.TabIndex = 1;
+            this.label353.Click += new System.EventHandler(this.flagSquare);
             // 
             // label354
             // 
@@ -3282,6 +3634,7 @@ namespace Minefield
             this.label354.Name = "label354";
             this.label354.Size = new System.Drawing.Size(20, 20);
             this.label354.TabIndex = 1;
+            this.label354.Click += new System.EventHandler(this.flagSquare);
             // 
             // label355
             // 
@@ -3290,6 +3643,7 @@ namespace Minefield
             this.label355.Name = "label355";
             this.label355.Size = new System.Drawing.Size(20, 20);
             this.label355.TabIndex = 1;
+            this.label355.Click += new System.EventHandler(this.flagSquare);
             // 
             // label356
             // 
@@ -3298,6 +3652,7 @@ namespace Minefield
             this.label356.Name = "label356";
             this.label356.Size = new System.Drawing.Size(20, 20);
             this.label356.TabIndex = 1;
+            this.label356.Click += new System.EventHandler(this.flagSquare);
             // 
             // label357
             // 
@@ -3306,6 +3661,7 @@ namespace Minefield
             this.label357.Name = "label357";
             this.label357.Size = new System.Drawing.Size(20, 20);
             this.label357.TabIndex = 1;
+            this.label357.Click += new System.EventHandler(this.flagSquare);
             // 
             // label358
             // 
@@ -3314,6 +3670,7 @@ namespace Minefield
             this.label358.Name = "label358";
             this.label358.Size = new System.Drawing.Size(20, 20);
             this.label358.TabIndex = 1;
+            this.label358.Click += new System.EventHandler(this.flagSquare);
             // 
             // label359
             // 
@@ -3322,6 +3679,7 @@ namespace Minefield
             this.label359.Name = "label359";
             this.label359.Size = new System.Drawing.Size(20, 20);
             this.label359.TabIndex = 1;
+            this.label359.Click += new System.EventHandler(this.flagSquare);
             // 
             // label360
             // 
@@ -3330,6 +3688,7 @@ namespace Minefield
             this.label360.Name = "label360";
             this.label360.Size = new System.Drawing.Size(20, 20);
             this.label360.TabIndex = 1;
+            this.label360.Click += new System.EventHandler(this.flagSquare);
             // 
             // label361
             // 
@@ -3338,6 +3697,7 @@ namespace Minefield
             this.label361.Name = "label361";
             this.label361.Size = new System.Drawing.Size(20, 20);
             this.label361.TabIndex = 1;
+            this.label361.Click += new System.EventHandler(this.flagSquare);
             // 
             // label362
             // 
@@ -3346,6 +3706,7 @@ namespace Minefield
             this.label362.Name = "label362";
             this.label362.Size = new System.Drawing.Size(20, 20);
             this.label362.TabIndex = 1;
+            this.label362.Click += new System.EventHandler(this.flagSquare);
             // 
             // label363
             // 
@@ -3354,6 +3715,7 @@ namespace Minefield
             this.label363.Name = "label363";
             this.label363.Size = new System.Drawing.Size(20, 20);
             this.label363.TabIndex = 1;
+            this.label363.Click += new System.EventHandler(this.flagSquare);
             // 
             // label364
             // 
@@ -3362,6 +3724,7 @@ namespace Minefield
             this.label364.Name = "label364";
             this.label364.Size = new System.Drawing.Size(20, 20);
             this.label364.TabIndex = 1;
+            this.label364.Click += new System.EventHandler(this.flagSquare);
             // 
             // label365
             // 
@@ -3370,6 +3733,7 @@ namespace Minefield
             this.label365.Name = "label365";
             this.label365.Size = new System.Drawing.Size(20, 20);
             this.label365.TabIndex = 1;
+            this.label365.Click += new System.EventHandler(this.flagSquare);
             // 
             // label366
             // 
@@ -3378,6 +3742,7 @@ namespace Minefield
             this.label366.Name = "label366";
             this.label366.Size = new System.Drawing.Size(20, 20);
             this.label366.TabIndex = 1;
+            this.label366.Click += new System.EventHandler(this.flagSquare);
             // 
             // label367
             // 
@@ -3386,6 +3751,7 @@ namespace Minefield
             this.label367.Name = "label367";
             this.label367.Size = new System.Drawing.Size(20, 20);
             this.label367.TabIndex = 1;
+            this.label367.Click += new System.EventHandler(this.flagSquare);
             // 
             // label368
             // 
@@ -3394,6 +3760,7 @@ namespace Minefield
             this.label368.Name = "label368";
             this.label368.Size = new System.Drawing.Size(20, 20);
             this.label368.TabIndex = 1;
+            this.label368.Click += new System.EventHandler(this.flagSquare);
             // 
             // label369
             // 
@@ -3402,6 +3769,7 @@ namespace Minefield
             this.label369.Name = "label369";
             this.label369.Size = new System.Drawing.Size(20, 20);
             this.label369.TabIndex = 1;
+            this.label369.Click += new System.EventHandler(this.flagSquare);
             // 
             // label370
             // 
@@ -3410,6 +3778,7 @@ namespace Minefield
             this.label370.Name = "label370";
             this.label370.Size = new System.Drawing.Size(20, 20);
             this.label370.TabIndex = 1;
+            this.label370.Click += new System.EventHandler(this.flagSquare);
             // 
             // label371
             // 
@@ -3418,6 +3787,7 @@ namespace Minefield
             this.label371.Name = "label371";
             this.label371.Size = new System.Drawing.Size(20, 20);
             this.label371.TabIndex = 1;
+            this.label371.Click += new System.EventHandler(this.flagSquare);
             // 
             // label372
             // 
@@ -3426,6 +3796,7 @@ namespace Minefield
             this.label372.Name = "label372";
             this.label372.Size = new System.Drawing.Size(20, 20);
             this.label372.TabIndex = 1;
+            this.label372.Click += new System.EventHandler(this.flagSquare);
             // 
             // label373
             // 
@@ -3434,6 +3805,7 @@ namespace Minefield
             this.label373.Name = "label373";
             this.label373.Size = new System.Drawing.Size(20, 20);
             this.label373.TabIndex = 1;
+            this.label373.Click += new System.EventHandler(this.flagSquare);
             // 
             // label374
             // 
@@ -3442,6 +3814,7 @@ namespace Minefield
             this.label374.Name = "label374";
             this.label374.Size = new System.Drawing.Size(20, 20);
             this.label374.TabIndex = 1;
+            this.label374.Click += new System.EventHandler(this.flagSquare);
             // 
             // label375
             // 
@@ -3450,6 +3823,7 @@ namespace Minefield
             this.label375.Name = "label375";
             this.label375.Size = new System.Drawing.Size(20, 20);
             this.label375.TabIndex = 1;
+            this.label375.Click += new System.EventHandler(this.flagSquare);
             // 
             // label376
             // 
@@ -3458,6 +3832,7 @@ namespace Minefield
             this.label376.Name = "label376";
             this.label376.Size = new System.Drawing.Size(20, 20);
             this.label376.TabIndex = 1;
+            this.label376.Click += new System.EventHandler(this.flagSquare);
             // 
             // label377
             // 
@@ -3466,6 +3841,7 @@ namespace Minefield
             this.label377.Name = "label377";
             this.label377.Size = new System.Drawing.Size(20, 20);
             this.label377.TabIndex = 1;
+            this.label377.Click += new System.EventHandler(this.flagSquare);
             // 
             // label378
             // 
@@ -3474,6 +3850,7 @@ namespace Minefield
             this.label378.Name = "label378";
             this.label378.Size = new System.Drawing.Size(20, 20);
             this.label378.TabIndex = 1;
+            this.label378.Click += new System.EventHandler(this.flagSquare);
             // 
             // label379
             // 
@@ -3482,6 +3859,7 @@ namespace Minefield
             this.label379.Name = "label379";
             this.label379.Size = new System.Drawing.Size(20, 20);
             this.label379.TabIndex = 1;
+            this.label379.Click += new System.EventHandler(this.flagSquare);
             // 
             // label380
             // 
@@ -3490,6 +3868,7 @@ namespace Minefield
             this.label380.Name = "label380";
             this.label380.Size = new System.Drawing.Size(20, 20);
             this.label380.TabIndex = 1;
+            this.label380.Click += new System.EventHandler(this.flagSquare);
             // 
             // label381
             // 
@@ -3506,6 +3885,7 @@ namespace Minefield
             this.label382.Name = "label382";
             this.label382.Size = new System.Drawing.Size(20, 20);
             this.label382.TabIndex = 1;
+            this.label382.Click += new System.EventHandler(this.flagSquare);
             // 
             // label383
             // 
@@ -3514,6 +3894,7 @@ namespace Minefield
             this.label383.Name = "label383";
             this.label383.Size = new System.Drawing.Size(20, 20);
             this.label383.TabIndex = 1;
+            this.label383.Click += new System.EventHandler(this.flagSquare);
             // 
             // label384
             // 
@@ -3522,6 +3903,7 @@ namespace Minefield
             this.label384.Name = "label384";
             this.label384.Size = new System.Drawing.Size(20, 20);
             this.label384.TabIndex = 1;
+            this.label384.Click += new System.EventHandler(this.flagSquare);
             // 
             // label385
             // 
@@ -3530,6 +3912,7 @@ namespace Minefield
             this.label385.Name = "label385";
             this.label385.Size = new System.Drawing.Size(20, 20);
             this.label385.TabIndex = 1;
+            this.label385.Click += new System.EventHandler(this.flagSquare);
             // 
             // label386
             // 
@@ -3538,6 +3921,7 @@ namespace Minefield
             this.label386.Name = "label386";
             this.label386.Size = new System.Drawing.Size(20, 20);
             this.label386.TabIndex = 1;
+            this.label386.Click += new System.EventHandler(this.flagSquare);
             // 
             // label387
             // 
@@ -3546,6 +3930,7 @@ namespace Minefield
             this.label387.Name = "label387";
             this.label387.Size = new System.Drawing.Size(20, 20);
             this.label387.TabIndex = 1;
+            this.label387.Click += new System.EventHandler(this.flagSquare);
             // 
             // label388
             // 
@@ -3554,6 +3939,7 @@ namespace Minefield
             this.label388.Name = "label388";
             this.label388.Size = new System.Drawing.Size(20, 20);
             this.label388.TabIndex = 1;
+            this.label388.Click += new System.EventHandler(this.flagSquare);
             // 
             // label389
             // 
@@ -3562,6 +3948,7 @@ namespace Minefield
             this.label389.Name = "label389";
             this.label389.Size = new System.Drawing.Size(20, 20);
             this.label389.TabIndex = 1;
+            this.label389.Click += new System.EventHandler(this.flagSquare);
             // 
             // label390
             // 
@@ -3570,6 +3957,7 @@ namespace Minefield
             this.label390.Name = "label390";
             this.label390.Size = new System.Drawing.Size(20, 20);
             this.label390.TabIndex = 1;
+            this.label390.Click += new System.EventHandler(this.flagSquare);
             // 
             // label391
             // 
@@ -3578,6 +3966,7 @@ namespace Minefield
             this.label391.Name = "label391";
             this.label391.Size = new System.Drawing.Size(20, 20);
             this.label391.TabIndex = 1;
+            this.label391.Click += new System.EventHandler(this.flagSquare);
             // 
             // label392
             // 
@@ -3586,6 +3975,7 @@ namespace Minefield
             this.label392.Name = "label392";
             this.label392.Size = new System.Drawing.Size(20, 20);
             this.label392.TabIndex = 1;
+            this.label392.Click += new System.EventHandler(this.flagSquare);
             // 
             // label393
             // 
@@ -3594,6 +3984,7 @@ namespace Minefield
             this.label393.Name = "label393";
             this.label393.Size = new System.Drawing.Size(20, 20);
             this.label393.TabIndex = 1;
+            this.label393.Click += new System.EventHandler(this.flagSquare);
             // 
             // label394
             // 
@@ -3602,6 +3993,7 @@ namespace Minefield
             this.label394.Name = "label394";
             this.label394.Size = new System.Drawing.Size(20, 20);
             this.label394.TabIndex = 1;
+            this.label394.Click += new System.EventHandler(this.flagSquare);
             // 
             // label395
             // 
@@ -3610,6 +4002,7 @@ namespace Minefield
             this.label395.Name = "label395";
             this.label395.Size = new System.Drawing.Size(20, 20);
             this.label395.TabIndex = 1;
+            this.label395.Click += new System.EventHandler(this.flagSquare);
             // 
             // label396
             // 
@@ -3618,6 +4011,7 @@ namespace Minefield
             this.label396.Name = "label396";
             this.label396.Size = new System.Drawing.Size(20, 20);
             this.label396.TabIndex = 1;
+            this.label396.Click += new System.EventHandler(this.flagSquare);
             // 
             // label397
             // 
@@ -3626,6 +4020,7 @@ namespace Minefield
             this.label397.Name = "label397";
             this.label397.Size = new System.Drawing.Size(20, 20);
             this.label397.TabIndex = 1;
+            this.label397.Click += new System.EventHandler(this.flagSquare);
             // 
             // label398
             // 
@@ -3634,6 +4029,7 @@ namespace Minefield
             this.label398.Name = "label398";
             this.label398.Size = new System.Drawing.Size(20, 20);
             this.label398.TabIndex = 1;
+            this.label398.Click += new System.EventHandler(this.flagSquare);
             // 
             // label399
             // 
@@ -3642,6 +4038,7 @@ namespace Minefield
             this.label399.Name = "label399";
             this.label399.Size = new System.Drawing.Size(20, 20);
             this.label399.TabIndex = 1;
+            this.label399.Click += new System.EventHandler(this.flagSquare);
             // 
             // label400
             // 
@@ -3650,6 +4047,7 @@ namespace Minefield
             this.label400.Name = "label400";
             this.label400.Size = new System.Drawing.Size(20, 20);
             this.label400.TabIndex = 1;
+            this.label400.Click += new System.EventHandler(this.flagSquare);
             // 
             // lblPlayer
             // 

@@ -31,6 +31,10 @@ namespace Minefield
         // Holds the direction which the player last moved in
         string lastMoveDirection = "up";
 
+        // Holds whether the player is in the exploding animation
+        // Used to stop the player from moving while in the explosion animation
+        bool isPlayerExploding = false;
+
         // The Array used to hold the positon of bombs
         int[,] MineMap = new int[20, 20];
 
@@ -39,7 +43,10 @@ namespace Minefield
 
         // List to hold all squares which have already been discovered
         // Used a list over array because the size is variable
-        List<String> discoveredSquares = new List<string>();
+        List<string> discoveredSquares = new List<string>();
+
+        // List to hold all flagged squares
+        List<Label> flaggedSquares = new List<Label>();
 
         // Holds the current Gamemode/Loadout index
         int gamemodeIndex;
@@ -115,6 +122,8 @@ namespace Minefield
         /// </summary>
         public async void explodeAnimation()
         {
+            isPlayerExploding = true;
+
             playSound(Minefield.Properties.Resources.Explosion, false, false);
 
             lblPlayer.Image = Resources.explosionP1;
@@ -142,6 +151,8 @@ namespace Minefield
 
                 playSound(Minefield.Properties.Resources.Game, true, false);
             }
+
+            isPlayerExploding = false;
         }
 
        #region GameLogic
@@ -231,6 +242,7 @@ namespace Minefield
 
         string[] Loadouts = { "Arsonist", "Ninja" };
 
+        // Holds the icons for each loadout
         Bitmap[] LoadoutIcons = { Minefield.Properties.Resources.arsonistLoadType, Minefield.Properties.Resources.ninjaLoadType };
 
         /// <summary>
@@ -579,13 +591,15 @@ namespace Minefield
         /// </summary>
         private void moveUp()
         {   
-            if (playerY != 0)
+            if (playerY != 0 && checkIfSquareFlagged(playerX, playerY - 1) != true && isPlayerExploding != true)
             {
                 lastMoveDirection = "up";
 
                 lblPlayer.Image = Resources.up;
                 lblPlayer.Location = new Point(lblPlayer.Location.X, lblPlayer.Location.Y - 20);
                 playerY -= 1;
+
+                checkEnv(playerX, playerY);
             }
         }
 
@@ -594,13 +608,15 @@ namespace Minefield
         /// </summary>
         private void moveDown()
         {   
-            if (playerY != 19)
+            if (playerY != 19 && checkIfSquareFlagged(playerX, playerY + 1) != true && isPlayerExploding != true)
             {
                 lastMoveDirection = "down";
 
                 lblPlayer.Image = Resources.down;
                 lblPlayer.Location = new Point(lblPlayer.Location.X, lblPlayer.Location.Y + 20);
                 playerY += 1;
+
+                checkEnv(playerX, playerY);
             } 
         }
 
@@ -609,13 +625,15 @@ namespace Minefield
         /// </summary>
         private void moveLeft()
         {   
-            if (playerX != 0)
+            if (playerX != 0 && checkIfSquareFlagged(playerX - 1, playerY) != true && isPlayerExploding != true)
             {
                 lastMoveDirection = "left";
 
                 lblPlayer.Image = Resources.left;
                 lblPlayer.Location = new Point(lblPlayer.Location.X - 20, lblPlayer.Location.Y);
                 playerX -= 1;
+
+                checkEnv(playerX, playerY);
             }
         }
 
@@ -624,13 +642,15 @@ namespace Minefield
         /// </summary>
         private void moveRight()
         {
-            if (playerX != 19)
+            if (playerX != 19 && checkIfSquareFlagged(playerX + 1, playerY) != true && isPlayerExploding != true)
             {
                 lastMoveDirection = "right";
 
                 lblPlayer.Image = Resources.right;
                 lblPlayer.Location = new Point(lblPlayer.Location.X + 20, lblPlayer.Location.Y);
                 playerX += 1;
+
+                checkEnv(playerX, playerY);
             }
         }
         #endregion
@@ -650,6 +670,26 @@ namespace Minefield
             }
 
             return isSquareDiscovered;
+        }
+
+        private bool checkIfSquareFlagged(int x, int y, Label label = null)
+        {
+            bool isSquareFlagged = false;
+
+            if (label == null)
+            {
+                label = getLabel(x, y);
+            }
+
+            foreach (Label square in flaggedSquares)
+            {
+                if (square == label)
+                {
+                    isSquareFlagged = true;
+                }
+            }
+
+            return isSquareFlagged;
         }
 
         private void checkEnv(int x, int y)
@@ -786,25 +826,21 @@ namespace Minefield
         private void btnDpadUp_Click(object sender, EventArgs e)
         {
             moveUp();
-            checkEnv(playerX, playerY);
         }
 
         private void btnDpadDown_Click(object sender, EventArgs e)
         {
             moveDown();
-            checkEnv(playerX, playerY);
         }
 
         private void btnDpadLeft_Click(object sender, EventArgs e)
         {
             moveLeft();
-            checkEnv(playerX, playerY);
         }
 
         private void btnDpadRight_Click(object sender, EventArgs e)
         {
             moveRight();
-            checkEnv(playerX, playerY);
         }
 
         #endregion
@@ -814,27 +850,22 @@ namespace Minefield
             if (e.KeyCode == Keys.W || e.KeyCode == Keys.Up)
             {
                 moveUp();
-                checkEnv(playerX, playerY);
             }
 
             if (e.KeyCode == Keys.A || e.KeyCode == Keys.Left)
             {
                 moveLeft();
-                checkEnv(playerX, playerY);
             }
 
             if (e.KeyCode == Keys.S || e.KeyCode == Keys.Down)
             {
                 moveDown();
-                checkEnv(playerX, playerY);
             }
 
             if (e.KeyCode == Keys.D || e.KeyCode == Keys.Right)
             {
                 moveRight();
-                checkEnv(playerX, playerY);
             }
-
         }
 
         private void btnActivateAbility_Click(object sender, EventArgs e)
@@ -881,6 +912,26 @@ namespace Minefield
             {
                 btnActivateAbility.FlatAppearance.BorderColor = Color.ForestGreen;
                 isAbilityReady = true;
+            }
+        }
+
+        // If one of the covering labels are clicked
+        private void flagSquare(object sender, EventArgs e)
+        {
+            if (Gamemodes[gamemodeIndex] == "Flag")
+            {
+                Label label = (Label)sender;
+
+                if (checkIfSquareFlagged(0, 0, label) == true)
+                {
+                    label.Image = null;
+                    flaggedSquares.Remove(label);
+                }
+                else
+                {
+                    label.Image = Minefield.Properties.Resources.flagGameTypeSmall;
+                    flaggedSquares.Add(label);
+                }
             }
         }
     }
