@@ -215,6 +215,10 @@ namespace Minefield
 
             stopwatch.Reset();
             stopwatch.Start();
+
+            EverySecond.Start();
+            FiveSeconds.Start();
+
         }
 
         /// <summary>
@@ -223,6 +227,8 @@ namespace Minefield
         private void gameOver()
         {
             stopwatch.Stop();
+            EverySecond.Stop();
+            FiveSeconds.Stop();
 
             pbGameOver.Visible = true;
             btnReplay.Visible = true;
