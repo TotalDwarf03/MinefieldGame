@@ -4255,6 +4255,7 @@ namespace Minefield
             // 
             // btnActivateAbility
             // 
+            this.btnActivateAbility.BackColor = System.Drawing.Color.DimGray;
             this.btnActivateAbility.BackgroundImage = global::Minefield.Properties.Resources.arsonistLoadType;
             this.btnActivateAbility.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnActivateAbility.FlatAppearance.BorderColor = System.Drawing.Color.ForestGreen;
@@ -4264,7 +4265,7 @@ namespace Minefield
             this.btnActivateAbility.Name = "btnActivateAbility";
             this.btnActivateAbility.Size = new System.Drawing.Size(80, 70);
             this.btnActivateAbility.TabIndex = 9;
-            this.btnActivateAbility.UseVisualStyleBackColor = true;
+            this.btnActivateAbility.UseVisualStyleBackColor = false;
             this.btnActivateAbility.Click += new System.EventHandler(this.btnActivateAbility_Click);
             // 
             // lblAbilityCooldown

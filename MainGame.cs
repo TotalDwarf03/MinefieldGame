@@ -28,6 +28,9 @@ namespace Minefield
         int playerX = 0;
         int playerY = 19;
 
+        // Holds the direction which the player last moved in
+        string lastMoveDirection = "up";
+
         // The Array used to hold the positon of bombs
         int[,] MineMap = new int[20, 20];
 
@@ -160,6 +163,8 @@ namespace Minefield
             label381.BackColor = Color.Transparent; //Set starting square to be transparent
 
             lives = 3;
+            pbLife.BackgroundImage = Minefield.Properties.Resources._3Lives;
+
             score = 0;
             lblScore.Text = $"SCORE: {score}";
 
@@ -174,6 +179,11 @@ namespace Minefield
 
             lblPlayer.Image = Resources.up;
             lblPlayer.Visible = true;
+            lastMoveDirection = "up";
+
+            btnActivateAbility.FlatAppearance.BorderColor = Color.ForestGreen;
+            lblAbilityCooldown.Text = "0s";
+            isAbilityReady = true;
 
             checkEnv(playerX, playerY);
 
@@ -221,7 +231,7 @@ namespace Minefield
 
         string[] Loadouts = { "Arsonist", "Ninja" };
 
-        UnmanagedMemoryStream[] LoadoutSounds = { Minefield.Properties.Resources.IgniteCrop, Minefield.Properties.Resources.Dash };
+        Bitmap[] LoadoutIcons = { Minefield.Properties.Resources.arsonistLoadType, Minefield.Properties.Resources.ninjaLoadType };
 
         /// <summary>
         /// Updates Gamemode and Loadout Indexes so the correct abilities/features are loaded
@@ -322,7 +332,165 @@ namespace Minefield
                 }
                 else if (Loadouts[loadoutIndex] == "Ninja")
                 {
+                    playSound(Minefield.Properties.Resources.Dash, false, false);
 
+                    switch (lastMoveDirection)
+                    {
+                        case "up":
+                            int maxMoves = 0;
+                            for (int i = 1; i <= 3; i++)
+                            {
+                                if (playerY - i >= 0 && playerY - i < 20)
+                                {
+                                    if (i > maxMoves)
+                                    {
+                                        maxMoves = i;
+                                    }
+
+                                    Label label = getLabel(playerX, playerY - i);
+                                    label.BackColor = Color.Transparent;
+
+                                    if (MineMap[playerX, playerY - i] == 1)
+                                    {
+                                        label.Image = Minefield.Properties.Resources.bombsmall;
+                                    }
+
+                                    if (checkIfSquareDiscovered(playerX, playerY - i) == false)
+                                    {
+                                        //Add Square to discovered list
+                                        discoveredSquares.Add($"({playerX},{playerY - i})");
+                                    }
+                                }
+                            }
+
+                            lblPlayer.Location = new Point(lblPlayer.Location.X, lblPlayer.Location.Y - (20 * maxMoves));
+                            playerY -= maxMoves;
+                            checkEnv(playerX, playerY);
+
+                            if (checkIfSquareDiscovered(playerX, playerY) == false)
+                            {
+                                //Add Square to discovered list
+                                discoveredSquares.Add($"({playerX},{playerY})");
+                            }
+                            break;
+
+                        case "down":
+                            maxMoves = 0;
+                            for (int i = 1; i <= 3; i++)
+                            {
+                                if (playerY + i >= 0 && playerY + i < 20)
+                                {
+                                    if (i > maxMoves)
+                                    {
+                                        maxMoves = i;
+                                    }
+
+                                    Label label = getLabel(playerX, playerY + i);
+                                    label.BackColor = Color.Transparent;
+
+                                    if (MineMap[playerX, playerY + i] == 1)
+                                    {
+                                        label.Image = Minefield.Properties.Resources.bombsmall;
+                                    }
+
+                                    if (checkIfSquareDiscovered(playerX, playerY + i) == false)
+                                    {
+                                        //Add Square to discovered list
+                                        discoveredSquares.Add($"({playerX},{playerY + i})");
+                                    }
+                                }
+                            }
+
+                            lblPlayer.Location = new Point(lblPlayer.Location.X, lblPlayer.Location.Y + (20 * maxMoves));
+                            playerY += maxMoves;
+                            checkEnv(playerX, playerY);
+
+                            if (checkIfSquareDiscovered(playerX, playerY) == false)
+                            {
+                                //Add Square to discovered list
+                                discoveredSquares.Add($"({playerX},{playerY})");
+                            }
+                            break;
+
+                        case "left":
+                            maxMoves = 0;
+                            for (int i = 1; i <= 3; i++)
+                            {
+                                if (playerX - i >= 0 && playerX - i < 20)
+                                {
+                                    if (i > maxMoves)
+                                    {
+                                        maxMoves = i;
+                                    }
+
+                                    Label label = getLabel(playerX - i, playerY);
+                                    label.BackColor = Color.Transparent;
+
+                                    if (MineMap[playerX - i, playerY] == 1)
+                                    {
+                                        label.Image = Minefield.Properties.Resources.bombsmall;
+                                    }
+
+                                    if (checkIfSquareDiscovered(playerX - i, playerY) == false)
+                                    {
+                                        //Add Square to discovered list
+                                        discoveredSquares.Add($"({playerX - i},{playerY})");
+                                    }
+                                }
+                            }
+
+                            lblPlayer.Location = new Point(lblPlayer.Location.X - (20 * maxMoves), lblPlayer.Location.Y);
+                            playerX -= maxMoves;
+                            checkEnv(playerX, playerY);
+
+                            if (checkIfSquareDiscovered(playerX, playerY) == false)
+                            {
+                                //Add Square to discovered list
+                                discoveredSquares.Add($"({playerX},{playerY})");
+                            }
+                            break;
+
+                        case "right":
+                            maxMoves = 0;
+                            for (int i = 1; i <= 3; i++)
+                            {
+                                if (playerX + i >= 0 && playerX + i < 20)
+                                {
+                                    if (i > maxMoves)
+                                    {
+                                        maxMoves = i;
+                                    }
+
+                                    Label label = getLabel(playerX + i, playerY);
+                                    label.BackColor = Color.Transparent;
+
+                                    if (MineMap[playerX + i, playerY] == 1)
+                                    {
+                                        label.Image = Minefield.Properties.Resources.bombsmall;
+                                    }
+
+                                    if (checkIfSquareDiscovered(playerX + i, playerY) == false)
+                                    {
+                                        //Add Square to discovered list
+                                        discoveredSquares.Add($"({playerX + i},{playerY})");
+                                    }
+                                }
+                            }
+
+                            lblPlayer.Location = new Point(lblPlayer.Location.X + (20 * maxMoves), lblPlayer.Location.Y);
+                            playerX += maxMoves;
+                            checkEnv(playerX, playerY);
+
+                            if (checkIfSquareDiscovered(playerX, playerY) == false)
+                            {
+                                //Add Square to discovered list
+                                discoveredSquares.Add($"({playerX},{playerY})");
+                            }
+                            break;
+                    }
+
+                    await Task.Delay(2000);
+                    playSound(Minefield.Properties.Resources.Game, true, false);
                 }
             }
         }
@@ -413,6 +581,8 @@ namespace Minefield
         {   
             if (playerY != 0)
             {
+                lastMoveDirection = "up";
+
                 lblPlayer.Image = Resources.up;
                 lblPlayer.Location = new Point(lblPlayer.Location.X, lblPlayer.Location.Y - 20);
                 playerY -= 1;
@@ -426,6 +596,8 @@ namespace Minefield
         {   
             if (playerY != 19)
             {
+                lastMoveDirection = "down";
+
                 lblPlayer.Image = Resources.down;
                 lblPlayer.Location = new Point(lblPlayer.Location.X, lblPlayer.Location.Y + 20);
                 playerY += 1;
@@ -439,6 +611,8 @@ namespace Minefield
         {   
             if (playerX != 0)
             {
+                lastMoveDirection = "left";
+
                 lblPlayer.Image = Resources.left;
                 lblPlayer.Location = new Point(lblPlayer.Location.X - 20, lblPlayer.Location.Y);
                 playerX -= 1;
@@ -452,6 +626,8 @@ namespace Minefield
         {
             if (playerX != 19)
             {
+                lastMoveDirection = "right";
+
                 lblPlayer.Image = Resources.right;
                 lblPlayer.Location = new Point(lblPlayer.Location.X + 20, lblPlayer.Location.Y);
                 playerX += 1;
@@ -460,6 +636,21 @@ namespace Minefield
         #endregion
 
         #region EnvironmentChecks
+
+        private bool checkIfSquareDiscovered(int x, int y)
+        {
+            bool isSquareDiscovered = false;
+
+            foreach (String square in discoveredSquares)
+            {
+                if ($"({x},{y})" == square)
+                {
+                    isSquareDiscovered = true;
+                }
+            }
+
+            return isSquareDiscovered;
+        }
 
         private void checkEnv(int x, int y)
         {
@@ -524,17 +715,7 @@ namespace Minefield
                 label.BackColor = Color.Transparent;
 
                 //Score Logic
-                bool isSquareDiscovered = false;
-
-                foreach (String square in discoveredSquares)
-                {
-                    if ($"({playerX},{playerY})" == square)
-                    {
-                        isSquareDiscovered = true;
-                    }
-                }
-
-                if (isSquareDiscovered == false)
+                if (checkIfSquareDiscovered(playerX, playerY) == false)
                 {
                     score += 1;
                     lblScore.Text = $"SCORE: {score}";
@@ -596,6 +777,8 @@ namespace Minefield
         private void Form1_Load(object sender, EventArgs e)
         {
             getGameSettings();
+            btnActivateAbility.BackgroundImage = LoadoutIcons[loadoutIndex];
+
             startGame();
         }
 
