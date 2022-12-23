@@ -20,20 +20,22 @@ namespace Minefield
             InitializeComponent();
         }
 
-        // Soundplayer to play select sound
+        // Initialises the sound player in global scope
         SoundPlayer player;
 
         /// <summary>
         /// Plays a given soundfile.
         /// </summary>
         /// <param name="soundFile">The name of the soundfile to play</param>
-        /// <param name="looping">Whether or not the file should loop</param>
-        private void playSound(UnmanagedMemoryStream soundFile, bool looping)
+        /// <param name="looping">Whether or not the file should loop (Default: false)</param>
+        /// <param name="sync">Whether the file should play synchronous (Default: false)</param>
+        private void playSound(UnmanagedMemoryStream soundFile, bool looping = false, bool sync = false)
         {
             if (looping)
             {
                 using (player = new SoundPlayer(soundFile))
                 {
+                    player.Load();
                     player.PlayLooping();
                 }
             }
@@ -41,7 +43,16 @@ namespace Minefield
             {
                 using (player = new SoundPlayer(soundFile))
                 {
-                    player.PlaySync();
+                    if (sync == false)
+                    {
+                        player.Stream.Position = 0;
+                        player.Play();
+                    }
+                    else
+                    {
+                        player.Stream.Position = 0;
+                        player.PlaySync();
+                    }
                 }
             }
         }
@@ -52,6 +63,7 @@ namespace Minefield
 
             List<string> scoreParts = new List<string>();
 
+            // Get the contents of Scores.txt using a StreamReader
             using (FileStream f = new FileStream("Scores.txt", FileMode.OpenOrCreate))
             {
                 using (StreamReader r = new StreamReader(f))
@@ -60,8 +72,10 @@ namespace Minefield
                 }
             }
 
+            // Split the contents by commas to get each score entry
             string[] scores = contents.Split(",");
 
+            // For each score entry, split it on hyphens to get the Player's name and Score
             foreach (string element in scores)
             {
                 string[] splitElements = element.Split("-");
@@ -70,8 +84,10 @@ namespace Minefield
                 scoreParts.Add(splitElements[1]);
             }
 
+            // Format the file contents into a string
             string leaderboard = @$"1 - {scoreParts[0]} - {scoreParts[1]}{System.Environment.NewLine}2 - {scoreParts[2]} - {scoreParts[3]}{System.Environment.NewLine}3 - {scoreParts[4]} - {scoreParts[5]}{System.Environment.NewLine}4 - {scoreParts[6]} - {scoreParts[7]}{System.Environment.NewLine}5 - {scoreParts[8]} - {scoreParts[9]}{System.Environment.NewLine}";
 
+            // Update Leaderboard label
             lblLeaderboard.Text = leaderboard;
         }
 
@@ -79,7 +95,7 @@ namespace Minefield
         {
             List<Form> formsToClose = new List<Form>();
 
-            playSound(Minefield.Properties.Resources.select, false);
+            playSound(Minefield.Properties.Resources.select, false, true);
 
             // Identify which forms other than the MainMenu are open in the background (not visible)
             foreach (Form form in Application.OpenForms)

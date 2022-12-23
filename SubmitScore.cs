@@ -18,30 +18,35 @@ namespace Minefield
     {
         int finalScore;
 
-        SoundPlayer player;
-
         public SubmitScore(int score, int timeBonus, int totalScore)
         {
             InitializeComponent();
 
+            // Puts the passed score parts into the UI
             lblScoreVal.Text = score.ToString();
             lblTimeBonusVal.Text = timeBonus.ToString();
             lblTotalScoreVal.Text = totalScore.ToString();
 
+            // Put final score into a global variable for later use
             finalScore = totalScore;
         }
+
+        // Initialises the sound player in global scope
+        SoundPlayer player;
 
         /// <summary>
         /// Plays a given soundfile.
         /// </summary>
         /// <param name="soundFile">The name of the soundfile to play</param>
-        /// <param name="looping">Whether or not the file should loop</param>
-        private void playSound(UnmanagedMemoryStream soundFile, bool looping)
+        /// <param name="looping">Whether or not the file should loop (Default: false)</param>
+        /// <param name="sync">Whether the file should play synchronous (Default: false)</param>
+        private void playSound(UnmanagedMemoryStream soundFile, bool looping = false, bool sync = false)
         {
             if (looping)
             {
                 using (player = new SoundPlayer(soundFile))
                 {
+                    player.Load();
                     player.PlayLooping();
                 }
             }
@@ -49,33 +54,44 @@ namespace Minefield
             {
                 using (player = new SoundPlayer(soundFile))
                 {
-                    player.Stream.Position = 0;
-                    player.Play();
+                    if (sync == false)
+                    {
+                        player.Stream.Position = 0;
+                        player.Play();
+                    }
+                    else
+                    {
+                        player.Stream.Position = 0;
+                        player.PlaySync();
+                    }
                 }
             }
         }
 
+        /// <summary>
+        /// Adds an animation when displaying the score summary (a 1 second delay between each part showing)
+        /// </summary>
         public async void statsAnimation()
         {
-            playSound(Minefield.Properties.Resources.scoreLine, false);
+            playSound(Minefield.Properties.Resources.scoreLine);
             lblScoreHeading.Visible = true;
             lblScoreVal.Visible = true;
 
             await Task.Delay(1000);
 
-            playSound(Minefield.Properties.Resources.scoreLine, false);
+            playSound(Minefield.Properties.Resources.scoreLine);
             lblTimeBonusHeading.Visible = true;
             lblTimeBonusVal.Visible = true;
 
             await Task.Delay(1000);
 
-            playSound(Minefield.Properties.Resources.scoreLine, false);
+            playSound(Minefield.Properties.Resources.scoreLine);
             lblTotalHeading.Visible = true;
             lblTotalScoreVal.Visible = true;
 
             await Task.Delay(1000);
 
-            playSound(Minefield.Properties.Resources.scoreLine, false);
+            playSound(Minefield.Properties.Resources.scoreLine);
             lblNameHeading.Visible = true;
 
             lblChar1.Visible = true;
@@ -92,7 +108,7 @@ namespace Minefield
 
             await Task.Delay(1000);
 
-            playSound(Minefield.Properties.Resources.scoreTotal, false);
+            playSound(Minefield.Properties.Resources.scoreTotal);
             btnSubmitScore.Visible = true;
         }
 
@@ -101,6 +117,11 @@ namespace Minefield
             statsAnimation();
         }
 
+        /// <summary>
+        /// Gets the prefix of a given number
+        /// </summary>
+        /// <param name="number">The number you want to find the prefix of</param>
+        /// <returns>The Prefix</returns>
         private string findNumberPrefix(int number)
         {
             string numAsString = number.ToString();
@@ -117,19 +138,31 @@ namespace Minefield
             return "th";
         }
 
+        // Define alphabet array for spinners
         char[] alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
+
+        // Tuple to hold current spinner selection
         Tuple<int, int, int> nameIndexes = new Tuple<int, int, int>(0, 0, 0);
 
+        /// <summary>
+        /// Goes to the next character in the alphabet
+        /// </summary>
         private void upChar(object sender, EventArgs e)
         {
-            playSound(Minefield.Properties.Resources.select, false);
+            playSound(Minefield.Properties.Resources.select);
 
+            // Gets the button which was pressed
             Button button = (Button)sender;
             string buttonName = button.Name;
 
             //7th character is always the number of the label which it effects
             string characterNo = buttonName[7].ToString();
 
+            // General Case Logic:
+            //      if index is within alphabet,
+            //          increase index in tuple
+            //      otherwise,
+            //          set index to 0
             switch (characterNo)
             {
                 case "1":
@@ -164,21 +197,32 @@ namespace Minefield
                     break;
             }
 
+            // Update UI to show new character selection
             lblChar1.Text = alphabet[nameIndexes.Item1].ToString();
             lblChar2.Text = alphabet[nameIndexes.Item2].ToString();
             lblChar3.Text = alphabet[nameIndexes.Item3].ToString();
         }
 
+
+        /// <summary>
+        /// Goes to the previous character in the alphabet
+        /// </summary>
         private void downChar(object sender, EventArgs e)
         {
             playSound(Minefield.Properties.Resources.select, false);
 
+            // Gets the button which was pressed
             Button button = (Button)sender;
             string buttonName = button.Name;
 
             //7th character is always the number of the label which it effects
             string characterNo = buttonName[7].ToString();
 
+            // General Case Logic:
+            //      if index greater than 0,
+            //          decrease index in tuple
+            //      otherwise,
+            //          set index to 25
             switch (characterNo)
             {
                 case "1":
@@ -213,6 +257,7 @@ namespace Minefield
                     break;
             }
 
+            // Update UI to show new character selection
             lblChar1.Text = alphabet[nameIndexes.Item1].ToString();
             lblChar2.Text = alphabet[nameIndexes.Item2].ToString();
             lblChar3.Text = alphabet[nameIndexes.Item3].ToString();
@@ -220,7 +265,7 @@ namespace Minefield
 
         private void btnSubmitScore_Click(object sender, EventArgs e)
         {
-            playSound(Minefield.Properties.Resources.select, false);
+            playSound(Minefield.Properties.Resources.select);
 
             string contents;
 
@@ -287,7 +332,7 @@ namespace Minefield
                     {
                         s.WriteLine(leaderboard);
 
-                        playSound(Minefield.Properties.Resources.newHighScore, false);
+                        playSound(Minefield.Properties.Resources.newHighScore);
                         MessageBox.Show($"Well Done! You made it onto the {newScorePosition + 1}{findNumberPrefix(newScorePosition + 1)} spot on the Leaderboard!", "Congratulations!");
                     }
                 }
@@ -297,6 +342,7 @@ namespace Minefield
                 MessageBox.Show("Unlucky! You didn't make it on the leaderboard this time!", "Better Luck Next Time!");
             }
 
+            // Go to leaderboard form
             var Leaderboard = new Leaderboard();
             Leaderboard.Show();
             this.Hide();

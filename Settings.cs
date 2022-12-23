@@ -46,20 +46,22 @@ namespace Minefield
         int gamemodeIndex;
         int loadoutIndex;
 
-        // Holds the current soundplayer
+        // Initialises the sound player in global scope
         SoundPlayer player;
 
         /// <summary>
         /// Plays a given soundfile.
         /// </summary>
         /// <param name="soundFile">The name of the soundfile to play</param>
-        /// <param name="looping">Whether or not the file should loop</param>
-        private void playSound(UnmanagedMemoryStream soundFile, bool looping)
+        /// <param name="looping">Whether or not the file should loop (Default: false)</param>
+        /// <param name="sync">Whether the file should play synchronous (Default: false)</param>
+        private void playSound(UnmanagedMemoryStream soundFile, bool looping = false, bool sync = false)
         {
             if (looping)
             {
                 using (player = new SoundPlayer(soundFile))
                 {
+                    player.Load();
                     player.PlayLooping();
                 }
             }
@@ -67,12 +69,23 @@ namespace Minefield
             {
                 using (player = new SoundPlayer(soundFile))
                 {
-                    player.Stream.Position = 0;
-                    player.Play();
+                    if (sync == false)
+                    {
+                        player.Stream.Position = 0;
+                        player.Play();
+                    }
+                    else
+                    {
+                        player.Stream.Position = 0;
+                        player.PlaySync();
+                    }
                 }
             }
         }
 
+        /// <summary>
+        /// Adds the new Gamemode and Loadout Selection to Settings.txt
+        /// </summary>
         private void UpdateSettingsFile()
         {
             string newString = $"gametype-{Gamemodes[gamemodeIndex, 0]},loadout-{Loadouts[loadoutIndex, 0]}";
@@ -98,6 +111,7 @@ namespace Minefield
             string curGamemode;
             string curLoadout;
 
+            // Using a StreamReader, get the contents of Settings.txt
             using (FileStream f = new FileStream("Settings.txt", FileMode.OpenOrCreate))
             {
                 using (StreamReader r = new StreamReader(f))
@@ -106,8 +120,12 @@ namespace Minefield
                 }
             }
 
+            // Split the contents of the text file into each option (separated by commas)
             string[] options = contents.Split(",");
 
+            // For each option from Settings.txt,
+            // Split it on hyphens
+            // This is to split the setting's label and value
             foreach (string option in options)
             {
                 string[] splitElements = option.Split("-");
@@ -116,9 +134,11 @@ namespace Minefield
                 SettingValues.Add(splitElements[1]);
             }
 
+            // Set current Gamemode and Loadout to the Setting's value
             curGamemode = SettingValues[0];
             curLoadout = SettingValues[1];
 
+            // Get the indexes of both the Gamemode and Loadout so assets can be loaded correctly
             for (int i = 0; i < Gamemodes.Length / 2; i++)
             {
                 if (curGamemode == Gamemodes[i, 0])
@@ -135,6 +155,7 @@ namespace Minefield
                 }
             }
 
+            // Update the UI with loaded values
             lblGameTypeVal.Text = Gamemodes[gamemodeIndex, 0];
             lblGameTypeDesc.Text = Gamemodes[gamemodeIndex, 1];
             pbGameIcon.BackgroundImage = GamemodeIcons[gamemodeIndex];
@@ -151,6 +172,7 @@ namespace Minefield
 
         private void btnQuit_Click(object sender, EventArgs e)
         {
+            // Go back to Main Menu
             foreach(Form form in Application.OpenForms)
             {
                 form.Show();
@@ -161,6 +183,7 @@ namespace Minefield
 
         private void pbGameIcon_Click(object sender, EventArgs e)
         {
+            // If at the end of the Gamemode list, set index to 0, otherwise, increment it by 1
             if (gamemodeIndex == (Gamemodes.Length / 2) - 1)
             {
                 gamemodeIndex = 0;
@@ -170,7 +193,7 @@ namespace Minefield
                 gamemodeIndex += 1;
             }
 
-            playSound(Minefield.Properties.Resources.select, false);
+            playSound(Minefield.Properties.Resources.select);
 
             UpdateSettingsFile();
             UpdateSettingsUI();
@@ -178,6 +201,7 @@ namespace Minefield
 
         private void pbLoadIcon_Click(object sender, EventArgs e)
         {
+            // If at the end of the Loadouts list, set index to 0, otherwise, increment it by 1
             if (loadoutIndex == (Loadouts.Length / 2) - 1)
             {
                 loadoutIndex = 0;
@@ -187,7 +211,7 @@ namespace Minefield
                 loadoutIndex += 1;
             }
 
-            playSound(LoadoutSounds[loadoutIndex], false);
+            playSound(LoadoutSounds[loadoutIndex]);
 
             UpdateSettingsFile();
             UpdateSettingsUI();

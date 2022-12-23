@@ -28,7 +28,7 @@ namespace Minefield
         int playerX = 0;
         int playerY = 19;
 
-        // Holds the direction which the player last moved in
+        // Holds the direction which the player last moved in (used for Ninja Loadout)
         string lastMoveDirection = "up";
 
         // Holds whether the player is in the exploding animation
@@ -87,9 +87,9 @@ namespace Minefield
         /// Plays a given soundfile.
         /// </summary>
         /// <param name="soundFile">The name of the soundfile to play</param>
-        /// <param name="looping">Whether or not the file should loop</param>
-        /// <param name="sync">Whether the file should play synchronous</param>
-        private void playSound(UnmanagedMemoryStream soundFile, bool looping, bool sync)
+        /// <param name="looping">Whether or not the file should loop (Default: false)</param>
+        /// <param name="sync">Whether the file should play synchronous (Default: false)</param>
+        private void playSound(UnmanagedMemoryStream soundFile, bool looping = false, bool sync = false)
         {
             if (looping)
             {
@@ -129,7 +129,7 @@ namespace Minefield
                 showMines();
             }
 
-            playSound(Minefield.Properties.Resources.Explosion, false, false);
+            playSound(Minefield.Properties.Resources.Explosion);
 
             lblPlayer.Image = Resources.explosionP1;
             await Task.Delay(500);
@@ -141,30 +141,36 @@ namespace Minefield
             await Task.Delay(500);
 
             lblPlayer.Visible = false;
-
+            
+            // Move player back to start
             lblPlayer.Location = new Point(0, 380);
             playerX = 0;
             playerY = 19;
 
+            // If game is still continuing
             if (lives != 0)
             {
                 hideMines();
+
+                // Reset player image to default
                 lblPlayer.Image = Resources.up;
                 lblPlayer.Visible = true;
 
+                // Run checkEnv to update bomb and life metres
                 checkEnv(playerX, playerY);
 
+                // Reset ability cooldown
                 btnActivateAbility.FlatAppearance.BorderColor = Color.ForestGreen;
                 lblAbilityCooldown.Text = "0s";
                 isAbilityReady = true;
 
-                // Reset Discovered Squares List
+                // Reset Discovered Squares and Flagged List
                 discoveredSquares.RemoveRange(0, discoveredSquares.Count);
                 discoveredSquares.Add(getLabel(playerX, playerY));
 
                 removeAllFlags();
 
-                playSound(Minefield.Properties.Resources.Game, true, false);
+                playSound(Minefield.Properties.Resources.Game, true);
             }
 
             isPlayerExploding = false;
@@ -181,25 +187,24 @@ namespace Minefield
         /// </summary>
         private void startGame()
         {
-            playSound(Minefield.Properties.Resources.Game, true, false);
+            playSound(Minefield.Properties.Resources.Game, true);
 
             hideMines();
             GenerateMinefield();
 
-            label381.BackColor = Color.Transparent; //Set starting square to be transparent
+            // Set starting square to be transparent
+            label381.BackColor = Color.Transparent; 
 
+            // Reset lives and score
             lives = 3;
             pbLife.BackgroundImage = Minefield.Properties.Resources._3Lives;
 
             score = 0;
             lblScore.Text = $"SCORE: {score}";
 
+            // Reset player position and images
             playerX = 0;
             playerY = 19;
-
-            pbGameOver.Visible = false;
-            btnReplay.Visible = false;
-            btnQuit.Visible = false;
 
             lblPlayer.Location = new Point(0, 380);
 
@@ -207,12 +212,20 @@ namespace Minefield
             lblPlayer.Visible = true;
             lastMoveDirection = "up";
 
+            // Hide the Game Over UI
+            pbGameOver.Visible = false;
+            btnReplay.Visible = false;
+            btnQuit.Visible = false;
+
+            // Reset ability cooldown
             btnActivateAbility.FlatAppearance.BorderColor = Color.ForestGreen;
             lblAbilityCooldown.Text = "0s";
             isAbilityReady = true;
 
+            // Runs checkEnv to update bomb and life metres
             checkEnv(playerX, playerY);
 
+            // Reset all stopwatch/timers
             stopwatch.Reset();
             stopwatch.Start();
 
@@ -222,7 +235,7 @@ namespace Minefield
         }
 
         /// <summary>
-        /// Shows Game Over UI
+        /// Shows Game Over UI and stops timers
         /// </summary>
         private void gameOver()
         {
@@ -243,6 +256,7 @@ namespace Minefield
             player.Stop();
 
             stopwatch.Stop();
+
             TimeSpan ts = stopwatch.Elapsed;
             int seconds = Convert.ToInt32(ts.TotalSeconds);
 
@@ -257,6 +271,11 @@ namespace Minefield
         #endregion
 
         #region LoadoutsAndGamemode
+
+        // ===========================================
+        // NOTE:
+        // More information about Loadouts/Gamemodes found in the Settings form (Settings.cs)
+        // ===========================================
 
         // Holds Choice of Gamemodes/Loadouts
         string[] Gamemodes = { "Search", "Flag" };
@@ -281,6 +300,7 @@ namespace Minefield
             string curGamemode;
             string curLoadout;
 
+            // Using a StreamReader, get the contents of Settings.txt
             using (FileStream f = new FileStream("Settings.txt", FileMode.OpenOrCreate))
             {
                 using (StreamReader r = new StreamReader(f))
@@ -289,8 +309,12 @@ namespace Minefield
                 }
             }
 
+            // Split the contents of the text file into each option (separated by commas)
             string[] options = contents.Split(",");
 
+            // For each option from Settings.txt,
+            // Split it on hyphens
+            // This is to split the setting's label and value
             foreach (string option in options)
             {
                 string[] splitElements = option.Split("-");
@@ -299,9 +323,11 @@ namespace Minefield
                 SettingValues.Add(splitElements[1]);
             }
 
+            // Set current Gamemode and Loadout to the Setting's value
             curGamemode = SettingValues[0];
             curLoadout = SettingValues[1];
 
+            // Get the indexes of both the Gamemode and Loadout so assets can be loaded correctly
             for (int i = 0; i < Gamemodes.Length; i++)
             {
                 if (curGamemode == Gamemodes[i])
@@ -319,18 +345,26 @@ namespace Minefield
             }
         }
 
+        /// <summary>
+        /// Activates the current ability
+        /// Asynchronous function to allow sound to play without interrouption 
+        /// </summary>
         private async void activateAbility()
         {
             if (isAbilityReady)
             {
+                // Change ability UI to show it is not ready
                 btnActivateAbility.FlatAppearance.BorderColor = Color.Red;
+
+                // Start the ability cooldown counter (EverySecond_Tick for more on the cooldown)
                 lblAbilityCooldown.Text = $"{LoadoutCooldowns[loadoutIndex]}s";
                 isAbilityReady = false;
 
                 if (Loadouts[loadoutIndex] == "Arsonist")
                 {
-                    playSound(Minefield.Properties.Resources.Ignite, false, false);
+                    playSound(Minefield.Properties.Resources.Ignite);
 
+                    // Gets the centre of the reveal radius and sets it to show a campfire icon
                     Label centreLabel = getLabel(playerX, playerY);
 
                     centreLabel.Image = Minefield.Properties.Resources.campfire;
@@ -348,7 +382,8 @@ namespace Minefield
                     //};
 
                     // New reveal layout (outside to inside) - for search gamemode
-
+                    // Each array item stores { x-coord, y-coords } of a tile
+                    // Reveals a 2 tile radius around the player
                     int[,] revealRadius =
                     {
                         // Outer Ring
@@ -358,14 +393,18 @@ namespace Minefield
                         { playerX, playerY-1 }, { playerX+1, playerY }, { playerX-1, playerY }, { playerX, playerY+1 }
                     };
 
+                    // Runs 12 times
                     for (int i = 0; i < 12; i++)
                     {
                         Label label = getLabel(revealRadius[i, 0], revealRadius[i, 1]);
 
+                        // If the label exists
                         if (label != null)
-                        {
+                        {   
+                            // If the label is within the grid
                             if (revealRadius[i, 0] >= 0 && revealRadius[i, 1] >= 0)
                             {
+                                // Clear the background colour and show a bomb icon if it is a bombd
                                 label.BackColor = Color.Transparent;
 
                                 if (MineMap[revealRadius[i, 0], revealRadius[i, 1]] == 1)
@@ -373,6 +412,9 @@ namespace Minefield
                                     label.Image = Minefield.Properties.Resources.bombsmall;
                                 }
 
+                                // If the square is already discovered move it to the back of the List
+                                // If not, add it to the List
+                                // (Used for Search gamemode - tile disappearing order)
                                 if (checkIfSquareDiscovered(0, 0, label) == true)
                                 {
                                     discoveredSquares.Remove(label);
@@ -391,13 +433,24 @@ namespace Minefield
                     discoveredSquares.Remove(labelUnderPlayer);
                     discoveredSquares.Add(labelUnderPlayer);
 
+                    // Small Delay to allow sound effect time to finish before Main Game music plays
                     await Task.Delay(3000);
-                    playSound(Minefield.Properties.Resources.Game, true, false);
+                    playSound(Minefield.Properties.Resources.Game, true);
                 }
                 else if (Loadouts[loadoutIndex] == "Ninja")
                 {
-                    playSound(Minefield.Properties.Resources.Dash, false, false);
+                    playSound(Minefield.Properties.Resources.Dash);
 
+                    // Logic for each case:
+                    //      if the playerPosition + the increment is inside the grid
+                    //          Set the maxMoves to the increment
+                    //          Set the label at the incremented position to be transparent and show a bomb icon if it is a bomb
+                    //          Add the square to the discovered list if not already discovered
+                    //      (Runs 3 times)
+                    //
+                    //      Move the player the maximum amount of moves (up to 3) in the last moved direction
+                    //      Run checkEnv on the new Square
+                    //      Add the square to the discovered list if not already discovered
                     switch (lastMoveDirection)
                     {
                         case "up":
@@ -553,12 +606,16 @@ namespace Minefield
                             break;
                     }
 
+                    // Small Delay to allow sound effect time to finish before Main Game music plays
                     await Task.Delay(2000);
-                    playSound(Minefield.Properties.Resources.Game, true, false);
+                    playSound(Minefield.Properties.Resources.Game, true);
                 }
             }
         }
 
+        /// <summary>
+        /// Removes all flags from the grid and empties the flaggedSquares List
+        /// </summary>
         private void removeAllFlags()
         {
             foreach (Label label in flaggedSquares)
@@ -605,8 +662,8 @@ namespace Minefield
             MineMap[19, 0] = 0;
             MineMap[19, 1] = 0;
 
-            MineMap[19, 0] = 2; //Designates end square
-
+            // Designates end square
+            MineMap[19, 0] = 2; 
         }
 
         /// <summary>
@@ -618,6 +675,7 @@ namespace Minefield
             {
                 for (int j = 0; j < 20; j++)
                 {
+                    // If the tile is a bomb, show a bomb icon
                     if (MineMap[i, j] == 1)
                     {
                         Label label = getLabel(i, j);
@@ -639,12 +697,14 @@ namespace Minefield
         private void hideMines()
         {
             foreach (Control c in panel1.Controls)
-            {
+            {   
+                // Ignore a few specific widgets (i.e player label and game over UI)
                 if (c.Name == "lblPlayer" || c.Name == "label381" || c.Name == "label20" || c.Name == "pbGameOver" || c.Name == "btnReplay" || c.Name == "btnQuit" || c.Name == "btnEndGame")
-                    ;   //Skip
+                    ;
 
                 else
                 {
+                    // Sets background colour to Midnight Blue and Removes the image on the tile
                     c.BackColor = Color.MidnightBlue;
                     ((Label)c).Image = null;
                 }
@@ -660,6 +720,10 @@ namespace Minefield
         /// </summary>
         private void moveUp()
         {   
+            // If player not at the top of the grid, below a flagged square or is in the exploding animation,
+            //      Move the player up by 1 tile
+            //      Update player image
+            //      Run checkEnv to update bomb and life metres
             if (playerY != 0 && checkIfSquareFlagged(playerX, playerY - 1) != true && isPlayerExploding != true)
             {
                 lastMoveDirection = "up";
@@ -676,7 +740,11 @@ namespace Minefield
         /// <Para> Moves the player down by 1 square </Para>
         /// </summary>
         private void moveDown()
-        {   
+        {
+            // If player not at the bottom of the grid, above a flagged square or is in the exploding animation,
+            //      Move the player down by 1 tile
+            //      Update player image
+            //      Run checkEnv to update bomb and life metres
             if (playerY != 19 && checkIfSquareFlagged(playerX, playerY + 1) != true && isPlayerExploding != true)
             {
                 lastMoveDirection = "down";
@@ -693,7 +761,11 @@ namespace Minefield
         /// <Para> Moves the player left by 1 square </Para>
         /// </summary>
         private void moveLeft()
-        {   
+        {
+            // If player not at the left of the grid, to the right of a flagged square or is in the exploding animation,
+            //      Move the player left by 1 tile
+            //      Update player image
+            //      Run checkEnv to update bomb and life metres
             if (playerX != 0 && checkIfSquareFlagged(playerX - 1, playerY) != true && isPlayerExploding != true)
             {
                 lastMoveDirection = "left";
@@ -711,6 +783,10 @@ namespace Minefield
         /// </summary>
         private void moveRight()
         {
+            // If player not at the right of the grid, to the left of a flagged square or is in the exploding animation,
+            //      Move the player right by 1 tile
+            //      Update player image
+            //      Run checkEnv to update bomb and life metres
             if (playerX != 19 && checkIfSquareFlagged(playerX + 1, playerY) != true && isPlayerExploding != true)
             {
                 lastMoveDirection = "right";
@@ -726,6 +802,13 @@ namespace Minefield
 
         #region EnvironmentChecks
 
+        /// <summary>
+        /// Checks if a given square has already been discovered
+        /// </summary>
+        /// <param name="x">The x coordinate of the tile (not needed if label given)</param>
+        /// <param name="y">The y coordinate of the tile (not needed if label given)</param>
+        /// <param name="label">The label it needs to check (use if label already found in scope)</param>
+        /// <returns>True if label already discovered</returns>
         private bool checkIfSquareDiscovered(int x, int y, Label label = null)
         {
             bool isSquareDiscovered = false;
@@ -746,6 +829,13 @@ namespace Minefield
             return isSquareDiscovered;
         }
 
+        /// <summary>
+        /// Checks if a given square has been flagged
+        /// </summary>
+        /// <param name="x">The x coordinate of the tile (not needed if label given)</param>
+        /// <param name="y">The y coordinate of the tile (not needed if label given)</param>
+        /// <param name="label">The label it needs to check (use if label already found in scope)</param>
+        /// <returns>True if label is flagged</returns>
         private bool checkIfSquareFlagged(int x, int y, Label label = null)
         {
             bool isSquareFlagged = false;
@@ -766,18 +856,32 @@ namespace Minefield
             return isSquareFlagged;
         }
 
+        /// <summary>
+        /// <para>Checks a given location for any bombs</para>
+        /// <para>Also updates bomb metre in the UI</para>
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
         private void checkEnv(int x, int y)
         {
             int dangerLevel = 0;
 
             Label label = getLabel(x, y);
 
+            // If the square is a bomb
             if (MineMap[x, y] == 1)
             {
                 if (btnEndGame.Visible == true)
                 {
                     btnEndGame.Visible = false;
                 }
+
+                // General Logic for each case:
+                //      Update Life Metre
+                //      Decrement Lives by 1
+                //      Decrease Score by 5
+                //      Show Exploding Animation
+                //      Run gameOver method (Only if lives = 1)
 
                 switch (lives)
                 {
@@ -812,10 +916,12 @@ namespace Minefield
                 }
                 
             }
+            // If Winning Tile, Show endgame button
             else if (MineMap[x, y] == 2)
             {
                 btnEndGame.Visible = true;
             }
+            // If tile is clear of bombs
             else
             {   
                 if (btnEndGame.Visible == true)
@@ -825,7 +931,8 @@ namespace Minefield
 
                 label.BackColor = Color.Transparent;
 
-                //Score Logic
+                // Score Logic
+                // If Square not discovered, increment score by 1, Update Score in UI, add square to discovered list
                 if (checkIfSquareDiscovered(playerX, playerY) == false)
                 {
                     score += 1;
@@ -835,7 +942,8 @@ namespace Minefield
                 }
             }
 
-            //Danger Level Calculation
+            // Danger Level Calculation
+            // Checks each adjacent tile for a bomb, if it is a bomb, increase the danger level by 1
             if (playerY != 0)
             {
                 if (MineMap[x, y - 1] == 1)
@@ -865,6 +973,7 @@ namespace Minefield
                 }
             }
                 
+            // Update Bomb Metre to match danger level
             switch (dangerLevel)
             {
                 case 0:
@@ -955,6 +1064,7 @@ namespace Minefield
 
         private void btnQuit_Click(object sender, EventArgs e)
         {
+            // Goes back to Main Menu
             foreach (Form form in Application.OpenForms)
             {
                 form.Show();
@@ -970,6 +1080,8 @@ namespace Minefield
 
         private void UpdateStopwatchInterval_Tick(object sender, EventArgs e)
         {
+            // Updates the timer UI
+
             TimeSpan ts = stopwatch.Elapsed; 
             String time = String.Format("{0:00}:{1:00}.{2:00}", ts.Minutes, ts.Seconds, ts.Milliseconds / 10);
             lblTimer.Text = time;
@@ -977,12 +1089,16 @@ namespace Minefield
 
         private void EverySecond_Tick(object sender, EventArgs e)
         {
+            // Decrease the ability cooldown by 1 each second
+            // Get the current cooldown without the units
             int cooldown = Convert.ToInt32(lblAbilityCooldown.Text.Remove(lblAbilityCooldown.Text.Length - 1));
 
+            // If there is a cooldown, decrement it by 1 and update UI to match
             if (cooldown > 0)
             {
                 lblAbilityCooldown.Text = $"{(cooldown - 1).ToString()}s";
             }
+            // If no cooldown, update UI to match
             else
             {
                 btnActivateAbility.FlatAppearance.BorderColor = Color.ForestGreen;
@@ -994,15 +1110,18 @@ namespace Minefield
         // If one of the covering labels are clicked
         private void flagSquare(object sender, EventArgs e)
         {
+            // If Flag Gamemode
             if (Gamemodes[gamemodeIndex] == "Flag")
             {
                 Label label = (Label)sender;
 
+                // If square is flagged, remove the flag image and remove it from the flagged List
                 if (checkIfSquareFlagged(0, 0, label) == true)
                 {
                     label.Image = null;
                     flaggedSquares.Remove(label);
                 }
+                // If square is not flagged, add the flag image and add the square to the flagged list
                 else if (label.BackColor != Color.Transparent)
                 {
                     label.Image = Minefield.Properties.Resources.flagGameTypeSmall;
@@ -1013,8 +1132,12 @@ namespace Minefield
 
         private void FiveSeconds_Tick(object sender, EventArgs e)
         {
+            // Only enabled if search gamemode
+
             Label oldestDiscoveredLabel = discoveredSquares[0];
 
+            // If the oldest label is not the one the player is standing on
+            // Rehide the square
             if (oldestDiscoveredLabel != getLabel(playerX, playerY))
             {
                 oldestDiscoveredLabel.BackColor = Color.MidnightBlue;
